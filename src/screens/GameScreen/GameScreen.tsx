@@ -1,7 +1,7 @@
 import React from "react";
 import Highlight from "react-highlight.js";
+import { useCategories } from "../../firestore";
 import { AnswerType, IAnswer, ICategory } from "../../models";
-import { categories } from "../../seed";
 import styles from "./GameScreen.module.css";
 
 interface IProps {
@@ -69,7 +69,8 @@ const Category: React.FC<{ category: ICategory }> = ({ category }) => {
 };
 
 export const GameScreen: React.SFC<IProps> = () => {
-	// XXX: Set show to true on any answer to toggle the answer screen
+	const categories = useCategories();
+
 	const currentCategory = categories.find(category => category.answers.some(answer => answer.show));
 	const currentAnswer = categories
 		.flatMap(category => category.answers)

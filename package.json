@@ -3,6 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
+		"@firebase/app-types": "^0.4.3",
 		"@reach/router": "^1.2.1",
 		"@types/jest": "24.0.5",
 		"@types/node": "11.9.4",
@@ -24,7 +25,8 @@
 		"tslint": "^5.12.1",
 		"tslint-config-prettier": "^1.18.0",
 		"tslint-eslint-rules": "^5.4.0",
-		"typescript": "3.3.3"
+		"typescript": "3.3.3",
+		"uniqid": "^5.0.3"
 	},
 	"scripts": {
 		"start": "react-scripts start",
