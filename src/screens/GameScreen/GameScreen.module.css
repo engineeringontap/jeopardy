@@ -72,3 +72,11 @@
 .teamItem {
 	padding: 20px;
 }
+
+.code {
+	text-align: left;
+}
+
+.image {
+	max-height: 400px;
+}
