@@ -24,6 +24,7 @@ export interface Technology {
 
 export interface Team {
 	id: string;
+	color: string;
 	name: string;
 	members: string[];
 }
@@ -113,9 +114,10 @@ export const useTeams = () => {
 			.onSnapshot(({ docs }) => {
 				setTeams(
 					docs.map<Team>(doc => {
-						const { name, members } = doc.data();
+						const { color, name, members } = doc.data();
 						return {
 							id: doc.id,
+							color,
 							name,
 							members
 						};

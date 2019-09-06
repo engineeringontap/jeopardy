@@ -8,8 +8,8 @@ interface IProps {
 	path: string;
 }
 
-const PlayerButton: React.FC<{ onClick: () => void }> = ({ onClick }) => (
-	<button className={styles.playerButton} onClick={onClick}>
+const PlayerButton: React.FC<{ color: string; onClick: () => void }> = ({ color, onClick }) => (
+	<button className={styles.playerButton} onClick={onClick} style={{ backgroundColor: color }}>
 		ANSWER
 	</button>
 );
@@ -25,7 +25,7 @@ const GetTeamInput: React.FC<{ onClick: () => void }> = ({ onClick }) => (
 );
 export const PlayerScreen: React.FC<IProps> = ({ userId }) => {
 	const teams = useTeams();
-	const isInTeam = teams.filter(team => team.members.includes(userId)).find(Boolean);
+	const signedTeam = teams.filter(team => team.members.includes(userId))[0];
 
 	const handleAnswerClick = () => {
 		console.log("dislike");
@@ -45,8 +45,11 @@ export const PlayerScreen: React.FC<IProps> = ({ userId }) => {
 
 	return (
 		<div className={styles.root}>
-			{isInTeam ? (
-				<PlayerButton onClick={handleAnswerClick} />
+			{signedTeam ? (
+				<>
+					<p>{signedTeam.name}</p>
+					<PlayerButton onClick={handleAnswerClick} color={signedTeam.color} />
+				</>
 			) : (
 				<QrReader delay={300} onError={handleError} onScan={handleScan} style={{ width: "100%" }} />
 			)}
