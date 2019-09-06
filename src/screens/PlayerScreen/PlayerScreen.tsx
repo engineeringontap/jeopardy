@@ -1,7 +1,7 @@
 import React from "react";
 import QrReader from "react-qr-reader";
 import styles from "./PlayerScreen.module.css";
-import { addToTeam } from "../../firestore";
+import { addToTeam, useTeams } from "../../firestore";
 
 interface IProps {
 	userId: string;
@@ -24,10 +24,11 @@ const GetTeamInput: React.FC<{ onClick: () => void }> = ({ onClick }) => (
 	</div>
 );
 export const PlayerScreen: React.FC<IProps> = ({ userId }) => {
-	const handleDislike = () => {
-		return () => {
-			console.log("dislike");
-		};
+	const teams = useTeams();
+	const isInTeam = teams.filter(team => team.members.includes(userId)).find(Boolean);
+
+	const handleAnswerClick = () => {
+		console.log("dislike");
 	};
 	const handleError = () => {
 		return () => {
@@ -44,9 +45,11 @@ export const PlayerScreen: React.FC<IProps> = ({ userId }) => {
 
 	return (
 		<div className={styles.root}>
-			<GetTeamInput onClick={handleDislike} />
-			<QrReader delay={300} onError={handleError} onScan={handleScan} style={{ width: "100%" }} />;
-			<div />
+			{isInTeam ? (
+				<PlayerButton onClick={handleAnswerClick} />
+			) : (
+				<QrReader delay={300} onError={handleError} onScan={handleScan} style={{ width: "100%" }} />
+			)}
 		</div>
 	);
 };
