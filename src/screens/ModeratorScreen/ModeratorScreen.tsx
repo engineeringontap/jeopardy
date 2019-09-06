@@ -1,7 +1,7 @@
 import React from "react";
 import { chooseAnswer, dismissAnswers, useCategories } from "../../firestore";
 import { IAnswer, ICategory } from "../../models";
-import { bootstrapFirebase } from "../../seed";
+import { bootstrapRound, round1 } from "../../seed";
 
 interface IProps {
 	path: string;
@@ -19,7 +19,7 @@ export const ModeratorScreen: React.SFC<IProps> = () => {
 
 	return (
 		<div>
-			<button onClick={bootstrapFirebase}>Bootstrap Firestore</button>
+			<button onClick={bootstrapRound(round1)}>Bootstrap Round 1</button>
 			{categories.map(category => (
 				<div>
 					<h1>{category.name}</h1>

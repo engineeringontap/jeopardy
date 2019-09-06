@@ -3,7 +3,7 @@ import "firebase/firestore";
 import uniqid from "uniqid";
 import { AnswerType, ICategory } from "./models";
 
-export const categories: ICategory[] = [
+export const round1: ICategory[] = [
 	{
 		id: uniqid(),
 		name: "Hacker",
@@ -277,9 +277,9 @@ export const categories: ICategory[] = [
 	}
 ];
 
-export const bootstrapFirebase = () => {
+export const bootstrapRound = (categories: ICategory[]) => () => {
 	// TODO: Delete old collection
-	// Currently you have to delete the collection by using the firebase web interface
+	// Currently you have to delete the old collection by using the firebase web interface
 
 	categories.forEach(category => {
 		firestore()
