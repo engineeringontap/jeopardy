@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import styles from "./PlayerScreen.module.css";
 
 interface IProps {
@@ -6,6 +6,10 @@ interface IProps {
 	path: string;
 }
 
-export const PlayerScreen: React.SFC<IProps> = ({ userId }) => {
-	return <div className={styles.root}>PlayerScreen</div>;
+export const PlayerScreen: React.FC<IProps> = ({ userId }) => {
+	return (
+		<div className={styles.root}>
+			<button className={styles.playerButton}>ANSWER</button>
+		</div>
+	);
 };
