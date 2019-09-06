@@ -1,7 +1,7 @@
-export interface Category {
+export interface ICategory {
 	id: string;
 	name: string;
-	answers: Answer[];
+	answers: IAnswer[];
 }
 
 export enum AnswerType {
@@ -10,7 +10,7 @@ export enum AnswerType {
 	CODE = "CODE"
 }
 
-export interface Answer {
+export interface IAnswer {
 	id: string;
 	type: AnswerType;
 	answer: string;

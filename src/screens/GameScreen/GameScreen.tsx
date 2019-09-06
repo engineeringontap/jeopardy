@@ -1,295 +1,11 @@
 import React from "react";
+import { IAnswer, ICategory } from "../../models";
+import { categories } from "../../seed";
 import styles from "./GameScreen.module.css";
-import { Answer, AnswerType } from "../../models";
 
 interface IProps {
 	path: string;
 }
-
-const answers: { [key: string]: Answer[] } = {
-	software: [
-		{
-			id: "dasda",
-			hint: "hint here",
-			type: AnswerType.TEXT,
-			answer: "It is green",
-			points: 500,
-			show: false,
-			answered: false
-		},
-		{
-			id: "dasda",
-			hint: "hint here",
-			type: AnswerType.TEXT,
-			answer: "It is green",
-			points: 400,
-			show: false,
-			answered: false
-		},
-		{
-			id: "dasda",
-			hint: "hint here",
-			type: AnswerType.TEXT,
-			answer: "It is green",
-			points: 300,
-			show: false,
-			answered: false
-		},
-		{
-			id: "dasda",
-			hint: "hint here",
-			type: AnswerType.TEXT,
-			answer: "It is green",
-			points: 200,
-			show: false,
-			answered: false
-		},
-		{
-			id: "dasda",
-			hint: "hint here",
-			type: AnswerType.TEXT,
-			answer: "It is green",
-			points: 100,
-			show: false,
-			answered: false
-		}
-	],
-	agile: [
-		{
-			id: "dasda",
-			hint: "hint here",
-			type: AnswerType.TEXT,
-			answer: "It is green",
-			points: 500,
-			show: false,
-			answered: false
-		},
-		{
-			id: "dasda",
-			hint: "hint here",
-			type: AnswerType.TEXT,
-			answer: "It is green",
-			points: 400,
-			show: false,
-			answered: false
-		},
-		{
-			id: "dasda",
-			hint: "hint here",
-			type: AnswerType.TEXT,
-			answer: "It is green",
-			points: 300,
-			show: false,
-			answered: false
-		},
-		{
-			id: "dasda",
-			hint: "hint here",
-			type: AnswerType.TEXT,
-			answer: "It is green",
-			points: 200,
-			show: false,
-			answered: false
-		},
-		{
-			id: "dasda",
-			hint: "hint here",
-			type: AnswerType.TEXT,
-			answer: "It is green",
-			points: 100,
-			show: false,
-			answered: false
-		}
-	],
-	design: [
-		{
-			id: "dasda",
-			hint: "hint here",
-			type: AnswerType.TEXT,
-			answer: "It is green",
-			points: 500,
-			show: false,
-			answered: false
-		},
-		{
-			id: "dasda",
-			hint: "hint here",
-			type: AnswerType.TEXT,
-			answer: "It is green",
-			points: 400,
-			show: false,
-			answered: false
-		},
-		{
-			id: "dasda",
-			hint: "hint here",
-			type: AnswerType.TEXT,
-			answer: "It is green",
-			points: 300,
-			show: false,
-			answered: false
-		},
-		{
-			id: "dasda",
-			hint: "hint here",
-			type: AnswerType.TEXT,
-			answer: "It is green",
-			points: 200,
-			show: false,
-			answered: false
-		},
-		{
-			id: "dasda",
-			hint: "hint here",
-			type: AnswerType.TEXT,
-			answer: "It is green",
-			points: 100,
-			show: false,
-			answered: false
-		}
-	],
-	hardware: [
-		{
-			id: "dasda",
-			hint: "hint here",
-			type: AnswerType.TEXT,
-			answer: "It is green",
-			points: 500,
-			show: false,
-			answered: false
-		},
-		{
-			id: "dasda",
-			hint: "hint here",
-			type: AnswerType.TEXT,
-			answer: "It is green",
-			points: 400,
-			show: false,
-			answered: false
-		},
-		{
-			id: "dasda",
-			hint: "hint here",
-			type: AnswerType.TEXT,
-			answer: "It is green",
-			points: 300,
-			show: false,
-			answered: false
-		},
-		{
-			id: "dasda",
-			hint: "hint here",
-			type: AnswerType.TEXT,
-			answer: "It is green",
-			points: 200,
-			show: false,
-			answered: false
-		},
-		{
-			id: "dasda",
-			hint: "hint here",
-			type: AnswerType.TEXT,
-			answer: "It is green",
-			points: 100,
-			show: false,
-			answered: false
-		}
-	],
-	os: [
-		{
-			id: "dasda",
-			hint: "hint here",
-			type: AnswerType.TEXT,
-			answer: "It is green",
-			points: 500,
-			show: false,
-			answered: false
-		},
-		{
-			id: "dasda",
-			hint: "hint here",
-			type: AnswerType.TEXT,
-			answer: "It is green",
-			points: 400,
-			show: false,
-			answered: false
-		},
-		{
-			id: "dasda",
-			hint: "hint here",
-			type: AnswerType.TEXT,
-			answer: "It is green",
-			points: 300,
-			show: false,
-			answered: false
-		},
-		{
-			id: "dasda",
-			hint: "hint here",
-			type: AnswerType.TEXT,
-			answer: "It is green",
-			points: 200,
-			show: false,
-			answered: false
-		},
-		{
-			id: "dasda",
-			hint: "hint here",
-			type: AnswerType.TEXT,
-			answer: "It is green",
-			points: 100,
-			show: false,
-			answered: false
-		}
-	],
-	mobile: [
-		{
-			id: "dasda",
-			hint: "hint here",
-			type: AnswerType.TEXT,
-			answer: "It is green",
-			points: 500,
-			show: false,
-			answered: false
-		},
-		{
-			id: "dasda",
-			hint: "hint here",
-			type: AnswerType.TEXT,
-			answer: "It is green",
-			points: 400,
-			show: false,
-			answered: false
-		},
-		{
-			id: "dasda",
-			hint: "hint here",
-			type: AnswerType.TEXT,
-			answer: "It is green",
-			points: 300,
-			show: false,
-			answered: false
-		},
-		{
-			id: "dasda",
-			hint: "hint here",
-			type: AnswerType.TEXT,
-			answer: "It is green",
-			points: 200,
-			show: false,
-			answered: false
-		},
-		{
-			id: "dasda",
-			hint: "hint here",
-			type: AnswerType.TEXT,
-			answer: "It is green",
-			points: 100,
-			show: false,
-			answered: false
-		}
-	]
-};
 
 const teams = [
 	{
@@ -314,15 +30,15 @@ const teams = [
 	}
 ];
 
-const AnswerElement: React.FC<Answer> = ({ points }) => {
+const AnswerElement: React.FC<IAnswer> = ({ points }) => {
 	return <div className={styles.answer}>{points}</div>;
 };
 
-const Category: React.FC<{ category: string }> = ({ category }) => {
+const Category: React.FC<{ category: ICategory }> = ({ category }) => {
 	return (
 		<div className={styles.category}>
-			<div className={styles.categoryTitle}>{category}</div>
-			{answers[category].map(a => (
+			<div className={styles.categoryTitle}>{category.name}</div>
+			{category.answers.map(a => (
 				<AnswerElement {...a} />
 			))}
 		</div>
@@ -330,7 +46,6 @@ const Category: React.FC<{ category: string }> = ({ category }) => {
 };
 
 export const GameScreen: React.SFC<IProps> = () => {
-	const categories = Object.keys(answers);
 	return (
 		<div className={styles.root}>
 			<div className={styles.title}>

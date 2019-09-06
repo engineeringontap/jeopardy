@@ -1,6 +1,6 @@
-import { AnswerType, Category } from "./models";
+import { AnswerType, ICategory } from "./models";
 
-export const categories: Category[] = [
+export const categories: ICategory[] = [
 	{
 		id: "",
 		name: "Hacker",
