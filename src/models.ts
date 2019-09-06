@@ -7,7 +7,7 @@ export interface Category {
 export enum AnswerType {
 	TEXT = "TEXT",
 	IMAGE = "IMAGE",
-	SOUND = "SOUND"
+	CODE = "CODE"
 }
 
 export interface Answer {
