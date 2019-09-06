@@ -2,6 +2,7 @@ import React from "react";
 import QrReader from "react-qr-reader";
 import styles from "./PlayerScreen.module.css";
 import { addToTeam, requestAnswer, useTeams } from "../../firestore";
+import Shake from "shake.js";
 
 interface IProps {
 	userId: string;
@@ -27,6 +28,31 @@ export const PlayerScreen: React.FC<IProps> = ({ userId }) => {
 	const teams = useTeams();
 	const signedTeam = teams.filter(team => team.members.includes(userId))[0];
 
+	const myShakeEvent = new Shake({
+		threshold: 15, // optional shake strength threshold
+		timeout: 1000 // optional, determines the frequency of event generation
+	});
+
+	myShakeEvent.start();
+
+	const shakeEventDidOccur = () => {
+		alert("shake!");
+	};
+
+	const handleTeamInput = teamId => {
+		const team = teamId.target.value;
+
+		if (team.length < 4) {
+			return;
+		}
+
+		addToTeam(userId, team)
+			.then(_ => {
+				console.log("new team member: ", userId, "for team: ", team);
+			})
+			.catch(err => console.log(err));
+	};
+
 	const handleAnswerClick = () => {
 		console.log("team:", signedTeam.id, "user:", userId, "request to answer:", new Date());
 	};
@@ -44,6 +70,8 @@ export const PlayerScreen: React.FC<IProps> = ({ userId }) => {
 		}
 	};
 
+	window.addEventListener("shake", shakeEventDidOccur, false);
+
 	return (
 		<div className={styles.root}>
 			{signedTeam ? (
@@ -52,7 +80,21 @@ export const PlayerScreen: React.FC<IProps> = ({ userId }) => {
 					<PlayerButton onClick={handleAnswerClick} color={signedTeam.color} />
 				</>
 			) : (
-				<QrReader delay={300} onError={handleError} onScan={handleScan} style={{ width: "100%" }} />
+				<>
+					<QrReader
+						className={styles.qrReader}
+						delay={300}
+						onError={handleError}
+						onScan={handleScan}
+					/>
+					<p>or</p>
+					<input
+						onInput={handleTeamInput}
+						className={styles.playerScreenInput}
+						placeholder="Enter your team code"
+						type="text"
+					/>
+				</>
 			)}
 		</div>
 	);

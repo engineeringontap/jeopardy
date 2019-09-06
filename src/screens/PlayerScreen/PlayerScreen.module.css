@@ -4,6 +4,7 @@
 	height: 100vh;
 	background-color: #fdbf2d;
 	padding: 12px 12px 0 12px;
+	align-items: center;
 }
 
 .playerButton {
@@ -48,4 +49,20 @@
 }
 
 .teamHeadline {
+}
+.qrReader {
+	text-align: center;
+	width: 50%;
+}
+
+.playerScreenInput {
+	padding: 12px 24px;
+}
+
+.playerScreenInput:focus {
+	outline: none;
+	border: none;
+}
+.playerScreenInput:active {
+	border: none;
 }
