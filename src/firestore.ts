@@ -133,7 +133,7 @@ export const chooseAnswer = (category: ICategory, answer: IAnswer) => {
 		.set(categoryCopy);
 };
 
-export const dismissAnswers = (category: ICategory) => () => {
+export const dismissAnswers = (category: ICategory) => {
 	const categoryCopy = {
 		...category,
 		answers: category.answers.map(a => ({ ...a, show: false }))
