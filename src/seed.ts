@@ -1,6 +1,6 @@
 import { AnswerType, Category } from "./models";
 
-const categories: Category[] = [
+export const categories: Category[] = [
 	{
 		id: "",
 		name: "Abbreviations",
@@ -8,9 +8,36 @@ const categories: Category[] = [
 			{
 				id: "",
 				type: AnswerType.TEXT,
+				answer: "HTTP",
+				hint: "Hypertext Transfer Protocol",
+				points: 100,
+				show: false,
+				answered: false
+			},
+			{
+				id: "",
+				type: AnswerType.TEXT,
+				answer: "SIP",
+				hint: "Session Initiation Protocol",
+				points: 200,
+				show: false,
+				answered: false
+			},
+			{
+				id: "",
+				type: AnswerType.TEXT,
 				answer: "Debian",
 				hint: "Debra & Ian",
 				points: 300,
+				show: false,
+				answered: false
+			},
+			{
+				id: "",
+				type: AnswerType.TEXT,
+				answer: "WWDC",
+				hint: "Apple World Wide Developer Conference",
+				points: 400,
 				show: false,
 				answered: false
 			},
