@@ -2,15 +2,15 @@ import firebase from "firebase";
 import { firestore } from "firebase/app";
 import "firebase/firestore";
 import { useEffect, useState } from "react";
-import { techs } from "./techs";
 
 const config = {
-	apiKey: "AIzaSyCB_A1DtilReOg9gP8_BmexaNHA-vzT72U",
-	authDomain: "engineeringontap-49ca3.firebaseapp.com",
-	databaseURL: "https://engineeringontap-49ca3.firebaseio.com",
-	projectId: "engineeringontap-49ca3",
-	storageBucket: "engineeringontap-49ca3.appspot.com",
-	messagingSenderId: "102977610816"
+	apiKey: "AIzaSyC_zYNpwcIa6VwP7147-1JghJAhWN6pRf8",
+	authDomain: "eot-jeopardy.firebaseapp.com",
+	databaseURL: "https://eot-jeopardy.firebaseio.com",
+	projectId: "eot-jeopardy",
+	storageBucket: "",
+	messagingSenderId: "3574246393",
+	appId: "1:3574246393:web:bd1d7bf24aba57106eeb28"
 };
 
 firebase.initializeApp(config);
@@ -50,67 +50,29 @@ firestore()
 		}
 	});
 
-export const like = (techId, userId) => {
-	firestore()
-		.collection(`technologies/${techId}/likes`)
-		.add({
-			userId
-		});
+// export const useTechnologies = () => {
+// 	const [technologies, setTechnologies] = useState<any[]>([]);
 
-	setRating(techId, userId);
-};
+// 	useEffect(() => {
+// 		return firestore()
+// 			.collection("technologies")
+// 			.onSnapshot(({ docs }) => {
+// 				setTechnologies(
+// 					docs.map<Technology>(doc => {
+// 						const { name, link, image } = doc.data();
+// 						return {
+// 							id: doc.id,
+// 							name,
+// 							link,
+// 							image
+// 						};
+// 					})
+// 				);
+// 			});
+// 	}, []);
 
-const setRating = (techId, userId) => {
-	firestore()
-		.collection(`users/${userId}/ratings`)
-		.add({
-			techId
-		});
-};
-
-export const dislike = (techId, userId) => {
-	firestore()
-		.collection(`technologies/${techId}/dislikes`)
-		.add({
-			userId
-		});
-
-	setRating(techId, userId);
-};
-
-export const insertTechnologies = () => {
-	console.log("adding", techs.length, techs);
-
-	techs.forEach(t => {
-		firestore()
-			.collection("technologies")
-			.add(t);
-	});
-};
-
-export const useTechnologies = () => {
-	const [technologies, setTechnologies] = useState<any[]>([]);
-
-	useEffect(() => {
-		return firestore()
-			.collection("technologies")
-			.onSnapshot(({ docs }) => {
-				setTechnologies(
-					docs.map<Technology>(doc => {
-						const { name, link, image } = doc.data();
-						return {
-							id: doc.id,
-							name,
-							link,
-							image
-						};
-					})
-				);
-			});
-	}, []);
-
-	return technologies;
-};
+// 	return technologies;
+// };
 
 export const useRatings = userId => {
 	const [ratings, setRatings] = useState<any[]>([]);
@@ -129,80 +91,4 @@ export const useRatings = userId => {
 	}, []);
 
 	return ratings;
-};
-
-export const useStats = () => {
-	const [stats, setStats] = useState<Stats>({});
-	let cache = {};
-
-	const update = (stat: any) => {
-		setStats({
-			...cache,
-			[stat.id]: {
-				...cache[stat.id],
-				...stat
-			}
-		});
-	};
-
-	useEffect(() => {
-		const unsubscribers: Unsubscribe[] = [];
-
-		const root = firestore()
-			.collection("technologies")
-			.onSnapshot(({ docs }) => {
-				docs.forEach(doc => {
-					const id = doc.id;
-					const { name } = doc.data();
-
-					const child = firestore()
-						.collection(`technologies/${id}/likes`)
-						.onSnapshot(({ docs: docs2 }) => {
-							const likes = docs2.length;
-							const stat = {
-								id,
-								name,
-								likes
-							};
-							cache = {
-								...cache,
-								[stat.id]: {
-									...cache[id],
-									...stat
-								}
-							};
-							update(stat);
-						});
-
-					unsubscribers.push(child);
-
-					const child2 = firestore()
-						.collection(`technologies/${id}/dislikes`)
-						.onSnapshot(({ docs: docs2 }) => {
-							const dislikes = docs2.length;
-							const stat = {
-								id,
-								name,
-								dislikes
-							};
-							cache = {
-								...cache,
-								[stat.id]: {
-									...cache[id],
-									...stat
-								}
-							};
-							update(stat);
-						});
-
-					unsubscribers.push(child2);
-				});
-			});
-
-		unsubscribers.push(root);
-
-		return () => unsubscribers.forEach(unsubscriber => unsubscriber());
-	}, []);
-
-	return stats;
 };
