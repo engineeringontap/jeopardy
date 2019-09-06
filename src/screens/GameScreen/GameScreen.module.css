@@ -1,7 +1,74 @@
 .root {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
 	height: 100%;
+	background-color: #060ce9;
+	justify-content: space-between;
+	padding: 0 20px;
+}
+
+.title {
+	width: 100%;
+
+	vertical-align: middle;
+	padding: 10px 20px;
+	/* border-bottom: 2px solid white; */
+	color: white;
+	height: 64px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.titleText {
+	font-size: 20px;
+	text-align: center;
+}
+
+.titleName {
+	font-weight: bold;
+}
+
+.categories {
+	display: flex;
+	flex-wrap: no-wrap;
+	width: 100%;
+	justify-content: center;
+}
+
+.category {
+	border: 1px solid gold;
+	flex: 1;
+}
+
+.categoryTitle {
+	color: gold;
+	font-size: 30px;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	padding: 10px;
+}
+
+.answer {
+	color: white;
+	border-top: 1px solid gold;
+	padding: 30px 30px;
+	text-align: center;
+	font-size: 40px;
+	font-weight: bold;
+}
+
+.teamFooter {
+	width: 100%;
+	/* background-color: red; */
+	/* padding-bottom: */
+	display: flex;
+	justify-content: space-around;
+	padding: 50px 0px;
+}
+
+.teamItem {
+	padding: 20px;
 }
