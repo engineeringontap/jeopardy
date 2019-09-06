@@ -105,6 +105,12 @@ export const addToTeam = async (userId, teamId) => {
 		.update("members", firestore.FieldValue.arrayUnion(userId));
 };
 
+export const requestAnswer = async (teamId, questionId) => {
+	await firestore()
+		.collection("answers")
+		.doc(teamId);
+};
+
 export const useTeams = () => {
 	const [teams, setTeams] = useState<any[]>([]);
 

@@ -1,7 +1,7 @@
 import React from "react";
 import QrReader from "react-qr-reader";
 import styles from "./PlayerScreen.module.css";
-import { addToTeam, useTeams } from "../../firestore";
+import { addToTeam, requestAnswer, useTeams } from "../../firestore";
 
 interface IProps {
 	userId: string;
@@ -28,11 +28,12 @@ export const PlayerScreen: React.FC<IProps> = ({ userId }) => {
 	const signedTeam = teams.filter(team => team.members.includes(userId))[0];
 
 	const handleAnswerClick = () => {
-		console.log("dislike");
+		console.log("team:", signedTeam.id, "user:", userId, "request to answer:", new Date());
 	};
-	const handleError = () => {
+
+	const handleError = error => {
 		return () => {
-			console.log("dislike");
+			console.log("Something went wrong", error);
 		};
 	};
 
@@ -47,7 +48,7 @@ export const PlayerScreen: React.FC<IProps> = ({ userId }) => {
 		<div className={styles.root}>
 			{signedTeam ? (
 				<>
-					<p>{signedTeam.name}</p>
+					<h1 className={styles.teamHeadline}>Your team: {signedTeam.name}</h1>
 					<PlayerButton onClick={handleAnswerClick} color={signedTeam.color} />
 				</>
 			) : (
