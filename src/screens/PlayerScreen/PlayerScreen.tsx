@@ -2,6 +2,7 @@ import React from "react";
 import QrReader from "react-qr-reader";
 import styles from "./PlayerScreen.module.css";
 import { addToTeam, requestAnswer, useTeams } from "../../firestore";
+import Shake from "shake.js";
 
 interface IProps {
 	userId: string;
@@ -26,6 +27,17 @@ const GetTeamInput: React.FC<{ onClick: () => void }> = ({ onClick }) => (
 export const PlayerScreen: React.FC<IProps> = ({ userId }) => {
 	const teams = useTeams();
 	const signedTeam = teams.filter(team => team.members.includes(userId))[0];
+
+	const myShakeEvent = new Shake({
+		threshold: 15, // optional shake strength threshold
+		timeout: 1000 // optional, determines the frequency of event generation
+	});
+
+	myShakeEvent.start();
+
+	const shakeEventDidOccur = () => {
+		alert("shake!");
+	};
 
 	const handleTeamInput = teamId => {
 		const team = teamId.target.value;
@@ -57,6 +69,8 @@ export const PlayerScreen: React.FC<IProps> = ({ userId }) => {
 			addToTeam(userId, data);
 		}
 	};
+
+	window.addEventListener("shake", shakeEventDidOccur, false);
 
 	return (
 		<div className={styles.root}>
