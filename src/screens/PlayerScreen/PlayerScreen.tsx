@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import QrReader from "react-qr-reader";
 import styles from "./PlayerScreen.module.css";
 
 interface IProps {
@@ -27,9 +28,23 @@ export const PlayerScreen: React.FC<IProps> = ({ userId }) => {
 			console.log("dislike");
 		};
 	};
+	const handleError = () => {
+		return () => {
+			console.log("dislike");
+		};
+	};
+
+	const handleScan = (data: any) => {
+		if (data) {
+			console.log(data);
+		}
+	};
+
 	return (
 		<div className={styles.root}>
 			<GetTeamInput onClick={handleDislike} />
+			<QrReader delay={300} onError={handleError} onScan={handleScan} style={{ width: "100%" }} />;
+			<div />
 		</div>
 	);
 };

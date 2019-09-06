@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a722df7b-b289-4fc3-a3db-8f26d2cec22a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/PlayerScreen/PlayerScreen.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/PlayerScreen/PlayerScreen.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/PlayerScreen/PlayerScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/PlayerScreen/PlayerScreen.tsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,8 +19,27 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/screens/PlayerScreen/PlayerScreen.module.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-114">
-              <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+            <state relative-caret-position="-205">
+              <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/screens/GameScreen/GameScreen.module.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-294" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/screens/GameScreen/GameScreen.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3700">
+              <caret line="160" column="9" lean-forward="true" selection-start-line="160" selection-start-column="9" selection-end-line="160" selection-end-column="9" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -29,8 +47,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/screens/PlayerScreen/PlayerScreen.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-72">
-              <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+            <state relative-caret-position="184">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -47,8 +65,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/screens/ModeratorScreen/ModeratorScreen.tsx" />
-        <option value="$PROJECT_DIR$/src/screens/PlayerScreen/PlayerScreen.tsx" />
         <option value="$PROJECT_DIR$/src/screens/PlayerScreen/PlayerScreen.module.css" />
+        <option value="$PROJECT_DIR$/src/screens/PlayerScreen/PlayerScreen.tsx" />
       </list>
     </option>
   </component>
@@ -132,12 +150,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1567760309002</updated>
-      <workItem from="1567760310178" duration="3895000" />
+      <workItem from="1567760310178" duration="4992000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3895000" />
+    <option name="totallyTimeSpent" value="4992000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
@@ -203,15 +221,6 @@
         <state relative-caret-position="-516" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/screens/GameScreen/GameScreen.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/screens/ModeratorScreen/ModeratorScreen.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -237,15 +246,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/screens/PlayerScreen/PlayerScreen.module.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-114">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        <state relative-caret-position="-205">
+          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/GameScreen/GameScreen.module.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-294" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/GameScreen/GameScreen.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3700">
+          <caret line="160" column="9" lean-forward="true" selection-start-line="160" selection-start-column="9" selection-end-line="160" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/screens/PlayerScreen/PlayerScreen.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-72">
-          <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+        <state relative-caret-position="184">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
