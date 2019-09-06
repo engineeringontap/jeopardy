@@ -2,7 +2,7 @@ import firebase from "firebase";
 import { firestore } from "firebase/app";
 import "firebase/firestore";
 import { useEffect, useState } from "react";
-import { ICategory } from "./models";
+import { IAnswer, ICategory } from "./models";
 
 const config = {
 	apiKey: "AIzaSyC_zYNpwcIa6VwP7147-1JghJAhWN6pRf8",
@@ -92,4 +92,33 @@ export const useCategories = () => {
 	}, []);
 
 	return categories;
+};
+
+export const chooseAnswer = (category: ICategory, answer: IAnswer) => {
+	const categoryCopy = {
+		...category,
+		answers: category.answers.map(a =>
+			a.id === answer.id
+				? {
+						...a,
+						show: true
+				  }
+				: a
+		)
+	};
+
+	firestore()
+		.doc(`categories/${category.id}`)
+		.set(categoryCopy);
+};
+
+export const dismissAnswers = (category: ICategory) => {
+	const categoryCopy = {
+		...category,
+		answers: category.answers.map(a => ({ ...a, show: false }))
+	};
+
+	firestore()
+		.doc(`categories/${category.id}`)
+		.set(categoryCopy);
 };
