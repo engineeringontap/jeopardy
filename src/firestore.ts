@@ -5,13 +5,14 @@ import { useEffect, useState } from "react";
 import { techs } from "./techs";
 
 const config = {
-	apiKey: "AIzaSyCB_A1DtilReOg9gP8_BmexaNHA-vzT72U",
-	authDomain: "engineeringontap-49ca3.firebaseapp.com",
-	databaseURL: "https://engineeringontap-49ca3.firebaseio.com",
-	projectId: "engineeringontap-49ca3",
-	storageBucket: "engineeringontap-49ca3.appspot.com",
-	messagingSenderId: "102977610816"
-};
+    apiKey: "AIzaSyC_zYNpwcIa6VwP7147-1JghJAhWN6pRf8",
+    authDomain: "eot-jeopardy.firebaseapp.com",
+    databaseURL: "https://eot-jeopardy.firebaseio.com",
+    projectId: "eot-jeopardy",
+    storageBucket: "",
+    messagingSenderId: "3574246393",
+    appId: "1:3574246393:web:bd1d7bf24aba57106eeb28"
+  };
 
 firebase.initializeApp(config);
 
