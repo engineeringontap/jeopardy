@@ -1,7 +1,7 @@
 export interface Category {
 	id: string;
 	name: string;
-	answers: Answers[];
+	answers: Answer[];
 }
 
 export enum AnswerType {
@@ -10,7 +10,7 @@ export enum AnswerType {
 	SOUND = "SOUND"
 }
 
-export interface Answers {
+export interface Answer {
 	type: AnswerType;
 	answer: string;
 	points: number;
