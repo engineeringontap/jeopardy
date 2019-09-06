@@ -218,62 +218,6 @@ export const categories: ICategory[] = [
 	},
 	{
 		id: "",
-		name: "Games",
-		answers: [
-			{
-				id: "",
-				type: AnswerType.IMAGE,
-				answer:
-					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fgames%2Fgames1.jpg?alt=media&token=4fcfc6be-4c99-4923-9a88-f44988cfeaca",
-				hint: "Pacman",
-				points: 100,
-				show: false,
-				answered: false
-			},
-			{
-				id: "",
-				type: AnswerType.IMAGE,
-				answer:
-					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fgames%2Fgames2.jpg?alt=media&token=d99159d1-3858-4db7-94d7-7ffc28e1a5e7",
-				hint: "Monkey Island",
-				points: 200,
-				show: false,
-				answered: false
-			},
-			{
-				id: "",
-				type: AnswerType.IMAGE,
-				answer:
-					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fgames%2Fgames3.jpg?alt=media&token=9eaa1282-385c-45df-95fb-e738c9bfa0c1",
-				hint: "Pong",
-				points: 300,
-				show: false,
-				answered: false
-			},
-			{
-				id: "",
-				type: AnswerType.IMAGE,
-				answer:
-					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fgames%2Fgames4.gif?alt=media&token=78f60ca5-4f6c-4167-98b5-f0bd6adecef9",
-				hint: "Game of Life",
-				points: 400,
-				show: false,
-				answered: false
-			},
-			{
-				id: "",
-				type: AnswerType.IMAGE,
-				answer:
-					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fgames%2Fgames5.jpg?alt=media&token=09ae5744-bd81-4604-b18d-d7ed3525b11b",
-				hint: "Zork",
-				points: 500,
-				show: false,
-				answered: false
-			}
-		]
-	},
-	{
-		id: "",
 		name: "Websites",
 		answers: [
 			{
