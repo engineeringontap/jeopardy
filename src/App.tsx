@@ -2,7 +2,6 @@ import { Router } from "@reach/router";
 import Fingerprint from "fingerprintjs";
 import React from "react";
 import styles from "./App.module.css";
-import { Header } from "./components/Header/Header";
 import { GameScreen } from "./screens/GameScreen/GameScreen";
 import { ModeratorScreen } from "./screens/ModeratorScreen/ModeratorScreen";
 import { PlayerScreen } from "./screens/PlayerScreen/PlayerScreen";
