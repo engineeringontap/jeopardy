@@ -11,7 +11,6 @@ export const App: React.SFC = () => {
 	const fingerprint = new Fingerprint().get();
 	return (
 		<div className={styles.root}>
-			<Header />
 			<Router className={styles.routerWrapper}>
 				<PlayerScreen userId={fingerprint} path="/" />
 				<GameScreen path="/gamescreen" />
