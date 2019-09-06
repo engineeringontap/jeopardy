@@ -1,6 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import QrReader from "react-qr-reader";
 import styles from "./PlayerScreen.module.css";
+import { addToTeam } from "../../firestore";
 
 interface IProps {
 	userId: string;
@@ -36,7 +37,8 @@ export const PlayerScreen: React.FC<IProps> = ({ userId }) => {
 
 	const handleScan = (data: any) => {
 		if (data) {
-			console.log(data);
+			console.log("new team member: ", userId, "for team: ", data);
+			addToTeam(userId, data);
 		}
 	};
 

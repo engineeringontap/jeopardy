@@ -92,3 +92,10 @@ export const useRatings = userId => {
 
 	return ratings;
 };
+
+export const addToTeam = (userId, teamId) => {
+	firestore()
+		.collection("teams")
+		.doc(teamId)
+		.update("members", firestore.FieldValue.arrayUnion(userId));
+};
