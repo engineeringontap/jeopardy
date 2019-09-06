@@ -9,6 +9,8 @@ interface IProps {
 const answers: { [key: string]: Answer[] } = {
 	software: [
 		{
+			id: "dasda",
+			hint: "hint here",
 			type: AnswerType.TEXT,
 			answer: "It is green",
 			points: 500,
@@ -16,6 +18,8 @@ const answers: { [key: string]: Answer[] } = {
 			answered: false
 		},
 		{
+			id: "dasda",
+			hint: "hint here",
 			type: AnswerType.TEXT,
 			answer: "It is green",
 			points: 400,
@@ -23,6 +27,8 @@ const answers: { [key: string]: Answer[] } = {
 			answered: false
 		},
 		{
+			id: "dasda",
+			hint: "hint here",
 			type: AnswerType.TEXT,
 			answer: "It is green",
 			points: 300,
@@ -30,6 +36,8 @@ const answers: { [key: string]: Answer[] } = {
 			answered: false
 		},
 		{
+			id: "dasda",
+			hint: "hint here",
 			type: AnswerType.TEXT,
 			answer: "It is green",
 			points: 200,
@@ -37,6 +45,8 @@ const answers: { [key: string]: Answer[] } = {
 			answered: false
 		},
 		{
+			id: "dasda",
+			hint: "hint here",
 			type: AnswerType.TEXT,
 			answer: "It is green",
 			points: 100,
@@ -46,6 +56,8 @@ const answers: { [key: string]: Answer[] } = {
 	],
 	agile: [
 		{
+			id: "dasda",
+			hint: "hint here",
 			type: AnswerType.TEXT,
 			answer: "It is green",
 			points: 500,
@@ -53,6 +65,8 @@ const answers: { [key: string]: Answer[] } = {
 			answered: false
 		},
 		{
+			id: "dasda",
+			hint: "hint here",
 			type: AnswerType.TEXT,
 			answer: "It is green",
 			points: 400,
@@ -60,6 +74,8 @@ const answers: { [key: string]: Answer[] } = {
 			answered: false
 		},
 		{
+			id: "dasda",
+			hint: "hint here",
 			type: AnswerType.TEXT,
 			answer: "It is green",
 			points: 300,
@@ -67,6 +83,8 @@ const answers: { [key: string]: Answer[] } = {
 			answered: false
 		},
 		{
+			id: "dasda",
+			hint: "hint here",
 			type: AnswerType.TEXT,
 			answer: "It is green",
 			points: 200,
@@ -74,6 +92,8 @@ const answers: { [key: string]: Answer[] } = {
 			answered: false
 		},
 		{
+			id: "dasda",
+			hint: "hint here",
 			type: AnswerType.TEXT,
 			answer: "It is green",
 			points: 100,
@@ -83,6 +103,8 @@ const answers: { [key: string]: Answer[] } = {
 	],
 	design: [
 		{
+			id: "dasda",
+			hint: "hint here",
 			type: AnswerType.TEXT,
 			answer: "It is green",
 			points: 500,
@@ -90,6 +112,8 @@ const answers: { [key: string]: Answer[] } = {
 			answered: false
 		},
 		{
+			id: "dasda",
+			hint: "hint here",
 			type: AnswerType.TEXT,
 			answer: "It is green",
 			points: 400,
@@ -97,6 +121,8 @@ const answers: { [key: string]: Answer[] } = {
 			answered: false
 		},
 		{
+			id: "dasda",
+			hint: "hint here",
 			type: AnswerType.TEXT,
 			answer: "It is green",
 			points: 300,
@@ -104,6 +130,8 @@ const answers: { [key: string]: Answer[] } = {
 			answered: false
 		},
 		{
+			id: "dasda",
+			hint: "hint here",
 			type: AnswerType.TEXT,
 			answer: "It is green",
 			points: 200,
@@ -111,6 +139,8 @@ const answers: { [key: string]: Answer[] } = {
 			answered: false
 		},
 		{
+			id: "dasda",
+			hint: "hint here",
 			type: AnswerType.TEXT,
 			answer: "It is green",
 			points: 100,
@@ -120,6 +150,8 @@ const answers: { [key: string]: Answer[] } = {
 	],
 	hardware: [
 		{
+			id: "dasda",
+			hint: "hint here",
 			type: AnswerType.TEXT,
 			answer: "It is green",
 			points: 500,
@@ -127,6 +159,8 @@ const answers: { [key: string]: Answer[] } = {
 			answered: false
 		},
 		{
+			id: "dasda",
+			hint: "hint here",
 			type: AnswerType.TEXT,
 			answer: "It is green",
 			points: 400,
@@ -134,6 +168,8 @@ const answers: { [key: string]: Answer[] } = {
 			answered: false
 		},
 		{
+			id: "dasda",
+			hint: "hint here",
 			type: AnswerType.TEXT,
 			answer: "It is green",
 			points: 300,
@@ -141,6 +177,8 @@ const answers: { [key: string]: Answer[] } = {
 			answered: false
 		},
 		{
+			id: "dasda",
+			hint: "hint here",
 			type: AnswerType.TEXT,
 			answer: "It is green",
 			points: 200,
@@ -148,6 +186,8 @@ const answers: { [key: string]: Answer[] } = {
 			answered: false
 		},
 		{
+			id: "dasda",
+			hint: "hint here",
 			type: AnswerType.TEXT,
 			answer: "It is green",
 			points: 100,
@@ -157,6 +197,8 @@ const answers: { [key: string]: Answer[] } = {
 	],
 	os: [
 		{
+			id: "dasda",
+			hint: "hint here",
 			type: AnswerType.TEXT,
 			answer: "It is green",
 			points: 500,
@@ -164,6 +206,8 @@ const answers: { [key: string]: Answer[] } = {
 			answered: false
 		},
 		{
+			id: "dasda",
+			hint: "hint here",
 			type: AnswerType.TEXT,
 			answer: "It is green",
 			points: 400,
@@ -171,6 +215,8 @@ const answers: { [key: string]: Answer[] } = {
 			answered: false
 		},
 		{
+			id: "dasda",
+			hint: "hint here",
 			type: AnswerType.TEXT,
 			answer: "It is green",
 			points: 300,
@@ -178,6 +224,8 @@ const answers: { [key: string]: Answer[] } = {
 			answered: false
 		},
 		{
+			id: "dasda",
+			hint: "hint here",
 			type: AnswerType.TEXT,
 			answer: "It is green",
 			points: 200,
@@ -185,6 +233,8 @@ const answers: { [key: string]: Answer[] } = {
 			answered: false
 		},
 		{
+			id: "dasda",
+			hint: "hint here",
 			type: AnswerType.TEXT,
 			answer: "It is green",
 			points: 100,
@@ -194,6 +244,8 @@ const answers: { [key: string]: Answer[] } = {
 	],
 	mobile: [
 		{
+			id: "dasda",
+			hint: "hint here",
 			type: AnswerType.TEXT,
 			answer: "It is green",
 			points: 500,
@@ -201,6 +253,8 @@ const answers: { [key: string]: Answer[] } = {
 			answered: false
 		},
 		{
+			id: "dasda",
+			hint: "hint here",
 			type: AnswerType.TEXT,
 			answer: "It is green",
 			points: 400,
@@ -208,6 +262,8 @@ const answers: { [key: string]: Answer[] } = {
 			answered: false
 		},
 		{
+			id: "dasda",
+			hint: "hint here",
 			type: AnswerType.TEXT,
 			answer: "It is green",
 			points: 300,
@@ -215,6 +271,8 @@ const answers: { [key: string]: Answer[] } = {
 			answered: false
 		},
 		{
+			id: "dasda",
+			hint: "hint here",
 			type: AnswerType.TEXT,
 			answer: "It is green",
 			points: 200,
@@ -222,6 +280,8 @@ const answers: { [key: string]: Answer[] } = {
 			answered: false
 		},
 		{
+			id: "dasda",
+			hint: "hint here",
 			type: AnswerType.TEXT,
 			answer: "It is green",
 			points: 100,
