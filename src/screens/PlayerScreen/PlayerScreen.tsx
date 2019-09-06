@@ -6,10 +6,12 @@ interface IProps {
 	path: string;
 }
 
+const PlayerButton: React.FC = () => <button className={styles.playerButton}>ANSWER</button>;
+
 export const PlayerScreen: React.FC<IProps> = ({ userId }) => {
 	return (
 		<div className={styles.root}>
-			<button className={styles.playerButton}>ANSWER</button>
+			<PlayerButton />
 		</div>
 	);
 };
