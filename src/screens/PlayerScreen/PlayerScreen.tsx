@@ -28,11 +28,12 @@ export const PlayerScreen: React.FC<IProps> = ({ userId }) => {
 	const signedTeam = teams.filter(team => team.members.includes(userId))[0];
 
 	const handleAnswerClick = () => {
-		console.log("team:", signedTeam.id, "request to answer:", new Date());
+		console.log("team:", signedTeam.id, "user:", userId, "request to answer:", new Date());
 	};
-	const handleError = () => {
+
+	const handleError = error => {
 		return () => {
-			console.log("dislike");
+			console.log("Something went wrong", error);
 		};
 	};
 
