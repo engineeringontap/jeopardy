@@ -93,7 +93,7 @@ export const initShake = (userId, team) => {
 
 		myShakeEvent.start();
 
-		window.addEventListener("shake", () => requestToAnswer(team.id, "X7GMiBDYhao939wrDzHA"), false);
+		window.addEventListener("shake", () => requestToAnswer("X7GMiBDYhao939wrDzHA", team.id), false);
 	}, []);
 };
 

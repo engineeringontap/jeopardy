@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a722df7b-b289-4fc3-a3db-8f26d2cec22a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/firestore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/firestore.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/PlayerScreen/PlayerScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/PlayerScreen/PlayerScreen.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="a722df7b-b289-4fc3-a3db-8f26d2cec22a" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -53,11 +49,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/firestore.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="146" column="5" lean-forward="true" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-2285">
+              <caret line="5" column="81" selection-start-line="5" selection-start-column="81" selection-end-line="5" selection-end-column="81" />
             </state>
           </provider>
         </entry>
@@ -143,16 +136,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1567760309002</updated>
-      <workItem from="1567760310178" duration="15440000" />
+      <workItem from="1567760310178" duration="15722000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15440000" />
+    <option name="totallyTimeSpent" value="15722000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
@@ -280,11 +272,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/firestore.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="146" column="5" lean-forward="true" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-2285">
+          <caret line="5" column="81" selection-start-line="5" selection-start-column="81" selection-end-line="5" selection-end-column="81" />
         </state>
       </provider>
     </entry>
