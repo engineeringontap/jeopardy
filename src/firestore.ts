@@ -21,9 +21,13 @@ export interface Technology {
 	link: string;
 	image: string;
 }
-export interface Rating {
+
+export interface Team {
 	id: string;
+	name: string;
+	members: string[];
 }
+
 export interface Stat {
 	id: string;
 	name: string;
@@ -91,4 +95,34 @@ export const useRatings = userId => {
 	}, []);
 
 	return ratings;
+};
+
+export const addToTeam = async (userId, teamId) => {
+	await firestore()
+		.collection("teams")
+		.doc(teamId)
+		.update("members", firestore.FieldValue.arrayUnion(userId));
+};
+
+export const useTeams = () => {
+	const [teams, setTeams] = useState<any[]>([]);
+
+	useEffect(() => {
+		return firestore()
+			.collection("teams")
+			.onSnapshot(({ docs }) => {
+				setTeams(
+					docs.map<Team>(doc => {
+						const { name, members } = doc.data();
+						return {
+							id: doc.id,
+							name,
+							members
+						};
+					})
+				);
+			});
+	}, []);
+
+	return teams;
 };
