@@ -1,8 +1,7 @@
 import React from "react";
 import QrReader from "react-qr-reader";
 import styles from "./PlayerScreen.module.css";
-import { addToTeam, requestAnswer, useTeams } from "../../firestore";
-import Shake from "shake.js";
+import { addToTeam, initShake, requestToAnswer, useTeams } from "../../firestore";
 
 interface IProps {
 	userId: string;
@@ -28,16 +27,7 @@ export const PlayerScreen: React.FC<IProps> = ({ userId }) => {
 	const teams = useTeams();
 	const signedTeam = teams.filter(team => team.members.includes(userId))[0];
 
-	const myShakeEvent = new Shake({
-		threshold: 15, // optional shake strength threshold
-		timeout: 1000 // optional, determines the frequency of event generation
-	});
-
-	myShakeEvent.start();
-
-	const shakeEventDidOccur = () => {
-		alert("shake!");
-	};
+	initShake(userId, signedTeam);
 
 	const handleTeamInput = teamId => {
 		const team = teamId.target.value;
@@ -54,7 +44,13 @@ export const PlayerScreen: React.FC<IProps> = ({ userId }) => {
 	};
 
 	const handleAnswerClick = () => {
-		console.log("team:", signedTeam.id, "user:", userId, "request to answer:", new Date());
+		requestToAnswer("X7GMiBDYhao939wrDzHA", signedTeam.id)
+			.then(_ => {
+				console.log("team:", signedTeam.id, "user:", userId, "request to answer:", new Date());
+			})
+			.catch(err => {
+				console.log(err);
+			});
 	};
 
 	const handleError = error => {
@@ -69,8 +65,6 @@ export const PlayerScreen: React.FC<IProps> = ({ userId }) => {
 			addToTeam(userId, data);
 		}
 	};
-
-	window.addEventListener("shake", shakeEventDidOccur, false);
 
 	return (
 		<div className={styles.root}>

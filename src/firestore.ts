@@ -2,6 +2,8 @@ import firebase from "firebase";
 import { firestore } from "firebase/app";
 import "firebase/firestore";
 import { useEffect, useState } from "react";
+import Shake from "shake.js";
+import { getTemplateRanges } from "tslint/lib/rules/noConsecutiveBlankLinesRule";
 
 const config = {
 	apiKey: "AIzaSyC_zYNpwcIa6VwP7147-1JghJAhWN6pRf8",
@@ -105,10 +107,14 @@ export const addToTeam = async (userId, teamId) => {
 		.update("members", firestore.FieldValue.arrayUnion(userId));
 };
 
-export const requestAnswer = async (teamId, questionId) => {
+export const requestToAnswer = async (questionId, teamId) => {
 	await firestore()
-		.collection("answers")
-		.doc(teamId);
+		.collection("requestedAnswers")
+		.add({
+			questionId,
+			teamId,
+			time: new Date()
+		});
 };
 
 export const useTeams = () => {
@@ -133,4 +139,20 @@ export const useTeams = () => {
 	}, []);
 
 	return teams;
+};
+
+export const initShake = (userId, team) => {
+	if (!userId || (team && !team.id)) {
+		return;
+	}
+	useEffect(() => {
+		const myShakeEvent = new Shake({
+			threshold: 15, // optional shake strength threshold
+			timeout: 1000 // optional, determines the frequency of event generation
+		});
+
+		myShakeEvent.start();
+
+		window.addEventListener("shake", () => requestToAnswer(team.id, "X7GMiBDYhao939wrDzHA"), false);
+	}, []);
 };
