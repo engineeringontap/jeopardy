@@ -1,7 +1,7 @@
 import React from "react";
 import { chooseAnswer, dismissAnswers, useCategories } from "../../firestore";
 import { IAnswer, ICategory } from "../../models";
-import { bootstrapRound, round1 } from "../../seed";
+import { bootstrapRound, resetRounds, round1 } from "../../seed";
 
 interface IProps {
 	path: string;
@@ -10,6 +10,9 @@ interface IProps {
 export const ModeratorScreen: React.SFC<IProps> = () => {
 	const categories = useCategories();
 
+	const reset = () => {
+		resetRounds();
+	};
 	const choose = (category: ICategory, answer: IAnswer) => () => {
 		chooseAnswer(category, answer);
 	};
@@ -19,6 +22,7 @@ export const ModeratorScreen: React.SFC<IProps> = () => {
 
 	return (
 		<div>
+			<button onClick={reset}>Reset</button>
 			<button onClick={bootstrapRound(round1)}>Bootstrap Round 1</button>
 			{categories.map(category => (
 				<div>

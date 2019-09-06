@@ -277,10 +277,19 @@ export const round1: ICategory[] = [
 	}
 ];
 
-export const bootstrapRound = (categories: ICategory[]) => () => {
-	// TODO: Delete old collection
-	// Currently you have to delete the old collection by using the firebase web interface
+export const resetRounds = () => {
+	// FIXME: Unsubscribe the onSnapshot listener after all docs have been deleted and remove window.location.reload()
+	firestore()
+		.collection("/categories")
+		.onSnapshot(snapshot => {
+			snapshot.docs.forEach(doc => doc.ref.delete());
+			setTimeout(() => {
+				window.location.reload();
+			}, 1000);
+		});
+};
 
+export const bootstrapRound = (categories: ICategory[]) => () => {
 	categories.forEach(category => {
 		firestore()
 			.collection("/categories")
