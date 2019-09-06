@@ -27,6 +27,20 @@ export const PlayerScreen: React.FC<IProps> = ({ userId }) => {
 	const teams = useTeams();
 	const signedTeam = teams.filter(team => team.members.includes(userId))[0];
 
+	const handleTeamInput = teamId => {
+		const team = teamId.target.value;
+
+		if (team.length < 4) {
+			return;
+		}
+
+		addToTeam(userId, team)
+			.then(_ => {
+				console.log("new team member: ", userId, "for team: ", team);
+			})
+			.catch(err => console.log(err));
+	};
+
 	const handleAnswerClick = () => {
 		console.log("team:", signedTeam.id, "user:", userId, "request to answer:", new Date());
 	};
@@ -52,7 +66,21 @@ export const PlayerScreen: React.FC<IProps> = ({ userId }) => {
 					<PlayerButton onClick={handleAnswerClick} color={signedTeam.color} />
 				</>
 			) : (
-				<QrReader delay={300} onError={handleError} onScan={handleScan} style={{ width: "100%" }} />
+				<>
+					<QrReader
+						className={styles.qrReader}
+						delay={300}
+						onError={handleError}
+						onScan={handleScan}
+					/>
+					<p>or</p>
+					<input
+						onInput={handleTeamInput}
+						className={styles.playerScreenInput}
+						placeholder="Enter your team code"
+						type="text"
+					/>
+				</>
 			)}
 		</div>
 	);
