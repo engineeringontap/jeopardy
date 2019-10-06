@@ -1,12 +1,9 @@
+import { RouteComponentProps } from "@reach/router";
 import React from "react";
 import QrReader from "react-qr-reader";
+import { addToTeam, requestToAnswer, useTeams } from "../../firestore";
+import { useUserId } from "../../util/userId";
 import styles from "./PlayerScreen.module.css";
-import { addToTeam, initShake, requestToAnswer, useTeams } from "../../firestore";
-
-interface IProps {
-	userId: string;
-	path: string;
-}
 
 const PlayerButton: React.FC<{ color: string; onClick: () => void }> = ({ color, onClick }) => (
 	<button className={styles.playerButton} onClick={onClick} style={{ backgroundColor: color }}>
@@ -14,20 +11,25 @@ const PlayerButton: React.FC<{ color: string; onClick: () => void }> = ({ color,
 	</button>
 );
 
-const GetTeamInput: React.FC<{ onClick: () => void }> = ({ onClick }) => (
-	<div className={styles.teamInputWrapper}>
-		<input className={styles.teamInput} placeholder="Gib einen Teamnamen ein" type="text" />
+// const GetTeamInput: React.FC<{ onClick: () => void }> = ({ onClick }) => (
+// 	<div className={styles.teamInputWrapper}>
+// 		<input className={styles.teamInput} placeholder="Gib einen Teamnamen ein" type="text" />
 
-		<button className={styles.teamInputButton} onClick={onClick}>
-			Absenden
-		</button>
-	</div>
-);
-export const PlayerScreen: React.FC<IProps> = ({ userId }) => {
+// 		<button className={styles.teamInputButton} onClick={onClick}>
+// 			Absenden
+// 		</button>
+// 	</div>
+// );
+
+export const PlayerScreen: React.FC<RouteComponentProps> = () => {
+	const userId = useUserId();
 	const teams = useTeams();
 	const signedTeam = teams.filter(team => team.members.includes(userId))[0];
+	// initShake(userId, signedTeam);
 
-	initShake(userId, signedTeam);
+	if (!userId) {
+		return <div>loading</div>;
+	}
 
 	const handleTeamInput = teamId => {
 		const team = teamId.target.value;

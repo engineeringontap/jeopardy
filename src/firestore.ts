@@ -2,7 +2,6 @@ import firebase from "firebase";
 import { firestore } from "firebase/app";
 import "firebase/firestore";
 import { useEffect, useState } from "react";
-import Shake from "shake.js";
 import { IAnswer, ICategory } from "./models";
 
 const config = {
@@ -80,21 +79,21 @@ export const useTeams = () => {
 	return teams;
 };
 
-export const initShake = (userId, team) => {
-	if (!userId || (team && !team.id)) {
-		return;
-	}
-	useEffect(() => {
-		const myShakeEvent = new Shake({
-			threshold: 15, // optional shake strength threshold
-			timeout: 1000 // optional, determines the frequency of event generation
-		});
+// export const initShake = (userId, team) => {
+// 	if (!userId || (team && !team.id)) {
+// 		return;
+// 	}
+// 	useEffect(() => {
+// 		const myShakeEvent = new Shake({
+// 			threshold: 15, // optional shake strength threshold
+// 			timeout: 1000 // optional, determines the frequency of event generation
+// 		});
 
-		myShakeEvent.start();
+// 		myShakeEvent.start();
 
-		window.addEventListener("shake", () => requestToAnswer("X7GMiBDYhao939wrDzHA", team.id), false);
-	}, []);
-};
+// 		window.addEventListener("shake", () => requestToAnswer("X7GMiBDYhao939wrDzHA", team.id), false);
+// 	}, []);
+// };
 
 export const useCategories = () => {
 	const [categories, setCategories] = useState<ICategory[]>([]);
