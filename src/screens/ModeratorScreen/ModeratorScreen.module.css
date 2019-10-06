@@ -1,0 +1,45 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.controlBar {
+	width: 100%;
+	padding: 10px;
+	background-color: grey;
+	border-bottom: 2px solid black;
+}
+
+.content {
+	display: flex;
+	flex-grow: 1;
+	height: 100%;
+}
+
+.categories {
+	background-color: blue;
+	color: white;
+	padding: 10px;
+	overflow-y: scroll;
+	min-width: 400px;
+	height: 100%;
+}
+
+.teams {
+	flex-grow: 1;
+}
+
+.rightColumn {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.currentAnswer {
+	background-color: yellow;
+}
+
+.team {
+	padding: 10px;
+}

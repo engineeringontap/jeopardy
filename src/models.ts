@@ -15,6 +15,7 @@ export interface IAnswer {
 	type: AnswerType;
 	answer: string;
 	hint: string;
+	explanation: string;
 	points: number;
 	show: boolean;
 	answered: boolean;

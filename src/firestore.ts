@@ -56,7 +56,7 @@ export const requestToAnswer = async (questionId, teamId) => {
 };
 
 export const useTeams = () => {
-	const [teams, setTeams] = useState<any[]>([]);
+	const [teams, setTeams] = useState<Team[]>([]);
 
 	useEffect(() => {
 		return firestore()
