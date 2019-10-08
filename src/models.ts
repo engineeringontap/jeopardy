@@ -10,6 +10,14 @@ export enum AnswerType {
 	CODE = "CODE"
 }
 
+export interface Team {
+	id: string;
+	color: string;
+	name: string;
+	members: string[];
+	points: number;
+}
+
 export interface IAnswer {
 	id: string;
 	type: AnswerType;

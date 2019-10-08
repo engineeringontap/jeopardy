@@ -2,7 +2,7 @@ import firebase from "firebase";
 import { firestore } from "firebase/app";
 import "firebase/firestore";
 import { useEffect, useState } from "react";
-import { IAnswer, ICategory } from "./models";
+import { IAnswer, ICategory, Team } from "./models";
 
 const config = {
 	apiKey: "AIzaSyC_zYNpwcIa6VwP7147-1JghJAhWN6pRf8",
@@ -15,13 +15,6 @@ const config = {
 };
 
 firebase.initializeApp(config);
-
-export interface Team {
-	id: string;
-	color: string;
-	name: string;
-	members: string[];
-}
 
 firestore()
 	.enablePersistence()
@@ -64,12 +57,13 @@ export const useTeams = () => {
 			.onSnapshot(({ docs }) => {
 				setTeams(
 					docs.map<Team>(doc => {
-						const { color, name, members } = doc.data();
+						const { color, name, members, points } = doc.data();
 						return {
 							id: doc.id,
 							color,
 							name,
-							members
+							members,
+							points
 						};
 					})
 				);
@@ -141,4 +135,46 @@ export const dismissAnswers = (category: ICategory) => {
 	firestore()
 		.doc(`categories/${category.id}`)
 		.set(categoryCopy);
+};
+
+export const setAnsweredAndDisiss = (category: ICategory, answer: IAnswer) => {
+	const categoryCopy = {
+		...category,
+		answers: category.answers.map(a => ({
+			...a,
+			show: false,
+			answered: a.answered || answer.id === a.id
+		}))
+	};
+
+	firestore()
+		.doc(`categories/${category.id}`)
+		.set(categoryCopy);
+};
+
+export const award = (team: Team, answer: IAnswer) => {
+	firestore()
+		.doc(`teams/${team.id}`)
+		.set({
+			...team,
+			points: team.points + answer.points
+		});
+};
+
+export const penalize = (team: Team, answer: IAnswer) => {
+	firestore()
+		.doc(`teams/${team.id}`)
+		.set({
+			...team,
+			points: team.points - answer.points
+		});
+};
+
+export const setTeamPoints = (team: Team, points: number) => {
+	firestore()
+		.doc(`teams/${team.id}`)
+		.set({
+			...team,
+			points
+		});
 };

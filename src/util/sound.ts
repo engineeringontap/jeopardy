@@ -1,30 +1,33 @@
 import themeSound from "../assets/theme.mp3";
 
 let isPlaying = false;
-let audioElement: null | HTMLAudioElement = null;
 
-export async function toggleTheme() {
-	if (!isPlaying) {
-		audioElement = await playSound(themeSound);
-	} else {
-		if (audioElement) {
-			audioElement.pause();
-		}
-		isPlaying = false;
-		audioElement = null;
-	}
-}
+const audio = new Audio(themeSound);
+audio.currentTime = 1;
+audio.loop = true;
 
-export async function playSound(soundUrl: string): Promise<HTMLAudioElement> {
-	const audio = new Audio(soundUrl);
-
-	audio.src = soundUrl;
+export async function startTheme() {
+	isPlaying = true;
 	try {
-		isPlaying = true;
 		await audio.play();
 	} catch (error) {
 		isPlaying = false;
-		console.error(error, `Could not play audio from URL "${soundUrl}"`);
+		console.error("Could not play audio", error);
 	}
-	return audio;
+}
+
+export function stopTheme() {
+	isPlaying = false;
+	if (audio) {
+		audio.pause();
+		audio.currentTime = 1;
+	}
+}
+
+export async function toggleTheme() {
+	if (!isPlaying) {
+		startTheme();
+	} else {
+		stopTheme();
+	}
 }

@@ -1,5 +1,6 @@
 import { RouteComponentProps } from "@reach/router";
 import React from "react";
+import { Helmet } from "react-helmet";
 import QrReader from "react-qr-reader";
 import { addToTeam, requestToAnswer, useTeams } from "../../firestore";
 import { useUserId } from "../../util/userId";
@@ -70,6 +71,9 @@ export const PlayerScreen: React.FC<RouteComponentProps> = () => {
 
 	return (
 		<div className={styles.root}>
+			<Helmet>
+				<title>Player</title>
+			</Helmet>
 			{signedTeam ? (
 				<>
 					<h1 className={styles.teamHeadline}>Your team: {signedTeam.name}</h1>

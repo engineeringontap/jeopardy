@@ -1,40 +1,16 @@
+import { RouteComponentProps } from "@reach/router";
 import React from "react";
 import Highlight from "react-highlight.js";
-import { useCategories } from "../../firestore";
+import { useCategories, useTeams } from "../../firestore";
 import { AnswerType, IAnswer, ICategory } from "../../models";
+import CountTo from "react-count-to";
 import styles from "./GameScreen.module.css";
-
-interface IProps {
-	path: string;
-}
-
-const teams = [
-	{
-		points: 300,
-		name: "Team Pink",
-		color: "#FF69B4"
-	},
-	{
-		points: 300,
-		name: "Team Red",
-		color: "#FF0000"
-	},
-	{
-		points: 300,
-		name: "Team Green",
-		color: "#00FF00"
-	},
-	{
-		points: 300,
-		name: "Team Yellow",
-		color: "#FFFF00"
-	}
-];
+import { Helmet } from "react-helmet";
 
 const renderAnswerByType = ({ type, answer }: IAnswer) => {
 	switch (type) {
 		case AnswerType.TEXT:
-			return <div>{answer}</div>;
+			return <div className={styles.text}>{answer}</div>;
 		case AnswerType.IMAGE:
 			return <img className={styles.image} src={answer} alt="" title="" />;
 		case AnswerType.CODE:
@@ -53,8 +29,8 @@ const Answer: React.FC<{ category: ICategory; answer: IAnswer }> = ({ category, 
 	);
 };
 
-const AnswerElement: React.FC<IAnswer> = ({ points }) => {
-	return <div className={styles.answer}>{points}</div>;
+const AnswerElement: React.FC<IAnswer> = ({ points, answered }) => {
+	return <div className={styles.answer}>{answered ? "" : points}</div>;
 };
 
 const Category: React.FC<{ category: ICategory }> = ({ category }) => {
@@ -68,8 +44,9 @@ const Category: React.FC<{ category: ICategory }> = ({ category }) => {
 	);
 };
 
-export const GameScreen: React.SFC<IProps> = () => {
+export const GameScreen: React.FC<RouteComponentProps> = () => {
 	const categories = useCategories();
+	const teams = useTeams();
 
 	const currentCategory = categories.find(category => category.answers.some(answer => answer.show));
 	const currentAnswer = categories
@@ -78,6 +55,9 @@ export const GameScreen: React.SFC<IProps> = () => {
 
 	return (
 		<div className={styles.root}>
+			<Helmet>
+				<title>Jeopardy!</title>
+			</Helmet>
 			<div className={styles.title}>
 				<span className={styles.titleText}>
 					<span className={styles.titleName}>Jeopardy</span> by engineeringontap
@@ -100,9 +80,10 @@ export const GameScreen: React.SFC<IProps> = () => {
 							backgroundColor: t.color
 						}}
 					>
-						{t.name}
-						<br />
-						{t.points}
+						<div className={styles.teamName}>{t.name}</div>
+						<div className={styles.teamPoints}>
+							<CountTo to={t.points} speed={1000} />
+						</div>
 					</div>
 				))}
 			</div>

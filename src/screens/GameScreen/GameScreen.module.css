@@ -5,12 +5,10 @@
 	height: 100%;
 	background-color: #060ce9;
 	justify-content: space-between;
-	padding: 0 20px;
 }
 
 .title {
 	width: 100%;
-
 	vertical-align: middle;
 	padding: 10px 20px;
 	/* border-bottom: 2px solid white; */
@@ -35,6 +33,7 @@
 	flex-wrap: no-wrap;
 	width: 100%;
 	justify-content: center;
+	padding: 0 20px;
 }
 
 .category {
@@ -58,19 +57,40 @@
 	text-align: center;
 	font-size: 40px;
 	font-weight: bold;
+	height: 100px;
 }
 
 .teamFooter {
 	width: 100%;
-	/* background-color: red; */
-	/* padding-bottom: */
 	display: flex;
-	justify-content: space-around;
-	padding: 50px 0px;
+	justify-content: space-evenly;
+	width: 100%;
 }
 
 .teamItem {
-	padding: 20px;
+	padding: 10px;
+	flex-grow: 0;
+	flex-shrink: 0;
+	display: flex;
+	flex-basis: 25%;
+	align-items: center;
+}
+
+.teamName {
+	font-size: 30px;
+	padding-left: 20px;
+	text-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
+}
+
+.teamPoints {
+	font-size: 50px;
+	margin-left: 20px;
+	font-weight: bold;
+	text-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
+}
+
+.text {
+	font-size: 60px;
 }
 
 .code {
