@@ -1,19 +1,19 @@
 import { RouteComponentProps } from "@reach/router";
 import React from "react";
+import { Helmet } from "react-helmet";
 import {
 	award,
 	chooseAnswer,
 	dismissAnswers,
-	useCategories,
-	useTeams,
-	setTeamPoints,
 	penalize,
-	setAnsweredAndDisiss
+	setAnsweredAndDisiss,
+	setTeamPoints,
+	useCategories,
+	useTeams
 } from "../../firestore";
-import { Helmet } from "react-helmet";
 import { AnswerType, IAnswer, ICategory, Team } from "../../models";
-import { bootstrapRound, resetRounds, resetTeams, round1 } from "../../seed";
-import { toggleTheme, stopTheme, startTheme } from "../../util/sound";
+import { bootstrapRound, resetRounds, resetTeams, round1, round2 } from "../../seed";
+import { startTheme, stopTheme, toggleTheme } from "../../util/sound";
 import styles from "./ModeratorScreen.module.css";
 
 const dismiss = (category: ICategory) => () => {
@@ -116,6 +116,7 @@ export const ModeratorScreen: React.SFC<RouteComponentProps> = () => {
 			<div className={styles.controlBar}>
 				<button onClick={reset}>Reset</button>
 				<button onClick={bootstrapRound(round1)}>Bootstrap Round 1</button>
+				<button onClick={bootstrapRound(round2)}>Bootstrap Round 2</button>
 				<button onClick={toggleTheme}>Toggle theme song</button>
 			</div>
 			<div className={styles.content}>
