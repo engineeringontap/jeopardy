@@ -8,6 +8,7 @@ import {
 	penalize,
 	setAnsweredAndDismiss,
 	setTeamPoints,
+	useActiveTeam,
 	useCategories,
 	useTeams
 } from "../../firestore";
@@ -37,6 +38,8 @@ const CurrentAnswer: React.FC<{
 	currentCategory: ICategory | undefined;
 }> = ({ currentAnswer, currentCategory }) => {
 	const teams = useTeams();
+	const activeTeamId = useActiveTeam(currentAnswer ? currentAnswer.id : "");
+	const activeTeam = teams.find(team => team.id === activeTeamId);
 
 	if (!currentAnswer || !currentCategory) {
 		return <div>No Answer selected</div>;
@@ -59,7 +62,25 @@ const CurrentAnswer: React.FC<{
 			<div>Hint: {currentAnswer.hint}</div>
 			<div>Explanation: {currentAnswer.explanation}</div>
 			<button onClick={dismiss(currentCategory)}>Dismiss</button>
-			<div>
+			{activeTeam && (
+				<div>
+					<button
+						key={activeTeam.id}
+						style={{ backgroundColor: activeTeam.color }}
+						onClick={awardPoints(activeTeam, currentAnswer, currentCategory)}
+					>
+						Award {activeTeam.name}
+					</button>
+					<button
+						key={activeTeam.id}
+						style={{ backgroundColor: activeTeam.color }}
+						onClick={penalizePoints(activeTeam, currentAnswer, currentCategory)}
+					>
+						penalize {activeTeam.name}
+					</button>
+				</div>
+			)}
+			{/* <div>
 				{teams.map(t => (
 					<button
 						key={t.id}
@@ -80,7 +101,7 @@ const CurrentAnswer: React.FC<{
 						penalize {t.name}
 					</button>
 				))}
-			</div>
+			</div> */}
 		</div>
 	);
 };
@@ -149,7 +170,7 @@ export const ModeratorScreen: React.SFC<RouteComponentProps> = () => {
 								{team.name}
 								<input
 									defaultValue={team.points}
-									type="text"
+									type="number"
 									onKeyDown={e => {
 										if (e.key === "Enter") {
 											setTeamPoints(team, Number(e.currentTarget.value));
