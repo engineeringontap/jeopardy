@@ -6,7 +6,7 @@ import {
 	chooseAnswer,
 	dismissAnswers,
 	penalize,
-	setAnsweredAndDisiss,
+	setAnsweredAndDismiss,
 	setTeamPoints,
 	useCategories,
 	useTeams
@@ -23,12 +23,12 @@ const dismiss = (category: ICategory) => () => {
 
 const awardPoints = (team: Team, answer: IAnswer, category: ICategory) => () => {
 	award(team, answer);
-	setAnsweredAndDisiss(category, answer);
+	setAnsweredAndDismiss(category, answer);
 	stopTheme();
 };
 const penalizePoints = (team: Team, answer: IAnswer, category: ICategory) => () => {
 	penalize(team, answer);
-	setAnsweredAndDisiss(category, answer);
+	setAnsweredAndDismiss(category, answer);
 	stopTheme();
 };
 

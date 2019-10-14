@@ -1,8 +1,8 @@
 import { RouteComponentProps } from "@reach/router";
-import React from "react";
+import React, { useCallback } from "react";
 import { Helmet } from "react-helmet";
 import QrReader from "react-qr-reader";
-import { addToTeam, requestToAnswer, useTeams } from "../../firestore";
+import { addToTeam, requestToAnswer, useCategories, useTeams } from "../../firestore";
 import { useUserId } from "../../util/userId";
 import styles from "./PlayerScreen.module.css";
 
@@ -24,13 +24,15 @@ const PlayerButton: React.FC<{ color: string; onClick: () => void }> = ({ color,
 
 export const PlayerScreen: React.FC<RouteComponentProps> = () => {
 	const userId = useUserId();
+	const categories = useCategories();
 	const teams = useTeams();
 	const signedTeam = teams.filter(team => team.members.includes(userId))[0];
-	// initShake(userId, signedTeam);
 
-	if (!userId) {
-		return <div>loading</div>;
-	}
+	const currentAnswer = categories
+		.flatMap(category => category.answers)
+		.find(answer => answer.show);
+
+	// initShake(userId, signedTeam);
 
 	const handleTeamInput = teamId => {
 		const team = teamId.target.value;
@@ -46,15 +48,27 @@ export const PlayerScreen: React.FC<RouteComponentProps> = () => {
 			.catch(err => console.log(err));
 	};
 
-	const handleAnswerClick = () => {
-		requestToAnswer("X7GMiBDYhao939wrDzHA", signedTeam.id)
+	const handleAnswerClick = useCallback(() => {
+		if (!currentAnswer) {
+			return;
+		}
+		requestToAnswer(currentAnswer.id, signedTeam.id)
 			.then(_ => {
-				console.log("team:", signedTeam.id, "user:", userId, "request to answer:", new Date());
+				console.log(
+					"question:",
+					currentAnswer.id,
+					"team:",
+					signedTeam.id,
+					"user:",
+					userId,
+					"request to answer:",
+					new Date()
+				);
 			})
 			.catch(err => {
 				console.log(err);
 			});
-	};
+	}, [currentAnswer, signedTeam, userId]);
 
 	const handleError = error => {
 		return () => {
@@ -68,6 +82,10 @@ export const PlayerScreen: React.FC<RouteComponentProps> = () => {
 			addToTeam(userId, data);
 		}
 	};
+
+	if (!userId) {
+		return <div>loading</div>;
+	}
 
 	return (
 		<div className={styles.root}>

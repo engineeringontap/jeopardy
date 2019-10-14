@@ -1,11 +1,12 @@
 import { RouteComponentProps } from "@reach/router";
+import classnames from "classnames";
 import React from "react";
-import Highlight from "react-highlight.js";
-import { useCategories, useTeams } from "../../firestore";
-import { AnswerType, IAnswer, ICategory } from "../../models";
 import CountTo from "react-count-to";
-import styles from "./GameScreen.module.css";
 import { Helmet } from "react-helmet";
+import Highlight from "react-highlight.js";
+import { useActiveTeam, useCategories, useTeams } from "../../firestore";
+import { AnswerType, IAnswer, ICategory } from "../../models";
+import styles from "./GameScreen.module.css";
 
 const renderAnswerByType = ({ type, answer }: IAnswer) => {
 	switch (type) {
@@ -53,6 +54,8 @@ export const GameScreen: React.FC<RouteComponentProps> = () => {
 		.flatMap(category => category.answers)
 		.find(answer => answer.show);
 
+	const activeTeam = useActiveTeam(currentAnswer ? currentAnswer.id : "");
+
 	return (
 		<div className={styles.root}>
 			<Helmet>
@@ -75,7 +78,9 @@ export const GameScreen: React.FC<RouteComponentProps> = () => {
 			<div className={styles.teamFooter}>
 				{teams.map(t => (
 					<div
-						className={styles.teamItem}
+						className={classnames(styles.teamItem, {
+							[styles.teamItemActive]: t.id === activeTeam
+						})}
 						style={{
 							backgroundColor: t.color
 						}}

@@ -76,6 +76,12 @@
 	align-items: center;
 }
 
+.teamItemActive {
+	z-index: 10000;
+	box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.6);
+	border-radius: 4px;
+}
+
 .teamName {
 	font-size: 30px;
 	padding-left: 20px;

@@ -48,6 +48,24 @@ export const requestToAnswer = async (questionId, teamId) => {
 		});
 };
 
+export const useActiveTeam = (questionId: string) => {
+	const [team, setTeam] = useState<string | null>(null);
+
+	useEffect(() => {
+		return firestore()
+			.collection("requestedAnswers")
+			.where("questionId", "==", questionId)
+			.orderBy("time")
+			.limit(1)
+			.onSnapshot(({ docs }) => {
+				const doc = docs.find(() => true);
+				setTeam(doc ? doc.data().teamId : null);
+			});
+	}, [questionId]);
+
+	return team;
+};
+
 export const useTeams = () => {
 	const [teams, setTeams] = useState<Team[]>([]);
 
@@ -137,7 +155,7 @@ export const dismissAnswers = (category: ICategory) => {
 		.set(categoryCopy);
 };
 
-export const setAnsweredAndDisiss = (category: ICategory, answer: IAnswer) => {
+export const setAnsweredAndDismiss = (category: ICategory, answer: IAnswer) => {
 	const categoryCopy = {
 		...category,
 		answers: category.answers.map(a => ({

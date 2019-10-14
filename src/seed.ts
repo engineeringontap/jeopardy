@@ -368,7 +368,7 @@ export const round2: ICategory[] = [
 				type: AnswerType.IMAGE,
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fminecraft%2Fminecraft1.jpg?alt=media&token=8c865a05-4df5-4930-a027-2f95a131b0d0",
-				hint: "",
+				hint: "Clock/Uhr",
 				explanation: "",
 				points: 200,
 				show: false,
@@ -399,7 +399,7 @@ export const round2: ICategory[] = [
 			{
 				id: uniqid(),
 				type: AnswerType.IMAGE,
-				hint: "",
+				hint: "Repeater/Redstone-Verstärker",
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fminecraft%2Fminecraft4.png?alt=media&token=d2d1a63d-62a3-4813-842b-dc81ef0d102b",
 				explanation: "",
@@ -646,7 +646,7 @@ export const round2: ICategory[] = [
 				type: AnswerType.CODE,
 				answer:
 					'const debug = console.log;\nconst warn = console.warn;\n\nfunction eat(snack, logger) {\n  // TODO: use logger\n  debug(snack);\n\n  if (snack) {\n    logger(snack);\n  } else if (snack === "cookie") {\n    logger("cookie");\n  }\n\n  return snack;\n}\n\nconsole.log(eat("cookie", warn));',
-				hint: "3x cookie",
+				hint: "2x cookie",
 				explanation: "",
 				points: 1000,
 				show: false,
