@@ -87,7 +87,15 @@ export const PlayerScreen: React.FC<RouteComponentProps> = () => {
 	if (!userId) {
 		return (
 			<div className={styles.loadingView}>
-				<PacmanLoader sizeUnit={"px"} size={30} color={"#FFFFFF"} loading={true} />
+				<Helmet>
+					<title>Jeopardy!</title>
+				</Helmet>
+				<p>
+					<strong>Jeopardy!</strong>
+				</p>
+				<div className={styles.loader}>
+					<PacmanLoader sizeUnit={"px"} size={30} color={"#FFFFFF"} loading={true} />
+				</div>
 			</div>
 		);
 	}
@@ -95,7 +103,7 @@ export const PlayerScreen: React.FC<RouteComponentProps> = () => {
 	return (
 		<div className={styles.root}>
 			<Helmet>
-				<title>Player</title>
+				<title>Player {userId}</title>
 			</Helmet>
 			{signedTeam ? (
 				<>

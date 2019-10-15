@@ -62,7 +62,7 @@ const CurrentAnswer: React.FC<{
 	if (activeTeam) {
 		console.log("stop theme!", activeTeam);
 		// TODO make this work consistently
-		// stopTheme();
+		stopTheme();
 	}
 
 	return (
