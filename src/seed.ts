@@ -76,7 +76,7 @@ export const round1: ICategory[] = [
 				type: AnswerType.TEXT,
 				answer: ".gov",
 				hint: "Goverment",
-				explanation: "",
+				explanation: "Wird überwiegend von der Amerikanischen Regierung eingesetzt",
 				points: 200,
 				show: false,
 				answered: false
@@ -86,7 +86,7 @@ export const round1: ICategory[] = [
 				type: AnswerType.TEXT,
 				answer: ".to",
 				hint: "Tonga",
-				explanation: "",
+				explanation: "Die Inselgruppe wurde früher auch Freundschaftsinseln genannt.",
 				points: 400,
 				show: false,
 				answered: false
@@ -96,7 +96,8 @@ export const round1: ICategory[] = [
 				type: AnswerType.TEXT,
 				answer: ".tv",
 				hint: "Tuvalu",
-				explanation: "",
+				explanation:
+					"Bis zur Unabhängigkeit am 1. Oktober 1978 hieß das Territorium Ellice Islands.",
 				points: 600,
 				show: false,
 				answered: false
@@ -106,7 +107,8 @@ export const round1: ICategory[] = [
 				type: AnswerType.TEXT,
 				answer: ".mc",
 				hint: "Monaco",
-				explanation: "",
+				explanation:
+					"Heute ist das Fürstentum vornehmlich bei den Reichen der Welt als Wohnsitz begehrt",
 				points: 800,
 				show: false,
 				answered: false
@@ -116,7 +118,8 @@ export const round1: ICategory[] = [
 				type: AnswerType.TEXT,
 				answer: ".za",
 				hint: "Zuid Afrika",
-				explanation: "",
+				explanation:
+					"Es ist der am weitesten entwickelte Wirtschaftsraum des afrikanischen Kontinents",
 				points: 1000,
 				show: false,
 				answered: false
@@ -133,7 +136,8 @@ export const round1: ICategory[] = [
 				answer:
 					'#include <stdio.h>\n#include <stdlib.h>\n\nint main(void)\n{\n        printf("hello, world");\n        return EXIT_SUCCESS;\n}',
 				hint: "C",
-				explanation: "",
+				explanation:
+					"Zahlreiche Sprachen orientieren sich an der Syntax und anderen Eigenschaften von dieser Sprache",
 				points: 200,
 				show: false,
 				answered: false
@@ -143,7 +147,8 @@ export const round1: ICategory[] = [
 				type: AnswerType.CODE,
 				answer: 'require "sinatra"\nget "/hi" do\n        "Hello World!"\nend',
 				hint: "Ruby",
-				explanation: "",
+				explanation:
+					"Diese höhere Programmiersprache wurde Mitte der 1990er Jahre vom Japaner Yukihiro Matsumoto entworfen",
 				points: 400,
 				show: false,
 				answered: false
@@ -153,7 +158,7 @@ export const round1: ICategory[] = [
 				type: AnswerType.CODE,
 				answer: 'tell application "Microsoft Word"\n        quit\nend tell',
 				hint: "Apple Script",
-				explanation: "",
+				explanation: "Die erste Version dieser Sprache basierte auf dem HyperCard-Projekt",
 				points: 600,
 				show: false,
 				answered: false
@@ -163,7 +168,8 @@ export const round1: ICategory[] = [
 				type: AnswerType.CODE,
 				answer: "print join ' ', reverse split ' ', reverse join ' ', q/teY rehtona lreP .rekcah/;",
 				hint: "Perl",
-				explanation: "",
+				explanation:
+					"Der Linguist Larry Wall entwarf sie 1987 als Synthese aus C, awk, den Unix-Befehlen und anderen Einflüssen",
 				points: 800,
 				show: false,
 				answered: false
