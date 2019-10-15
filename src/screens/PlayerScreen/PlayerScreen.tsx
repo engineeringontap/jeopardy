@@ -5,10 +5,11 @@ import QrReader from "react-qr-reader";
 import { addToTeam, requestToAnswer, useCategories, useTeams } from "../../firestore";
 import { useUserId } from "../../util/userId";
 import styles from "./PlayerScreen.module.css";
+import { PacmanLoader } from "react-spinners";
 
 const PlayerButton: React.FC<{ color: string; onClick: () => void }> = ({ color, onClick }) => (
 	<button className={styles.playerButton} onClick={onClick} style={{ backgroundColor: color }}>
-		ANSWER
+		ANSWER!
 	</button>
 );
 
@@ -84,7 +85,11 @@ export const PlayerScreen: React.FC<RouteComponentProps> = () => {
 	};
 
 	if (!userId) {
-		return <div>loading</div>;
+		return (
+			<div className={styles.loadingView}>
+				<PacmanLoader sizeUnit={"px"} size={30} color={"#FFFFFF"} loading={true} />
+			</div>
+		);
 	}
 
 	return (
@@ -94,19 +99,20 @@ export const PlayerScreen: React.FC<RouteComponentProps> = () => {
 			</Helmet>
 			{signedTeam ? (
 				<>
-					<h1 className={styles.teamHeadline}>Your team: {signedTeam.name}</h1>
+					<div className={styles.teamHeadline}>Your team: {signedTeam.name}</div>
+					<div className={styles.userId}>User id: {userId}</div>
 					<PlayerButton onClick={handleAnswerClick} color={signedTeam.color} />
-					<span>User id: {userId}</span>
 				</>
 			) : (
 				<>
+					<div className={styles.helpline}>Scan team QR code</div>
 					<QrReader
 						className={styles.qrReader}
 						delay={300}
 						onError={handleError}
 						onScan={handleScan}
 					/>
-					<p>or</p>
+					<div className={styles.helpline}>or</div>
 					<input
 						onInput={handleTeamInput}
 						className={styles.playerScreenInput}

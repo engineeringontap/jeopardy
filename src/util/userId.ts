@@ -13,7 +13,7 @@ export const useUserId = () => {
 				console.log({ id });
 				setUserId(id);
 			});
-		}, 300);
+		}, 3000);
 	}, []);
 
 	return userId;

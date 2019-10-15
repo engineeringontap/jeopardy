@@ -2,8 +2,8 @@
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
-	background-color: #fdbf2d;
-	padding: 12px 12px 0 12px;
+	background-color: black;
+	/* padding: 12px 12px 0 12px; */
 	align-items: center;
 }
 
@@ -11,7 +11,8 @@
 	width: 100%;
 	height: 100%;
 	border: 10px solid black;
-	margin-bottom: 12px;
+	/* margin-bottom: 12px; */
+	font-size: 30px;
 }
 
 .playerButton:active {
@@ -49,14 +50,28 @@
 }
 
 .teamHeadline {
+	font-size: 20px;
 }
+
+.userId {
+	font-size: 12px;
+}
+
 .qrReader {
 	text-align: center;
-	width: 50%;
+	width: 100%;
+}
+
+.helpline {
+	padding: 10px;
+	font-size: 20px;
 }
 
 .playerScreenInput {
-	padding: 12px 24px;
+	/* padding: 12px 24px; */
+	width: 100%;
+	font-size: 30px;
+	text-align: center;
 }
 
 .playerScreenInput:focus {
@@ -65,4 +80,12 @@
 }
 .playerScreenInput:active {
 	border: none;
+}
+
+.loadingView {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
