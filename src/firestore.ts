@@ -210,3 +210,14 @@ export const removePlayer = async (userId: string, team: Team) => {
 			members: data.members.filter(m => m !== userId)
 		});
 };
+
+export const resetAnswerRequests = async () => {
+	const query = await firestore()
+		.collection("requestedAnswers")
+		.get();
+	for (const item of query.docs) {
+		await firestore()
+			.doc(`requestedAnswers/${item.id}`)
+			.delete();
+	}
+};

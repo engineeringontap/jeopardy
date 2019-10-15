@@ -1,21 +1,22 @@
 import { RouteComponentProps } from "@reach/router";
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import {
 	award,
 	chooseAnswer,
 	dismissAnswers,
 	penalize,
+	removePlayer,
+	resetAnswerRequests,
 	setAnsweredAndDismiss,
 	setTeamPoints,
 	useActiveTeam,
 	useCategories,
-	useTeams,
-	removePlayer
+	useTeams
 } from "../../firestore";
 import { AnswerType, IAnswer, ICategory, Team } from "../../models";
 import { bootstrapRound, resetRounds, resetTeams, round1, round2 } from "../../seed";
-import { startTheme, stopTheme, toggleTheme } from "../../util/sound";
+import { startTheme, stopTheme, toggleTheme, useSoundEnbaled } from "../../util/sound";
 import styles from "./ModeratorScreen.module.css";
 
 const dismiss = (category?: ICategory) => () => {
@@ -24,17 +25,20 @@ const dismiss = (category?: ICategory) => () => {
 	}
 	dismissAnswers(category);
 	stopTheme();
+	resetAnswerRequests();
 };
 
 const awardPoints = (team: Team, answer: IAnswer, category: ICategory) => () => {
 	award(team, answer);
 	setAnsweredAndDismiss(category, answer);
 	stopTheme();
+	resetAnswerRequests();
 };
 const penalizePoints = (team: Team, answer: IAnswer, category: ICategory) => () => {
 	penalize(team, answer);
 	setAnsweredAndDismiss(category, answer);
 	stopTheme();
+	resetAnswerRequests();
 };
 
 const CurrentAnswer: React.FC<{
@@ -46,6 +50,7 @@ const CurrentAnswer: React.FC<{
 	const activeTeam = teams.find(team => team.id === activeTeamId);
 
 	if (!currentAnswer || !currentCategory) {
+		stopTheme();
 		return <div>No Answer selected</div>;
 	}
 
@@ -60,8 +65,6 @@ const CurrentAnswer: React.FC<{
 	}
 
 	if (activeTeam) {
-		console.log("stop theme!", activeTeam);
-		// TODO make this work consistently
 		stopTheme();
 	}
 
@@ -121,12 +124,14 @@ const CurrentAnswer: React.FC<{
 export const ModeratorScreen: React.SFC<RouteComponentProps> = () => {
 	const categories = useCategories();
 	const teams = useTeams();
+	const { enabled, toggleThemeState } = useSoundEnbaled();
 
 	const reset = () => {
 		if (window.confirm("Really reset game?")) {
 			if (window.confirm("Really????")) {
 				resetRounds();
 				resetTeams();
+				resetAnswerRequests();
 			}
 		}
 	};
@@ -147,6 +152,10 @@ export const ModeratorScreen: React.SFC<RouteComponentProps> = () => {
 		}
 	};
 
+	const handleThemeToggleChange = () => {
+		toggleThemeState();
+	};
+
 	return (
 		<div className={styles.root}>
 			<Helmet>
@@ -157,6 +166,12 @@ export const ModeratorScreen: React.SFC<RouteComponentProps> = () => {
 				<button onClick={bootstrapRound(round1)}>Bootstrap Round 1</button>
 				<button onClick={bootstrapRound(round2)}>Bootstrap Round 2</button>
 				<button onClick={toggleTheme}>Toggle theme song</button>
+				<input
+					type="checkbox"
+					name="theme-toggle"
+					checked={enabled}
+					onChange={handleThemeToggleChange}
+				/>
 			</div>
 			<div className={styles.content}>
 				<div className={styles.categories}>
@@ -164,14 +179,14 @@ export const ModeratorScreen: React.SFC<RouteComponentProps> = () => {
 						<div key={category.id}>
 							<h1>{category.name}</h1>
 							{category.answers.map(answer => (
-								<div key={answer.id}>
-									<div>
-										<span style={{ textDecoration: answer.answered ? "line-through" : "none" }}>
-											{answer.points}
-										</span>
-										<button onClick={choose(category, answer)}>Show</button>
-										<button onClick={dismiss(category)}>Dismiss</button>
-									</div>
+								<div
+									key={answer.id}
+									className={styles.answerRow}
+									style={{ textDecoration: answer.answered ? "line-through" : "none" }}
+								>
+									<span className={styles.points}>{answer.points}</span>
+									<button onClick={choose(category, answer)}>Show</button>
+									<button onClick={dismiss(category)}>Dismiss</button>
 								</div>
 							))}
 						</div>

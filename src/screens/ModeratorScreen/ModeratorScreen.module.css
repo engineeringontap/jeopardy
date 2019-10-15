@@ -60,3 +60,18 @@
 .currentAnswerTitle {
 	font-size: 20px;
 }
+
+.points {
+	font-size: 18px;
+	width: 50px;
+	font-weight: 600;
+}
+
+.answerRow {
+	display: flex;
+	align-items: center;
+}
+
+.answerRow button {
+	margin-left: 10px;
+}

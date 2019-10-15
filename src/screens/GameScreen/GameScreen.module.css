@@ -110,10 +110,12 @@
 
 .code {
 	text-align: left;
+	font-size: 40px;
 }
 
 .image {
-	max-height: 500px;
+	max-height: 600px;
+	height: 100%;
 }
 
 .categoryTitle {
@@ -126,4 +128,12 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.answerTitle {
+	color: gold;
+	font-size: 30px;
+	text-align: center;
+	margin-bottom: 20px;
+	font-weight: bold;
 }

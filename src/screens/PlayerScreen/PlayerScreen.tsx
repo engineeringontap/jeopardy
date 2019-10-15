@@ -94,7 +94,7 @@ export const PlayerScreen: React.FC<RouteComponentProps> = () => {
 					<strong>Jeopardy!</strong>
 				</p>
 				<div className={styles.loader}>
-					<PacmanLoader sizeUnit={"px"} size={30} color={"#FFFFFF"} loading={true} />
+					<PacmanLoader sizeUnit={"px"} size={30} color={"#FFD700"} loading={true} />
 				</div>
 			</div>
 		);
@@ -113,18 +113,17 @@ export const PlayerScreen: React.FC<RouteComponentProps> = () => {
 				</>
 			) : (
 				<>
-					<div className={styles.helpline}>Scan team QR code</div>
+					<div className={styles.helpline}>Scan team QR code or enter team ID</div>
 					<QrReader
 						className={styles.qrReader}
 						delay={300}
 						onError={handleError}
 						onScan={handleScan}
 					/>
-					<div className={styles.helpline}>or</div>
 					<input
 						onInput={handleTeamInput}
 						className={styles.playerScreenInput}
-						placeholder="Enter your team code"
+						placeholder="Enter your team ID"
 						type="text"
 					/>
 				</>
