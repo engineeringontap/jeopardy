@@ -15,7 +15,10 @@ import {
 	useTeams
 } from "../../firestore";
 import { AnswerType, IAnswer, ICategory, Team } from "../../models";
-import { bootstrapRound, resetRounds, resetTeams, round1, round2 } from "../../seed";
+import { round1 } from "../../seed/round1";
+import { round2 } from "../../seed/round2";
+import { round3 } from "../../seed/round3";
+import { bootstrapRound, resetRounds, resetTeams } from "../../seed/seed";
 import { startTheme, stopTheme, toggleTheme, useSoundEnbaled } from "../../util/sound";
 import styles from "./ModeratorScreen.module.css";
 
@@ -165,6 +168,7 @@ export const ModeratorScreen: React.SFC<RouteComponentProps> = () => {
 				<button onClick={reset}>Reset</button>
 				<button onClick={bootstrapRound(round1)}>Bootstrap Round 1</button>
 				<button onClick={bootstrapRound(round2)}>Bootstrap Round 2</button>
+				<button onClick={bootstrapRound(round3)}>Bootstrap Round 3</button>
 				<button onClick={toggleTheme}>Toggle theme song</button>
 				<input
 					type="checkbox"
