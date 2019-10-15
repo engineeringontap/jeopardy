@@ -46,3 +46,8 @@
 .team {
 	padding: 10px;
 }
+
+.teamName {
+	font-size: 20px;
+	font-weight: bold;
+}

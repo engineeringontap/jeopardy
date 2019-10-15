@@ -10,7 +10,8 @@ import {
 	setTeamPoints,
 	useActiveTeam,
 	useCategories,
-	useTeams
+	useTeams,
+	removePlayer
 } from "../../firestore";
 import { AnswerType, IAnswer, ICategory, Team } from "../../models";
 import { bootstrapRound, resetRounds, resetTeams, round1, round2 } from "../../seed";
@@ -129,6 +130,12 @@ export const ModeratorScreen: React.SFC<RouteComponentProps> = () => {
 		.flatMap(category => category.answers)
 		.find(answer => answer.show);
 
+	const removePlayerFromTeam = (userId: string, team: Team) => () => {
+		if (window.confirm(`Remove user ${userId} from team ${team.id}?`)) {
+			removePlayer(userId, team);
+		}
+	};
+
 	return (
 		<div className={styles.root}>
 			<Helmet>
@@ -167,21 +174,28 @@ export const ModeratorScreen: React.SFC<RouteComponentProps> = () => {
 					<div className={styles.teams}>
 						{teams.map(team => (
 							<div style={{ backgroundColor: team.color }} className={styles.team} key={team.id}>
-								{team.name}
-								<input
-									defaultValue={team.points}
-									type="number"
-									onKeyDown={e => {
-										if (e.key === "Enter") {
-											setTeamPoints(team, Number(e.currentTarget.value));
-										}
-									}}
-								/>
+								<div className={styles.teamName}>
+									{team.name} - ID: {team.id}
+								</div>
+								<div>
+									<span>Set points</span>
+									<input
+										defaultValue={team.points}
+										type="number"
+										onKeyDown={e => {
+											if (e.key === "Enter") {
+												setTeamPoints(team, Number(e.currentTarget.value));
+											}
+										}}
+									/>
+								</div>
 								<div>
 									Members:
 									<ul>
 										{team.members.map(m => (
-											<li key={m}>{m}</li>
+											<li key={m}>
+												{m} <button onClick={removePlayerFromTeam(m, team)}>Remove</button>
+											</li>
 										))}
 									</ul>
 								</div>

@@ -96,6 +96,7 @@ export const PlayerScreen: React.FC<RouteComponentProps> = () => {
 				<>
 					<h1 className={styles.teamHeadline}>Your team: {signedTeam.name}</h1>
 					<PlayerButton onClick={handleAnswerClick} color={signedTeam.color} />
+					<span>User id: {userId}</span>
 				</>
 			) : (
 				<>

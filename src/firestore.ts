@@ -196,3 +196,17 @@ export const setTeamPoints = (team: Team, points: number) => {
 			points
 		});
 };
+
+export const removePlayer = async (userId: string, team: Team) => {
+	const teamQuery = await firestore()
+		.doc(`teams/${team.id}`)
+		.get();
+
+	const data = teamQuery.data() as Team;
+	await firestore()
+		.doc(`teams/${team.id}`)
+		.set({
+			...data,
+			members: data.members.filter(m => m !== userId)
+		});
+};
