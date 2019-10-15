@@ -48,6 +48,7 @@
 	text-transform: uppercase;
 	font-weight: bold;
 	padding: 10px;
+	height: 100px;
 }
 
 .answer {
@@ -112,5 +113,11 @@
 }
 
 .image {
-	max-height: 400px;
+	max-height: 500px;
+}
+
+.categoryTitle {
+	color: gold;
+	padding: 30px 30px;
+	font-size: 30px;
 }

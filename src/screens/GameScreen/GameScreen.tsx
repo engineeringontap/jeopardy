@@ -24,7 +24,9 @@ const renderAnswerByType = ({ type, answer }: IAnswer) => {
 const Answer: React.FC<{ category: ICategory; answer: IAnswer }> = ({ category, answer }) => {
 	return (
 		<div>
-			<h1>{category.name}</h1>
+			<div className={styles.categoryTitle}>
+				{category.name} ({answer.points})
+			</div>
 			{renderAnswerByType(answer)}
 		</div>
 	);

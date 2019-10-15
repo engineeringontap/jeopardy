@@ -14,7 +14,7 @@ export const round1: ICategory[] = [
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fhacker%2Fhacker1.jpg?alt=media&token=f1248684-8769-47ff-9b07-830138812418",
 				hint: "Edward Snowden",
-				explanation: "Dieser Dude hat die NSA voll krass exposed",
+				explanation: "Dieser Herr hat einen der größten Geheimdienste bloßgestellt.",
 				points: 200,
 				show: false,
 				answered: false
@@ -36,7 +36,7 @@ export const round1: ICategory[] = [
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fhacker%2Fhacker3.jpg?alt=media&token=3eadb35b-0c50-4cf3-9342-9fc30e0e695e",
 				hint: "George Hotz",
-				explanation: "",
+				explanation: "Dieser Herr ist hat iPhones aus dem Gefängnis befreit",
 				points: 600,
 				show: false,
 				answered: false
@@ -47,7 +47,8 @@ export const round1: ICategory[] = [
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fhacker%2Fhacker4.jpg?alt=media&token=54fc2f1b-9c49-41d6-af27-2f7569f6e4c7",
 				hint: "Tsutomu Shimomura",
-				explanation: "",
+				explanation:
+					"Er half dem FBI Kevin Mitnik zu finden und schrieb später das Buch Takedown darüber.",
 				points: 800,
 				show: false,
 				answered: false
@@ -58,7 +59,8 @@ export const round1: ICategory[] = [
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fhacker%2Fhacker5.jpg?alt=media&token=799b07dd-dce5-4252-bec3-9f2c775ad3b5",
 				hint: "John Draper (Captain Crunch)",
-				explanation: "",
+				explanation:
+					"Er ist ein legendärer Phone Phreak und trägt den Spitznamen eines Cornflakes Maskottchens",
 				points: 1000,
 				show: false,
 				answered: false

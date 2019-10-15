@@ -51,3 +51,12 @@
 	font-size: 20px;
 	font-weight: bold;
 }
+
+.pointsbutton {
+	font-size: 20px;
+	margin-right: 10px;
+}
+
+.currentAnswerTitle {
+	font-size: 20px;
+}

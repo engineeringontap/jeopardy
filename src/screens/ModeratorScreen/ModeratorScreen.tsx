@@ -18,7 +18,10 @@ import { bootstrapRound, resetRounds, resetTeams, round1, round2 } from "../../s
 import { startTheme, stopTheme, toggleTheme } from "../../util/sound";
 import styles from "./ModeratorScreen.module.css";
 
-const dismiss = (category: ICategory) => () => {
+const dismiss = (category?: ICategory) => () => {
+	if (!category) {
+		return;
+	}
 	dismissAnswers(category);
 	stopTheme();
 };
@@ -56,24 +59,32 @@ const CurrentAnswer: React.FC<{
 			answerImageOrText = <div>{currentAnswer.answer}</div>;
 	}
 
+	if (activeTeam) {
+		console.log("stop theme!", activeTeam);
+		// TODO make this work consistently
+		// stopTheme();
+	}
+
 	return (
 		<div>
 			<div>{answerImageOrText}</div>
 			<div>Points: {currentAnswer.points}</div>
 			<div>Hint: {currentAnswer.hint}</div>
 			<div>Explanation: {currentAnswer.explanation}</div>
-			<button onClick={dismiss(currentCategory)}>Dismiss</button>
+
 			{activeTeam && (
 				<div>
 					<button
-						key={activeTeam.id}
+						key={`${activeTeam.id}_award`}
+						className={styles.pointsbutton}
 						style={{ backgroundColor: activeTeam.color }}
 						onClick={awardPoints(activeTeam, currentAnswer, currentCategory)}
 					>
 						Award {activeTeam.name}
 					</button>
 					<button
-						key={activeTeam.id}
+						key={`${activeTeam.id}_penalty`}
+						className={styles.pointsbutton}
 						style={{ backgroundColor: activeTeam.color }}
 						onClick={penalizePoints(activeTeam, currentAnswer, currentCategory)}
 					>
@@ -168,14 +179,17 @@ export const ModeratorScreen: React.SFC<RouteComponentProps> = () => {
 				</div>
 				<div className={styles.rightColumn}>
 					<div className={styles.currentAnswer}>
-						<div>Current Jeopardy</div>
+						<div className={styles.currentAnswerTitle}>
+							<div>Current Jeopardy</div>
+							<button onClick={dismiss(currentCategory)}>Dismiss</button>
+						</div>
 						<CurrentAnswer currentAnswer={currentAnswer} currentCategory={currentCategory} />
 					</div>
 					<div className={styles.teams}>
 						{teams.map(team => (
 							<div style={{ backgroundColor: team.color }} className={styles.team} key={team.id}>
 								<div className={styles.teamName}>
-									{team.name} - ID: {team.id}
+									{team.name} - ID: {team.id} - Points: {team.points}
 								</div>
 								<div>
 									<span>Set points</span>
