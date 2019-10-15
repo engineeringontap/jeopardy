@@ -2,10 +2,10 @@ import { RouteComponentProps } from "@reach/router";
 import React, { useCallback } from "react";
 import { Helmet } from "react-helmet";
 import QrReader from "react-qr-reader";
+import { PacmanLoader } from "react-spinners";
 import { addToTeam, requestToAnswer, useCategories, useTeams } from "../../firestore";
 import { useUserId } from "../../util/userId";
 import styles from "./PlayerScreen.module.css";
-import { PacmanLoader } from "react-spinners";
 
 const PlayerButton: React.FC<{ color: string; onClick: () => void }> = ({ color, onClick }) => (
 	<button className={styles.playerButton} onClick={onClick} style={{ backgroundColor: color }}>
