@@ -18,6 +18,13 @@ import { AnswerType, IAnswer, ICategory, Team } from "../../models";
 import { round1 } from "../../seed/round1";
 import { round2 } from "../../seed/round2";
 import { round3 } from "../../seed/round3";
+import { round93 } from "../../seed/round93";
+import { round94 } from "../../seed/round94";
+import { round95 } from "../../seed/round95";
+import { round96 } from "../../seed/round96";
+import { round97 } from "../../seed/round97";
+import { round98 } from "../../seed/round98";
+import { round99 } from "../../seed/round99";
 import { bootstrapRound, resetRounds, resetTeams } from "../../seed/seed";
 import { startTheme, stopTheme, toggleTheme, useSoundEnbaled } from "../../util/sound";
 import styles from "./ModeratorScreen.module.css";
@@ -169,6 +176,13 @@ export const ModeratorScreen: React.SFC<RouteComponentProps> = () => {
 				<button onClick={bootstrapRound(round1)}>Bootstrap Round 1</button>
 				<button onClick={bootstrapRound(round2)}>Bootstrap Round 2</button>
 				<button onClick={bootstrapRound(round3)}>Bootstrap Round 3</button>
+				<button onClick={bootstrapRound(round93)}>Bootstrap Round 93</button>
+				<button onClick={bootstrapRound(round94)}>Bootstrap Round 94</button>
+				<button onClick={bootstrapRound(round95)}>Bootstrap Round 95</button>
+				<button onClick={bootstrapRound(round96)}>Bootstrap Round 96</button>
+				<button onClick={bootstrapRound(round97)}>Bootstrap Round 97</button>
+				<button onClick={bootstrapRound(round98)}>Bootstrap Round 98</button>
+				<button onClick={bootstrapRound(round99)}>Bootstrap Round 99</button>
 				<button onClick={toggleTheme}>Toggle theme song</button>
 				<input
 					type="checkbox"

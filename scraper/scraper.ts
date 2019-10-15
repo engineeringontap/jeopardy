@@ -4,7 +4,7 @@ import uniqid from "uniqid";
 import { AnswerType, IAnswer, ICategory } from "./models";
 
 // TODO: Change me
-const URL = "https://jeopardylabs.com/play/nerd-jeopardy21";
+const URL = "https://jeopardylabs.com/play/internet475";
 
 const scrape = async () => {
 	const { data } = await axios.get(URL);
