@@ -24,7 +24,7 @@ export const roundGames: ICategory[] = [
 				answer:
 					"This game takes place in 2287 and a nuke goes off as you are going down an elevator",
 				answerDe:
-					"Dieses Spiel findet im Jahr 2287 statt und eine Atombombe geht los, während man einen Aufzug hinuntergeht.",
+					"Dieses Spiel findet im Jahr 2287 statt und eine Atombombe geht los, während man mit einem Aufzug fährt.",
 				question: "What is Fallout 4",
 				explanation: "",
 				points: 400,
@@ -145,7 +145,7 @@ export const roundGames: ICategory[] = [
 				id: "1qxjj0ek1sccain",
 				type: AnswerType.TEXT,
 				answer: "A fat Italian plumber's pet.",
-				answerDe: "Das Haustier von einem fetten italienischer Klempner.",
+				answerDe: "Das Haustier von einem fetten italienischen Klempner.",
 				question: "What is Yoshi?",
 				explanation: "",
 				points: 200,
@@ -164,6 +164,17 @@ export const roundGames: ICategory[] = [
 				answered: false
 			},
 			{
+				id: "1qxjj0ek1sccaj2",
+				type: AnswerType.TEXT,
+				answer: "A pink character who can suck enemies up and gain their abilities.",
+				answerDe: "Ein rosa Charakter, der Feinde aufsaugen und ihre Fähigkeiten annehmen kann.",
+				question: "Who is Kirby?",
+				explanation: "",
+				points: 600,
+				show: false,
+				answered: false
+			},
+			{
 				id: "1qxjj0ek1sccaix",
 				type: AnswerType.TEXT,
 				answer:
@@ -171,17 +182,6 @@ export const roundGames: ICategory[] = [
 				answerDe:
 					"Ein weiblicher Charakter, der mit Vogel D.N.A. genetisch verändert wurde und eine aufgeladene lonenkanone hat.",
 				question: "Who is Samus Aran?",
-				explanation: "",
-				points: 600,
-				show: false,
-				answered: false
-			},
-			{
-				id: "1qxjj0ek1sccaj2",
-				type: AnswerType.TEXT,
-				answer: "A pink character who can suck enemies up and gain their abilities.",
-				answerDe: "Ein rosa Charakter, der Feinde aufsaugen und ihre Fähigkeiten annehmen kann.",
-				question: "Who is Kirby?",
 				explanation: "",
 				points: 800,
 				show: false,

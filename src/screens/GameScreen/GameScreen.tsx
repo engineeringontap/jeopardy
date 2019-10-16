@@ -1,18 +1,18 @@
 import { RouteComponentProps } from "@reach/router";
 import classnames from "classnames";
 import React from "react";
+import Confetti from "react-confetti";
 import CountTo from "react-count-to";
 import { Helmet } from "react-helmet";
 import Highlight from "react-highlight.js";
 import { useActiveTeam, useCategories, useTeams } from "../../firestore";
 import { AnswerType, IAnswer, ICategory } from "../../models";
 import styles from "./GameScreen.module.css";
-import Confetti from "react-confetti";
 
-const renderAnswerByType = ({ type, answer }: IAnswer) => {
+const renderAnswerByType = ({ type, answer, answerDe }: IAnswer) => {
 	switch (type) {
 		case AnswerType.TEXT:
-			return <div className={styles.text}>{answer}</div>;
+			return <div className={styles.text}>{answerDe || answer}</div>;
 		case AnswerType.IMAGE:
 			return <img className={styles.image} src={answer} alt="" title="" />;
 		case AnswerType.CODE:

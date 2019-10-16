@@ -28,22 +28,22 @@ export const roundMovies: ICategory[] = [
 				answered: false
 			},
 			{
-				id: "1qxjjd4k1scs3ab",
+				id: "1qxjjd4k1scs3al",
 				type: AnswerType.TEXT,
-				answer: "This is the name of Star-Lord's ship in Guardians of the Galaxy",
-				answerDe: "So heißt das Schiff von Star-Lord in Guardians of the Galaxy",
-				question: "Milano",
+				answer: "This young Jedi Knight becomes Darth Vader in Star Wars",
+				answerDe: "Dieser junge Jedi-Ritter wird Darth Vader in Star Wars",
+				question: "Anakin Skywalker",
 				explanation: "",
 				points: 600,
 				show: false,
 				answered: false
 			},
 			{
-				id: "1qxjjd4k1scs3al",
+				id: "1qxjjd4k1scs3ab",
 				type: AnswerType.TEXT,
-				answer: "This young Jedi Knight becomes Darth Vader in Star Wars",
-				answerDe: "Dieser junge Jedi-Ritter wird Darth Vader in Star Wars",
-				question: "Anakin Skywalker",
+				answer: "This is the name of Star-Lord's ship in Guardians of the Galaxy",
+				answerDe: "So heißt das Schiff von Star-Lord in Guardians of the Galaxy",
+				question: "Milano",
 				explanation: "",
 				points: 800,
 				show: false,
@@ -89,24 +89,24 @@ export const roundMovies: ICategory[] = [
 				answered: false
 			},
 			{
-				id: "1qxjjd4k1scs3ah",
+				id: "1qxjjd4k1scs3am",
 				type: AnswerType.TEXT,
-				answer:
-					'This Pixar character says, "No matter how many times you save the world, it always manages to get back in jeopardy again?"',
-				answerDe:
-					'Dieser Pixar-Charakter sagt: "Egal wie oft man die Welt rettet, sie schafft es immer wieder, wieder in Gefahr zu kommen?"',
-				question: "Mr. Incredible",
+				answer: 'This European city is the setting for the 2007 movie "Ratatouille"',
+				answerDe: 'In dieser europäischen Stadt spielt der Film "Ratatouille" von 2007',
+				question: "Paris",
 				explanation: "",
 				points: 600,
 				show: false,
 				answered: false
 			},
 			{
-				id: "1qxjjd4k1scs3am",
+				id: "1qxjjd4k1scs3ah",
 				type: AnswerType.TEXT,
-				answer: 'This European city is the setting for the 2007 movie "Ratatouille"',
-				answerDe: 'In dieser europäischen Stadt spielt der Film "Ratatouille" von 2007',
-				question: "Paris",
+				answer:
+					'This Pixar character says, "No matter how many times you save the world, it always manages to get back in jeopardy again?"',
+				answerDe:
+					'Dieser Pixar-Charakter sagt: "Ganz egal wie oft man die Welt rettet, sie schafft es immer wieder sich in Gefahr zu bringen?"',
+				question: "Mr. Incredible",
 				explanation: "",
 				points: 800,
 				show: false,
@@ -117,7 +117,8 @@ export const roundMovies: ICategory[] = [
 				type: AnswerType.TEXT,
 				answer:
 					'This is where the character Carl Fredricksen moves in in the Oscar-winning film "Up"',
-				answerDe: 'Hierhin zieht der Charakter Carl Fredricksen in dem Oscar-prämierten Film "Up"',
+				answerDe:
+					'Hierhin zieht der Charakter Carl Fredricksen in dem Oscar-prämierten Film "Oben"',
 				question: "Paradise Falls / Paradiesfälle",
 				explanation: "",
 				points: 1000,
@@ -131,22 +132,22 @@ export const roundMovies: ICategory[] = [
 		name: "Princesses",
 		answers: [
 			{
-				id: "1qxjjd4k1scs3a8",
+				id: "1qxjjd4k1scs3an",
 				type: AnswerType.TEXT,
-				answer: "Name the only Disney Princess based on a real life person. ",
-				answerDe: "Nenne die einzige Disney-Prinzessin, die auf einer echten Person basiert.",
-				question: "Pocahontas ",
+				answer: "Name the 2 Disney Princesses who have red hair.",
+				answerDe: "Die 2 Disney-Prinzessinnen, die rotes Haar haben.",
+				question: "Princess Merida, Ariel (The Little Mermaid)",
 				explanation: "",
 				points: 200,
 				show: false,
 				answered: false
 			},
 			{
-				id: "1qxjjd4k1scs3ad",
+				id: "1qxjjd4k1scs3a8",
 				type: AnswerType.TEXT,
-				answer: "Name the only Disney Princess with hazel eyes. ",
-				answerDe: "Nennen Sie die einzige Disney-Prinzessin mit braunen Augen.",
-				question: "Belle ",
+				answer: "Name the only Disney Princess based on a real life person. ",
+				answerDe: "Die einzige Disney-Prinzessin, die auf einer echten Person basiert.",
+				question: "Pocahontas ",
 				explanation: "",
 				points: 400,
 				show: false,
@@ -155,22 +156,11 @@ export const roundMovies: ICategory[] = [
 			{
 				id: "1qxjjd4k1scs3ai",
 				type: AnswerType.TEXT,
-				answer: "Who are three princesses who had evil stepmothers? ",
-				answerDe: "Wer sind drei Prinzessinnen, die böse Stiefmütter hatten?",
+				answer: "Who are three princesses who had evil stepmothers?",
+				answerDe: "Nenne drei Prinzessinnen, die böse Stiefmütter hatten",
 				question: "Snow White, Cinderella, Rapunzel ",
 				explanation: "",
 				points: 600,
-				show: false,
-				answered: false
-			},
-			{
-				id: "1qxjjd4k1scs3an",
-				type: AnswerType.TEXT,
-				answer: "Name the 2 Disney Princesses who have red hair.",
-				answerDe: "Nenne die 2 Disney-Prinzessinnen, die rotes Haar haben.",
-				question: "Princess Merida, Ariel (The Little Mermaid)",
-				explanation: "",
-				points: 800,
 				show: false,
 				answered: false
 			},
@@ -180,6 +170,17 @@ export const roundMovies: ICategory[] = [
 				answer: "This Disney princess movie was the first to show war",
 				answerDe: "Dieser Disney-Prinzessinnenfilm war der erste, der den Krieg zeigte.",
 				question: "Mulan",
+				explanation: "",
+				points: 800,
+				show: false,
+				answered: false
+			},
+			{
+				id: "1qxjjd4k1scs3ad",
+				type: AnswerType.TEXT,
+				answer: "Name the only Disney Princess with hazel eyes. ",
+				answerDe: "Die einzige Disney-Prinzessin mit braunen Augen.",
+				question: "Belle ",
 				explanation: "",
 				points: 1000,
 				show: false,
@@ -214,22 +215,22 @@ export const roundMovies: ICategory[] = [
 				answered: false
 			},
 			{
-				id: "1qxjj0ek1sccaio",
+				id: "1qxjj0ek1sccaiy",
 				type: AnswerType.TEXT,
-				answer: "A show about a little boy who has fairy godparents.",
-				answerDe: "Eine Show über einen kleinen Jungen, der Elfen als Eltern hat.",
-				question: "What is The Fairly Odd Parents? / Cosmo und Wanda",
+				answer: "A show about 3 super powered girls fighting crime.",
+				answerDe: "Eine Show über 3 superstarke Mädchen, die Verbrechen bekämpfen.",
+				question: "What is The Power Puff Girls?",
 				explanation: "",
 				points: 600,
 				show: false,
 				answered: false
 			},
 			{
-				id: "1qxjj0ek1sccaiy",
+				id: "1qxjj0ek1sccaio",
 				type: AnswerType.TEXT,
-				answer: "A show about 3 super powered girls fighting crime.",
-				answerDe: "Eine Show über 3 superstarke Mädchen, die Verbrechen bekämpfen.",
-				question: "What is The Power Puff Girls?",
+				answer: "A show about a little boy who has fairy godparents.",
+				answerDe: "Eine Show über einen kleinen Jungen, der Elfen als Eltern hat.",
+				question: "What is The Fairly Odd Parents? / Cosmo und Wanda",
 				explanation: "",
 				points: 800,
 				show: false,
@@ -298,7 +299,7 @@ export const roundMovies: ICategory[] = [
 				answer:
 					"This ring of power was wielded by Galadriel, and lent it’s preservative powers to her domain, Lorien. ",
 				answerDe:
-					"Dieser Ring der Macht wurde von Galadriel ausgeübt und verlieh seine konservierenden Kräfte ihrem Reich Lorien.",
+					"Dieser Ring der Macht wurde von Galadriel getragen und verlieh seine Kräfte ihrem Reich Lorien.",
 				question: "What is Nenya?",
 				explanation: "",
 				points: 800,
@@ -311,7 +312,7 @@ export const roundMovies: ICategory[] = [
 				answer:
 					"With it’s counterpart Quenya, Tolkien invented this language, spoken by the “Gray Elves” of Middle-Earth. ",
 				answerDe:
-					'Mit seinem Gegenstück Quenya erfand Tolkien diese Sprache, die von den "Grauen Elfen" Mittelerdes gesprochen wird.',
+					"Mit seinem Gegenstück Quenya erfand Tolkien diese Sprache, die von den Grauelben Mittelerdes gesprochen wird.",
 				question: "What is Sindarin?",
 				explanation: "",
 				points: 1000,

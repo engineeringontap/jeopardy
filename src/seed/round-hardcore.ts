@@ -60,69 +60,6 @@ export const roundHardcore: ICategory[] = [
 	},
 	{
 		id: uniqid(),
-		name: "Hacker Movies",
-		answers: [
-			{
-				id: uniqid(),
-				type: AnswerType.IMAGE,
-				answer:
-					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fmovies%2Fhacker_movies1.JPG?alt=media&token=7579ffc3-bfa8-4f59-8e90-3b99a4ef7337",
-				question: "Jurassic Park",
-				explanation: "Samuel L. Jackson ist dabei und sagt: Ich hasse dieser Hacker scheisse!",
-				points: 200,
-				show: false,
-				answered: false
-			},
-			{
-				id: uniqid(),
-				type: AnswerType.IMAGE,
-				answer:
-					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fmovies%2Fhacker_movies2.PNG?alt=media&token=c63a846d-e87a-41cf-9fc4-7db352b8e0ae",
-				question: "Iron Man 2",
-				explanation:
-					"Es ist ein Marvel Film und <spoiler>Justin Hammer</spoiler> sieht hier ganz schlecht aus...",
-				points: 400,
-				show: false,
-				answered: false
-			},
-			{
-				id: uniqid(),
-				type: AnswerType.IMAGE,
-				answer:
-					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fmovies%2Fhacker_movies3.JPG?alt=media&token=0d0fc232-cc86-4c6e-a0de-251277bce440",
-				question: "WarGames",
-				explanation: "Ein uralter Film in dem es um den Atomkrieg geht",
-				points: 600,
-				show: false,
-				answered: false
-			},
-			{
-				id: uniqid(),
-				type: AnswerType.IMAGE,
-				answer:
-					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fmovies%2Fhacker_movies4.JPG?alt=media&token=80232826-0a4b-4c5e-9869-9bca54b3f71d",
-				question: "TRON: Legacy",
-				explanation: "Jeder von euch hat ihn gesehen und hört die Musik auch ziemlich gern",
-				points: 800,
-				show: false,
-				answered: false
-			},
-			{
-				id: uniqid(),
-				type: AnswerType.IMAGE,
-				answer:
-					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fmovies%2Fhacker_movies5.JPG?alt=media&token=233abd66-8211-45c9-8d55-a995f3818db4",
-				question: "Matrix 2",
-				explanation:
-					"Hier sehen wir einen echten SSH-Nuke Exploit. Es wird ein Kraftwerk herunter gefahren.",
-				points: 1000,
-				show: false,
-				answered: false
-			}
-		]
-	},
-	{
-		id: uniqid(),
 		name: "Hacker",
 		answers: [
 			{
@@ -226,7 +163,7 @@ export const roundHardcore: ICategory[] = [
 				id: uniqid(),
 				type: AnswerType.CODE,
 				answer:
-					'class Person {\n  drink = "nothing";\n\n  constructor(drink) {\n    this.drink = drink;\n\n    Person.print = function() {\n      console.log("beer");\n    };\n  }\n\n  print() {\n    console.log(this.drink);\n  }\n}\n\nconst person = new Person("water");\nperson.print();',
+					'class Person {\n  drink = "nothing";\n  constructor(drink) {\n    this.drink = drink;\n    Person.print = function() {\n      console.log("beer");\n    };\n  }\n  print() {\n    console.log(this.drink);\n  }\n}\nconst person = new Person("water");\nperson.print();',
 				question: "water",
 				explanation: "",
 				points: 800,
@@ -237,7 +174,7 @@ export const roundHardcore: ICategory[] = [
 				id: uniqid(),
 				type: AnswerType.CODE,
 				answer:
-					'const debug = console.log;\nconst warn = console.warn;\n\nfunction eat(snack, logger) {\n  // TODO: use logger\n  debug(snack);\n\n  if (snack) {\n    logger(snack);\n  } else if (snack === "cookie") {\n    logger("cookie");\n  }\n\n  return snack;\n}\n\nconsole.log(eat("cookie", warn));',
+					'const debug = console.log;\nconst warn = console.warn;\nfunction eat(snack, logger) {\n  // TODO: use logger\n  debug(snack);\n  if (snack) {\n    logger(snack);\n  } else if (snack === "cookie") {\n    logger("cookie");\n  }\n  return snack;\n}\nconsole.log(eat("cookie", warn));',
 				question: "2x cookie",
 				explanation: "",
 				points: 1000,
@@ -304,6 +241,69 @@ export const roundHardcore: ICategory[] = [
 				answerDe: "Das Subnetz 224.0.0.0.0.0/4 ist für diese Nutzung reserviert.",
 				question: "What is IP Multicast",
 				explanation: "",
+				points: 1000,
+				show: false,
+				answered: false
+			}
+		]
+	},
+	{
+		id: uniqid(),
+		name: "Hacker Movies",
+		answers: [
+			{
+				id: uniqid(),
+				type: AnswerType.IMAGE,
+				answer:
+					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fmovies%2Fhacker_movies1.JPG?alt=media&token=7579ffc3-bfa8-4f59-8e90-3b99a4ef7337",
+				question: "Jurassic Park",
+				explanation: "Samuel L. Jackson ist dabei und sagt: Ich hasse dieser Hacker scheisse!",
+				points: 200,
+				show: false,
+				answered: false
+			},
+			{
+				id: uniqid(),
+				type: AnswerType.IMAGE,
+				answer:
+					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fmovies%2Fhacker_movies2.PNG?alt=media&token=c63a846d-e87a-41cf-9fc4-7db352b8e0ae",
+				question: "Iron Man 2",
+				explanation:
+					"Es ist ein Marvel Film und <spoiler>Justin Hammer</spoiler> sieht hier ganz schlecht aus...",
+				points: 400,
+				show: false,
+				answered: false
+			},
+			{
+				id: uniqid(),
+				type: AnswerType.IMAGE,
+				answer:
+					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fmovies%2Fhacker_movies3.JPG?alt=media&token=0d0fc232-cc86-4c6e-a0de-251277bce440",
+				question: "WarGames",
+				explanation: "Ein uralter Film in dem es um den Atomkrieg geht",
+				points: 600,
+				show: false,
+				answered: false
+			},
+			{
+				id: uniqid(),
+				type: AnswerType.IMAGE,
+				answer:
+					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fmovies%2Fhacker_movies4.JPG?alt=media&token=80232826-0a4b-4c5e-9869-9bca54b3f71d",
+				question: "TRON: Legacy",
+				explanation: "Jeder von euch hat ihn gesehen und hört die Musik auch ziemlich gern",
+				points: 800,
+				show: false,
+				answered: false
+			},
+			{
+				id: uniqid(),
+				type: AnswerType.IMAGE,
+				answer:
+					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fmovies%2Fhacker_movies5.JPG?alt=media&token=233abd66-8211-45c9-8d55-a995f3818db4",
+				question: "Matrix 2",
+				explanation:
+					"Hier sehen wir einen echten SSH-Nuke Exploit. Es wird ein Kraftwerk herunter gefahren.",
 				points: 1000,
 				show: false,
 				answered: false
