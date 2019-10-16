@@ -243,5 +243,61 @@ export const roundTech: ICategory[] = [
 				answered: false
 			}
 		]
+	},
+	{
+		id: "1qxjj4uk1scgk0c",
+		name: "Hacker Crews",
+		answers: [
+			{
+				id: "1qxjj4uk1scgk0h",
+				type: AnswerType.TEXT,
+				answer: "Cyper, Thank, Switch, Trinity, Morpheus, Neo",
+				hint: "What is 'The Matrix'?",
+				explanation: "",
+				points: 200,
+				show: false,
+				answered: false
+			},
+			{
+				id: "1qxjj4uk1scgk0m",
+				type: AnswerType.TEXT,
+				answer: "Eliot Anderson, Darlene, Tyrell Wellick, fsociety",
+				hint: "What is 'Mr. Robot'?",
+				explanation: "",
+				points: 400,
+				show: false,
+				answered: false
+			},
+			{
+				id: "1qxjj4uk1scgk0r",
+				type: AnswerType.TEXT,
+				answer: "The Plague, Phantom Phreak, Crash Override, Zero Cool, Acid Burn",
+				hint: "What is 'Hackers'?",
+				explanation: "",
+				points: 600,
+				show: false,
+				answered: false
+			},
+			{
+				id: "1qxjj4uk1scgk0w",
+				type: AnswerType.TEXT,
+				answer: "Batou, Togusa, Saito, Ishikawa, Motoko ('The Major')",
+				hint: "What is 'Ghost in the Shell'?",
+				explanation: "",
+				points: 800,
+				show: false,
+				answered: false
+			},
+			{
+				id: "1qxjj4uk1scgk11",
+				type: AnswerType.TEXT,
+				answer: "Count Zero, Brian Oblivion, Space Rogue, Kingpin, Mudge",
+				hint: "What is L0pht?",
+				explanation: "",
+				points: 1000,
+				show: false,
+				answered: false
+			}
+		]
 	}
 ];

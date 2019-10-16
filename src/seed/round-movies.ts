@@ -12,7 +12,7 @@ export const roundMovies: ICategory[] = [
 				answerDe: "So heißt der neue Avengers-Film?",
 				hint: "Avengers: Endgame",
 				explanation: "",
-				points: 100,
+				points: 200,
 				show: false,
 				answered: false
 			},
@@ -23,7 +23,7 @@ export const roundMovies: ICategory[] = [
 				answerDe: "So heißt das Schiff von Han Solo",
 				hint: "Millennium Falcon",
 				explanation: "",
-				points: 200,
+				points: 400,
 				show: false,
 				answered: false
 			},
@@ -34,7 +34,7 @@ export const roundMovies: ICategory[] = [
 				answerDe: "So heißt das Schiff von Star-Lord in Guardians of the Galaxy",
 				hint: "Milano",
 				explanation: "",
-				points: 300,
+				points: 600,
 				show: false,
 				answered: false
 			},
@@ -45,7 +45,7 @@ export const roundMovies: ICategory[] = [
 				answerDe: "Dieser junge Jedi-Ritter wird Darth Vader in Star Wars",
 				hint: "Anakin Skywalker",
 				explanation: "",
-				points: 400,
+				points: 800,
 				show: false,
 				answered: false
 			},
@@ -56,7 +56,7 @@ export const roundMovies: ICategory[] = [
 				answerDe: "Hier hat Iron Man zum ersten Mal gegen Whiplash gekämpft",
 				hint: "Monaco",
 				explanation: "",
-				points: 500,
+				points: 1000,
 				show: false,
 				answered: false
 			}
@@ -73,7 +73,7 @@ export const roundMovies: ICategory[] = [
 				answerDe: "Dieser Animationsfilm war die erste Veröffentlichung von Pixar im Jahr 1995",
 				hint: "Toy Story",
 				explanation: "",
-				points: 100,
+				points: 200,
 				show: false,
 				answered: false
 			},
@@ -84,7 +84,7 @@ export const roundMovies: ICategory[] = [
 				answerDe: 'Der Film "WALL-E" zeigt einen gleichnamigen Roboter. Das ist sein Job.',
 				hint: "Trash Collector",
 				explanation: "",
-				points: 200,
+				points: 400,
 				show: false,
 				answered: false
 			},
@@ -97,7 +97,7 @@ export const roundMovies: ICategory[] = [
 					'Dieser Pixar-Charakter sagt: "Egal wie oft man die Welt rettet, sie schafft es immer wieder, wieder in Gefahr zu kommen?"',
 				hint: "Mr. Incredible",
 				explanation: "",
-				points: 300,
+				points: 600,
 				show: false,
 				answered: false
 			},
@@ -108,7 +108,7 @@ export const roundMovies: ICategory[] = [
 				answerDe: 'In dieser europäischen Stadt spielt der Film "Ratatouille" von 2007',
 				hint: "Paris",
 				explanation: "",
-				points: 400,
+				points: 800,
 				show: false,
 				answered: false
 			},
@@ -120,7 +120,7 @@ export const roundMovies: ICategory[] = [
 				answerDe: 'Hierhin zieht der Charakter Carl Fredricksen in dem Oscar-prämierten Film "Up"',
 				hint: "Paradise Falls / Paradiesfälle",
 				explanation: "",
-				points: 500,
+				points: 1000,
 				show: false,
 				answered: false
 			}
@@ -137,7 +137,7 @@ export const roundMovies: ICategory[] = [
 				answerDe: "Nenne die einzige Disney-Prinzessin, die auf einer echten Person basiert.",
 				hint: "Pocahontas ",
 				explanation: "",
-				points: 100,
+				points: 200,
 				show: false,
 				answered: false
 			},
@@ -148,7 +148,7 @@ export const roundMovies: ICategory[] = [
 				answerDe: "Nennen Sie die einzige Disney-Prinzessin mit braunen Augen.",
 				hint: "Belle ",
 				explanation: "",
-				points: 200,
+				points: 400,
 				show: false,
 				answered: false
 			},
@@ -159,7 +159,7 @@ export const roundMovies: ICategory[] = [
 				answerDe: "Wer sind drei Prinzessinnen, die böse Stiefmütter hatten?",
 				hint: "Snow White, Cinderella, Rapunzel ",
 				explanation: "",
-				points: 300,
+				points: 600,
 				show: false,
 				answered: false
 			},
@@ -170,7 +170,7 @@ export const roundMovies: ICategory[] = [
 				answerDe: "Nenne die 2 Disney-Prinzessinnen, die rotes Haar haben.",
 				hint: "Princess Merida, Ariel (The Little Mermaid)",
 				explanation: "",
-				points: 400,
+				points: 800,
 				show: false,
 				answered: false
 			},
@@ -181,7 +181,7 @@ export const roundMovies: ICategory[] = [
 				answerDe: "Dieser Disney-Prinzessinnenfilm war der erste, der den Krieg zeigte.",
 				hint: "Mulan",
 				explanation: "",
-				points: 500,
+				points: 1000,
 				show: false,
 				answered: false
 			}
@@ -198,7 +198,7 @@ export const roundMovies: ICategory[] = [
 				answerDe: "Ein Cartoon über einen Schwamm im Meer.",
 				hint: "What is SpongeBob SquarePants?",
 				explanation: "",
-				points: 100,
+				points: 200,
 				show: false,
 				answered: false
 			},
@@ -209,7 +209,7 @@ export const roundMovies: ICategory[] = [
 				answerDe: "Eine Show über Ponys und Freundschaft.",
 				hint: "What is My Little Pony Friendship is Magic?",
 				explanation: "",
-				points: 200,
+				points: 400,
 				show: false,
 				answered: false
 			},
@@ -220,7 +220,7 @@ export const roundMovies: ICategory[] = [
 				answerDe: "Eine Show über einen kleinen Jungen, der Elfen als Eltern hat.",
 				hint: "What is The Fairly Odd Parents? / Cosmo und Wanda",
 				explanation: "",
-				points: 300,
+				points: 600,
 				show: false,
 				answered: false
 			},
@@ -231,7 +231,7 @@ export const roundMovies: ICategory[] = [
 				answerDe: "Eine Show über 3 superstarke Mädchen, die Verbrechen bekämpfen.",
 				hint: "What is The Power Puff Girls?",
 				explanation: "",
-				points: 400,
+				points: 800,
 				show: false,
 				answered: false
 			},
@@ -243,7 +243,7 @@ export const roundMovies: ICategory[] = [
 					"Eine ältere Show über einen Samurai, der darum kämpft, die Welt vor Robotern zu retten.",
 				hint: "What is Samurai Jack?",
 				explanation: "",
-				points: 500,
+				points: 1000,
 				show: false,
 				answered: false
 			}
@@ -262,7 +262,7 @@ export const roundMovies: ICategory[] = [
 					'Dieser Charakter begann die Serie unter einer anderen Farbbezeichnung, beendet die Serie aber als "der Weiße".',
 				hint: "Who is Gandalf?",
 				explanation: "",
-				points: 100,
+				points: 200,
 				show: false,
 				answered: false
 			},
@@ -275,7 +275,7 @@ export const roundMovies: ICategory[] = [
 					'Dieser Regisseur brachte die Trilogie "Herr der Ringe" mit einer preisgekrönten Filmreihe, die auf diesen Romanen basiert, ins neue Jahrtausend."',
 				hint: "Who is Peter Jackson?",
 				explanation: "",
-				points: 200,
+				points: 400,
 				show: false,
 				answered: false
 			},
@@ -288,7 +288,7 @@ export const roundMovies: ICategory[] = [
 					"Diese Vorgeschichte zur Trilogie Herr der Ringe beinhaltet die Geschichte der Entstehung von Ea, dem fiktiven Schauplatz dieser Bücher.",
 				hint: "What is The Silmarillion?",
 				explanation: "",
-				points: 300,
+				points: 600,
 				show: false,
 				answered: false
 			},
@@ -301,7 +301,7 @@ export const roundMovies: ICategory[] = [
 					"Dieser Ring der Macht wurde von Galadriel ausgeübt und verlieh seine konservierenden Kräfte ihrem Reich Lorien.",
 				hint: "What is Nenya?",
 				explanation: "",
-				points: 400,
+				points: 800,
 				show: false,
 				answered: false
 			},
@@ -314,7 +314,7 @@ export const roundMovies: ICategory[] = [
 					'Mit seinem Gegenstück Quenya erfand Tolkien diese Sprache, die von den "Grauen Elfen" Mittelerdes gesprochen wird.',
 				hint: "What is Sindarin?",
 				explanation: "",
-				points: 500,
+				points: 1000,
 				show: false,
 				answered: false
 			}

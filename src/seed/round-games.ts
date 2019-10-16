@@ -15,7 +15,7 @@ export const roundGames: ICategory[] = [
 					"Ein Spiel, in dem Sie als Unternehmer Immobilien kaufen, um Ihr Vermögen zu erweitern.",
 				hint: "What is Monopoly? ",
 				explanation: "",
-				points: 100,
+				points: 200,
 				show: false,
 				answered: false
 			},
@@ -27,7 +27,7 @@ export const roundGames: ICategory[] = [
 				answerDe: "Ein Spiel, bei dem es darum geht, alle Püppchen nach Hause zu bringen",
 				hint: "What is Sorry? / Mensch ärger dich nicht",
 				explanation: "",
-				points: 200,
+				points: 400,
 				show: false,
 				answered: false
 			},
@@ -40,7 +40,7 @@ export const roundGames: ICategory[] = [
 					"Ein Spiel um den Verlust aller Ihrer Karten, indem Sie die gleiche Zahl oder Farbe auf einem Ablagestapel spielen.",
 				hint: "What is Uno?",
 				explanation: "",
-				points: 300,
+				points: 600,
 				show: false,
 				answered: false
 			},
@@ -51,7 +51,7 @@ export const roundGames: ICategory[] = [
 				answerDe: "Ein klassisches Spiel über die Suche nach einem Mörder in einem Haus.",
 				hint: "What is Clue?",
 				explanation: "",
-				points: 400,
+				points: 800,
 				show: false,
 				answered: false
 			},
@@ -64,7 +64,7 @@ export const roundGames: ICategory[] = [
 					"Ein Spiel über den Prozess der Eliminierung, um herauszufinden, welcher Charakter dein Gegner ist.",
 				hint: "What is Guess Who?",
 				explanation: "",
-				points: 500,
+				points: 1000,
 				show: false,
 				answered: false
 			}
@@ -81,7 +81,7 @@ export const roundGames: ICategory[] = [
 				answerDe: "Das Haustier von einem fetten italienischer Klempner.",
 				hint: "What is Yoshi?",
 				explanation: "",
-				points: 100,
+				points: 200,
 				show: false,
 				answered: false
 			},
@@ -92,7 +92,7 @@ export const roundGames: ICategory[] = [
 				answerDe: "Ein berühmter Held, der grün trägt, A.K.A. der Hero of Time.",
 				hint: "Who is Link?",
 				explanation: "",
-				points: 200,
+				points: 400,
 				show: false,
 				answered: false
 			},
@@ -105,7 +105,7 @@ export const roundGames: ICategory[] = [
 					"Ein weiblicher Charakter, der mit Vogel D.N.A. genetisch verändert wurde und eine aufgeladene lonenkanone hat.",
 				hint: "Who is Samus Aran?",
 				explanation: "",
-				points: 300,
+				points: 600,
 				show: false,
 				answered: false
 			},
@@ -116,7 +116,7 @@ export const roundGames: ICategory[] = [
 				answerDe: "Ein rosa Charakter, der Feinde aufsaugen und ihre Fähigkeiten annehmen kann.",
 				hint: "Who is Kirby?",
 				explanation: "",
-				points: 400,
+				points: 800,
 				show: false,
 				answered: false
 			},
@@ -127,7 +127,7 @@ export const roundGames: ICategory[] = [
 				answerDe: "Ein blauer, humanoider Roboter kämpft gegen einen verrückten Arzt.",
 				hint: "Who is Megaman?",
 				explanation: "",
-				points: 500,
+				points: 1000,
 				show: false,
 				answered: false
 			}

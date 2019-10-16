@@ -257,7 +257,7 @@ export const roundHardcore: ICategory[] = [
 				answerDe: "Die Anzahl der Bytes in einer IPv4-Adresse",
 				hint: "What is 4",
 				explanation: "",
-				points: 100,
+				points: 200,
 				show: false,
 				answered: false
 			},
@@ -268,7 +268,7 @@ export const roundHardcore: ICategory[] = [
 				answerDe: "Private IPv4-Adressen wurden in diesem RFC als Standard festgelegt.",
 				hint: "What is RFC 1918",
 				explanation: "",
-				points: 200,
+				points: 400,
 				show: false,
 				answered: false
 			},
@@ -280,7 +280,7 @@ export const roundHardcore: ICategory[] = [
 					"Eine Netzmaske von 255.255.255.255.240.240 (oder /28) hat so viele brauchbare Hosts.",
 				hint: "What is 14",
 				explanation: "",
-				points: 300,
+				points: 600,
 				show: false,
 				answered: false
 			},
@@ -293,7 +293,7 @@ export const roundHardcore: ICategory[] = [
 					"Diese Technologie ist bekannt für die Sicherung der Internet Protocol (IP)-Kommunikation durch Authentifizierung und/oder Verschlüsselung jedes IP-Pakets einer Kommunikationssitzung.",
 				hint: "What is IPSec",
 				explanation: "",
-				points: 400,
+				points: 800,
 				show: false,
 				answered: false
 			},
@@ -304,20 +304,7 @@ export const roundHardcore: ICategory[] = [
 				answerDe: "Das Subnetz 224.0.0.0.0.0/4 ist für diese Nutzung reserviert.",
 				hint: "What is IP Multicast",
 				explanation: "",
-				points: 500,
-				show: false,
-				answered: false
-			},
-			{
-				id: "1qxjh6uk1sbd7zm",
-				type: AnswerType.TEXT,
-				answer:
-					"This Internet Protocol, written and released on April 1, 1990 in RFC 1149, transmits large amounts of data with high latency and packet loss.",
-				answerDe:
-					"Dieses Internet-Protokoll, das am 1. April 1990 in RFC 1149 geschrieben und veröffentlicht wurde, überträgt große Datenmengen mit hoher Latenz und Paketverlust.",
-				hint: "What is Internet Protocol over Avian Carrier (IPoAC)",
-				explanation: "",
-				points: 600,
+				points: 1000,
 				show: false,
 				answered: false
 			}
