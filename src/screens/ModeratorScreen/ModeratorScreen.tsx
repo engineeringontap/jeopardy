@@ -30,7 +30,7 @@ import { round96 } from "../../seed/round96";
 import { round97 } from "../../seed/round97";
 import { round98 } from "../../seed/round98";
 import { round99 } from "../../seed/round99";
-import { bootstrapRound, resetRounds, resetTeams } from "../../seed/seed";
+import { bootstrapRound } from "../../seed/seed";
 import { startTheme, stopTheme, toggleTheme, useSoundEnbaled } from "../../util/sound";
 import styles from "./ModeratorScreen.module.css";
 
@@ -95,7 +95,7 @@ const CurrentAnswer: React.FC<{
 		<div>
 			<div>{answerImageOrText}</div>
 			<div>Points: {currentAnswer.points}</div>
-			<div>Hint: {currentAnswer.hint}</div>
+			<div>Hint: {currentAnswer.question}</div>
 			<div>Explanation: {currentAnswer.explanation}</div>
 
 			{activeTeam && (

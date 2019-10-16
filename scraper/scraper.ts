@@ -39,7 +39,7 @@ const scrape = async () => {
 					answerDe: $(cell)
 						.find(".answer")
 						.text(),
-					hint: $(cell)
+					question: $(cell)
 						.find(".question")
 						.text(),
 					explanation: "",

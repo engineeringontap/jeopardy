@@ -10,7 +10,7 @@ export const roundHardcore: ICategory[] = [
 				id: uniqid(),
 				type: AnswerType.TEXT,
 				answer: "ssh + ftp",
-				hint: "22 + 21 = 43",
+				question: "22 + 21 = 43",
 				explanation: "",
 				points: 200,
 				show: false,
@@ -20,7 +20,7 @@ export const roundHardcore: ICategory[] = [
 				id: uniqid(),
 				type: AnswerType.TEXT,
 				answer: "mysql + http",
-				hint: "3306 + 80 = 3386",
+				question: "3306 + 80 = 3386",
 				explanation: "",
 				points: 400,
 				show: false,
@@ -30,7 +30,7 @@ export const roundHardcore: ICategory[] = [
 				id: uniqid(),
 				type: AnswerType.TEXT,
 				answer: "telnet + smtp",
-				hint: "23 + 25 = 48",
+				question: "23 + 25 = 48",
 				explanation: "",
 				points: 600,
 				show: false,
@@ -40,7 +40,7 @@ export const roundHardcore: ICategory[] = [
 				id: uniqid(),
 				type: AnswerType.TEXT,
 				answer: "dns + redis",
-				hint: "53 + 6379 = 6432",
+				question: "53 + 6379 = 6432",
 				explanation: "",
 				points: 800,
 				show: false,
@@ -50,7 +50,7 @@ export const roundHardcore: ICategory[] = [
 				id: uniqid(),
 				type: AnswerType.TEXT,
 				answer: "sip + git",
-				hint: "5060 + 9418 = 14478",
+				question: "5060 + 9418 = 14478",
 				explanation: "",
 				points: 1000,
 				show: false,
@@ -67,7 +67,7 @@ export const roundHardcore: ICategory[] = [
 				type: AnswerType.IMAGE,
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fmovies%2Fhacker_movies1.JPG?alt=media&token=7579ffc3-bfa8-4f59-8e90-3b99a4ef7337",
-				hint: "Jurassic Park",
+				question: "Jurassic Park",
 				explanation: "Samuel L. Jackson ist dabei und sagt: Ich hasse dieser Hacker scheisse!",
 				points: 200,
 				show: false,
@@ -78,7 +78,7 @@ export const roundHardcore: ICategory[] = [
 				type: AnswerType.IMAGE,
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fmovies%2Fhacker_movies2.PNG?alt=media&token=c63a846d-e87a-41cf-9fc4-7db352b8e0ae",
-				hint: "Iron Man 2",
+				question: "Iron Man 2",
 				explanation:
 					"Es ist ein Marvel Film und <spoiler>Justin Hammer</spoiler> sieht hier ganz schlecht aus...",
 				points: 400,
@@ -90,7 +90,7 @@ export const roundHardcore: ICategory[] = [
 				type: AnswerType.IMAGE,
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fmovies%2Fhacker_movies3.JPG?alt=media&token=0d0fc232-cc86-4c6e-a0de-251277bce440",
-				hint: "WarGames",
+				question: "WarGames",
 				explanation: "Ein uralter Film in dem es um den Atomkrieg geht",
 				points: 600,
 				show: false,
@@ -101,7 +101,7 @@ export const roundHardcore: ICategory[] = [
 				type: AnswerType.IMAGE,
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fmovies%2Fhacker_movies4.JPG?alt=media&token=80232826-0a4b-4c5e-9869-9bca54b3f71d",
-				hint: "TRON: Legacy",
+				question: "TRON: Legacy",
 				explanation: "Jeder von euch hat ihn gesehen und hört die Musik auch ziemlich gern",
 				points: 800,
 				show: false,
@@ -112,7 +112,7 @@ export const roundHardcore: ICategory[] = [
 				type: AnswerType.IMAGE,
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fmovies%2Fhacker_movies5.JPG?alt=media&token=233abd66-8211-45c9-8d55-a995f3818db4",
-				hint: "Matrix 2",
+				question: "Matrix 2",
 				explanation:
 					"Hier sehen wir einen echten SSH-Nuke Exploit. Es wird ein Kraftwerk herunter gefahren.",
 				points: 1000,
@@ -130,7 +130,7 @@ export const roundHardcore: ICategory[] = [
 				type: AnswerType.IMAGE,
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fhacker%2Fhacker1.jpg?alt=media&token=f1248684-8769-47ff-9b07-830138812418",
-				hint: "Edward Snowden",
+				question: "Edward Snowden",
 				explanation: "Dieser Herr hat einen der größten Geheimdienste bloßgestellt.",
 				points: 200,
 				show: false,
@@ -141,7 +141,7 @@ export const roundHardcore: ICategory[] = [
 				type: AnswerType.IMAGE,
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fhacker%2Fhacker2.jpg?alt=media&token=f08d14c8-6094-4692-bd44-a383129334af",
-				hint: "Aaron Swartz",
+				question: "Aaron Swartz",
 				explanation:
 					"Dieser Herr hat die sog. Frontpage des Internet mitbegründet und RSS geschrieben.",
 				points: 400,
@@ -153,7 +153,7 @@ export const roundHardcore: ICategory[] = [
 				type: AnswerType.IMAGE,
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fhacker%2Fhacker3.jpg?alt=media&token=3eadb35b-0c50-4cf3-9342-9fc30e0e695e",
-				hint: "George Hotz",
+				question: "George Hotz",
 				explanation: "Dieser Herr hat iPhones aus dem Gefängnis befreit. Und Playstations.",
 				points: 600,
 				show: false,
@@ -164,7 +164,7 @@ export const roundHardcore: ICategory[] = [
 				type: AnswerType.IMAGE,
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fhacker%2Fhacker4.jpg?alt=media&token=54fc2f1b-9c49-41d6-af27-2f7569f6e4c7",
-				hint: "Tsutomu Shimomura",
+				question: "Tsutomu Shimomura",
 				explanation:
 					"Er half dem FBI Kevin Mitnik zu finden und schrieb später das Buch Takedown darüber.",
 				points: 800,
@@ -176,7 +176,7 @@ export const roundHardcore: ICategory[] = [
 				type: AnswerType.IMAGE,
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fhacker%2Fhacker5.jpg?alt=media&token=799b07dd-dce5-4252-bec3-9f2c775ad3b5",
-				hint: "John Draper (Captain Crunch)",
+				question: "John Draper (Captain Crunch)",
 				explanation:
 					"Er ist ein legendärer Phone Phreak und trägt den Spitznamen eines Cornflakes Maskottchens",
 				points: 1000,
@@ -194,7 +194,7 @@ export const roundHardcore: ICategory[] = [
 				type: AnswerType.CODE,
 				answer:
 					'function foo() {\n  var bar = ["t", "o", "e"].reverse().join("");\n  console.log("hello " + bar);\n}\n\nfoo();',
-				hint: "hello eot",
+				question: "hello eot",
 				explanation: "",
 				points: 200,
 				show: false,
@@ -205,7 +205,7 @@ export const roundHardcore: ICategory[] = [
 				type: AnswerType.CODE,
 				answer:
 					'function foo() {\n  var eot = "hello eot";\n  setTimeout(() => {\n    console.log(eot);\n  }, 100);\n  this.eot = "cheers!";\n}\n\nfoo();',
-				hint: "hello eot",
+				question: "hello eot",
 				explanation: "",
 				points: 400,
 				show: false,
@@ -216,7 +216,7 @@ export const roundHardcore: ICategory[] = [
 				type: AnswerType.CODE,
 				answer:
 					'function foo() {\n  var beers = 2;\n  setTimeout(() => {\n    console.log(beers + " beers");\n  }, 1000);\n\n  for (let beers = 10; beers < 10; beers++) {}\n}\n\nfoo();',
-				hint: "2 beers (new scope using let)",
+				question: "2 beers (new scope using let)",
 				explanation: "",
 				points: 600,
 				show: false,
@@ -227,7 +227,7 @@ export const roundHardcore: ICategory[] = [
 				type: AnswerType.CODE,
 				answer:
 					'class Person {\n  drink = "nothing";\n\n  constructor(drink) {\n    this.drink = drink;\n\n    Person.print = function() {\n      console.log("beer");\n    };\n  }\n\n  print() {\n    console.log(this.drink);\n  }\n}\n\nconst person = new Person("water");\nperson.print();',
-				hint: "water",
+				question: "water",
 				explanation: "",
 				points: 800,
 				show: false,
@@ -238,7 +238,7 @@ export const roundHardcore: ICategory[] = [
 				type: AnswerType.CODE,
 				answer:
 					'const debug = console.log;\nconst warn = console.warn;\n\nfunction eat(snack, logger) {\n  // TODO: use logger\n  debug(snack);\n\n  if (snack) {\n    logger(snack);\n  } else if (snack === "cookie") {\n    logger("cookie");\n  }\n\n  return snack;\n}\n\nconsole.log(eat("cookie", warn));',
-				hint: "2x cookie",
+				question: "2x cookie",
 				explanation: "",
 				points: 1000,
 				show: false,
@@ -255,7 +255,7 @@ export const roundHardcore: ICategory[] = [
 				type: AnswerType.TEXT,
 				answer: "The number of bytes in an IPv4 address",
 				answerDe: "Die Anzahl der Bytes in einer IPv4-Adresse",
-				hint: "What is 4",
+				question: "What is 4",
 				explanation: "",
 				points: 200,
 				show: false,
@@ -266,7 +266,7 @@ export const roundHardcore: ICategory[] = [
 				type: AnswerType.TEXT,
 				answer: "Private IPv4 addresses were set as a standard in this RFC.",
 				answerDe: "Private IPv4-Adressen wurden in diesem RFC als Standard festgelegt.",
-				hint: "What is RFC 1918",
+				question: "What is RFC 1918",
 				explanation: "",
 				points: 400,
 				show: false,
@@ -278,7 +278,7 @@ export const roundHardcore: ICategory[] = [
 				answer: "A netmask of 255.255.255.240 (or /28) has this many usable hosts",
 				answerDe:
 					"Eine Netzmaske von 255.255.255.255.240.240 (oder /28) hat so viele brauchbare Hosts.",
-				hint: "What is 14",
+				question: "What is 14",
 				explanation: "",
 				points: 600,
 				show: false,
@@ -291,7 +291,7 @@ export const roundHardcore: ICategory[] = [
 					"This technology is known for securing Internet Protocol (IP) communications by authenticating and/or encrypting each IP packet of a communication session",
 				answerDe:
 					"Diese Technologie ist bekannt für die Sicherung der Internet Protocol (IP)-Kommunikation durch Authentifizierung und/oder Verschlüsselung jedes IP-Pakets einer Kommunikationssitzung.",
-				hint: "What is IPSec",
+				question: "What is IPSec",
 				explanation: "",
 				points: 800,
 				show: false,
@@ -302,7 +302,7 @@ export const roundHardcore: ICategory[] = [
 				type: AnswerType.TEXT,
 				answer: "The subnet 224.0.0.0/4 is reserved for this use",
 				answerDe: "Das Subnetz 224.0.0.0.0.0/4 ist für diese Nutzung reserviert.",
-				hint: "What is IP Multicast",
+				question: "What is IP Multicast",
 				explanation: "",
 				points: 1000,
 				show: false,
