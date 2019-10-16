@@ -11,6 +11,8 @@ export const roundGames: ICategory[] = [
 				type: AnswerType.TEXT,
 				answer:
 					"A game in which you are a entrepreneur buying properties in order to expand your wealth. ",
+				answerDe:
+					"Ein Spiel, in dem Sie als Unternehmer Immobilien kaufen, um Ihr Vermögen zu erweitern.",
 				hint: "What is Monopoly? ",
 				explanation: "",
 				points: 100,
@@ -22,7 +24,8 @@ export const roundGames: ICategory[] = [
 				type: AnswerType.TEXT,
 				answer:
 					"A game about bringing all your pawns home,it is remembered for its iconic saying when you screw someone over. ",
-				hint: "What is Sorry?",
+				answerDe: "Ein Spiel, bei dem es darum geht, alle Püppchen nach Hause zu bringen",
+				hint: "What is Sorry? / Mensch ärger dich nicht",
 				explanation: "",
 				points: 200,
 				show: false,
@@ -33,6 +36,8 @@ export const roundGames: ICategory[] = [
 				type: AnswerType.TEXT,
 				answer:
 					"A game about losing all your cards by playing the same number or color down on a discard pile.",
+				answerDe:
+					"Ein Spiel um den Verlust aller Ihrer Karten, indem Sie die gleiche Zahl oder Farbe auf einem Ablagestapel spielen.",
 				hint: "What is Uno?",
 				explanation: "",
 				points: 300,
@@ -43,6 +48,7 @@ export const roundGames: ICategory[] = [
 				id: "1qxjj0ek1sccaiz",
 				type: AnswerType.TEXT,
 				answer: "A classic game about finding a murderer through searching a house.",
+				answerDe: "Ein klassisches Spiel über die Suche nach einem Mörder in einem Haus.",
 				hint: "What is Clue?",
 				explanation: "",
 				points: 400,
@@ -54,6 +60,8 @@ export const roundGames: ICategory[] = [
 				type: AnswerType.TEXT,
 				answer:
 					"A game about through the process of elimination finding out which character your opponent is",
+				answerDe:
+					"Ein Spiel über den Prozess der Eliminierung, um herauszufinden, welcher Charakter dein Gegner ist.",
 				hint: "What is Guess Who?",
 				explanation: "",
 				points: 500,
@@ -69,7 +77,8 @@ export const roundGames: ICategory[] = [
 			{
 				id: "1qxjj0ek1sccain",
 				type: AnswerType.TEXT,
-				answer: "A fat Italian plumber's pet.  ",
+				answer: "A fat Italian plumber's pet.",
+				answerDe: "Das Haustier von einem fetten italienischer Klempner.",
 				hint: "What is Yoshi?",
 				explanation: "",
 				points: 100,
@@ -80,6 +89,7 @@ export const roundGames: ICategory[] = [
 				id: "1qxjj0ek1sccais",
 				type: AnswerType.TEXT,
 				answer: "A famous hero who wears green, A.K.A the Hero of Time.",
+				answerDe: "Ein berühmter Held, der grün trägt, A.K.A. der Hero of Time.",
 				hint: "Who is Link?",
 				explanation: "",
 				points: 200,
@@ -90,7 +100,9 @@ export const roundGames: ICategory[] = [
 				id: "1qxjj0ek1sccaix",
 				type: AnswerType.TEXT,
 				answer:
-					"A Female character genitally modified with bird D.N.A welding a charge up ion cannon.",
+					"A Female character genetically modified with bird D.N.A welding a charge up ion cannon.",
+				answerDe:
+					"Ein weiblicher Charakter, der mit Vogel D.N.A. genetisch verändert wurde und eine aufgeladene lonenkanone hat.",
 				hint: "Who is Samus Aran?",
 				explanation: "",
 				points: 300,
@@ -101,6 +113,7 @@ export const roundGames: ICategory[] = [
 				id: "1qxjj0ek1sccaj2",
 				type: AnswerType.TEXT,
 				answer: "A pink character who can suck enemies up and gain their abilities.",
+				answerDe: "Ein rosa Charakter, der Feinde aufsaugen und ihre Fähigkeiten annehmen kann.",
 				hint: "Who is Kirby?",
 				explanation: "",
 				points: 400,
@@ -111,7 +124,8 @@ export const roundGames: ICategory[] = [
 				id: "1qxjj0ek1sccaj7",
 				type: AnswerType.TEXT,
 				answer: "A Humanoid robot wearing blue fighting an insane doctor.",
-				hint: "Who is Megaman? ",
+				answerDe: "Ein blauer, humanoider Roboter kämpft gegen einen verrückten Arzt.",
+				hint: "Who is Megaman?",
 				explanation: "",
 				points: 500,
 				show: false,
@@ -121,7 +135,7 @@ export const roundGames: ICategory[] = [
 	},
 	{
 		id: uniqid(),
-		name: "Games",
+		name: "Guess the game",
 		answers: [
 			{
 				id: uniqid(),
@@ -190,7 +204,7 @@ export const roundGames: ICategory[] = [
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fminecraft%2Fminecraft1.jpg?alt=media&token=8c865a05-4df5-4930-a027-2f95a131b0d0",
 				hint: "Clock/Uhr",
-				explanation: "",
+				explanation: "Was bekommt man, wenn man dieses Rezept benutzt?",
 				points: 200,
 				show: false,
 				answered: false
@@ -201,7 +215,7 @@ export const roundGames: ICategory[] = [
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fminecraft%2Fminecraft2.png?alt=media&token=df73f081-b4c0-4c97-af04-62080c750699",
 				hint: "Beacon/Leuchtfeuer",
-				explanation: "",
+				explanation: "Was bekommt man, wenn man dieses Rezept benutzt?",
 				points: 400,
 				show: false,
 				answered: false
@@ -212,7 +226,7 @@ export const roundGames: ICategory[] = [
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fminecraft%2Fminecraft3.png?alt=media&token=5dc5c9a7-7c36-4b51-803e-af3720bd0ae1",
 				hint: "Hopper/Trichter",
-				explanation: "",
+				explanation: "Was bekommt man, wenn man dieses Rezept benutzt?",
 				points: 600,
 				show: false,
 				answered: false
@@ -223,7 +237,7 @@ export const roundGames: ICategory[] = [
 				hint: "Repeater/Redstone-Verstärker",
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fminecraft%2Fminecraft4.png?alt=media&token=d2d1a63d-62a3-4813-842b-dc81ef0d102b",
-				explanation: "",
+				explanation: "Was bekommt man, wenn man dieses Rezept benutzt?",
 				points: 800,
 				show: false,
 				answered: false
@@ -234,7 +248,7 @@ export const roundGames: ICategory[] = [
 				hint: "Observer/Beobachter",
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fminecraft%2Fminecraft5.png?alt=media&token=af62f4cc-359f-4ebb-a2b2-5c03a93f7709",
-				explanation: "",
+				explanation: "Was bekommt man, wenn man dieses Rezept benutzt?",
 				points: 1000,
 				show: false,
 				answered: false

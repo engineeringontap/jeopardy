@@ -68,7 +68,7 @@ export const roundHardcore: ICategory[] = [
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fmovies%2Fhacker_movies1.JPG?alt=media&token=7579ffc3-bfa8-4f59-8e90-3b99a4ef7337",
 				hint: "Jurassic Park",
-				explanation: "",
+				explanation: "Samuel L. Jackson ist dabei und sagt: Ich hasse dieser Hacker scheisse!",
 				points: 200,
 				show: false,
 				answered: false
@@ -79,7 +79,8 @@ export const roundHardcore: ICategory[] = [
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fmovies%2Fhacker_movies2.PNG?alt=media&token=c63a846d-e87a-41cf-9fc4-7db352b8e0ae",
 				hint: "Iron Man 2",
-				explanation: "",
+				explanation:
+					"Es ist ein Marvel Film und <spoiler>Justin Hammer</spoiler> sieht hier ganz schlecht aus...",
 				points: 400,
 				show: false,
 				answered: false
@@ -90,7 +91,7 @@ export const roundHardcore: ICategory[] = [
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fmovies%2Fhacker_movies3.JPG?alt=media&token=0d0fc232-cc86-4c6e-a0de-251277bce440",
 				hint: "WarGames",
-				explanation: "",
+				explanation: "Ein uralter Film in dem es um den Atomkrieg geht",
 				points: 600,
 				show: false,
 				answered: false
@@ -101,7 +102,7 @@ export const roundHardcore: ICategory[] = [
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fmovies%2Fhacker_movies4.JPG?alt=media&token=80232826-0a4b-4c5e-9869-9bca54b3f71d",
 				hint: "TRON: Legacy",
-				explanation: "",
+				explanation: "Jeder von euch hat ihn gesehen und hört die Musik auch ziemlich gern",
 				points: 800,
 				show: false,
 				answered: false
@@ -112,7 +113,8 @@ export const roundHardcore: ICategory[] = [
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fmovies%2Fhacker_movies5.JPG?alt=media&token=233abd66-8211-45c9-8d55-a995f3818db4",
 				hint: "Matrix 2",
-				explanation: "",
+				explanation:
+					"Hier sehen wir einen echten SSH-Nuke Exploit. Es wird ein Kraftwerk herunter gefahren.",
 				points: 1000,
 				show: false,
 				answered: false
@@ -140,7 +142,8 @@ export const roundHardcore: ICategory[] = [
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fhacker%2Fhacker2.jpg?alt=media&token=f08d14c8-6094-4692-bd44-a383129334af",
 				hint: "Aaron Swartz",
-				explanation: "Dieser Herr hat die sog. Frontpage des Internet mitbegründet.",
+				explanation:
+					"Dieser Herr hat die sog. Frontpage des Internet mitbegründet und RSS geschrieben.",
 				points: 400,
 				show: false,
 				answered: false
@@ -151,7 +154,7 @@ export const roundHardcore: ICategory[] = [
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fhacker%2Fhacker3.jpg?alt=media&token=3eadb35b-0c50-4cf3-9342-9fc30e0e695e",
 				hint: "George Hotz",
-				explanation: "Dieser Herr ist hat iPhones aus dem Gefängnis befreit",
+				explanation: "Dieser Herr hat iPhones aus dem Gefängnis befreit. Und Playstations.",
 				points: 600,
 				show: false,
 				answered: false
@@ -184,7 +187,7 @@ export const roundHardcore: ICategory[] = [
 	},
 	{
 		id: uniqid(),
-		name: "STDOUT",
+		name: "JavaScript > STDOUT",
 		answers: [
 			{
 				id: uniqid(),
@@ -251,6 +254,7 @@ export const roundHardcore: ICategory[] = [
 				id: "1qxjh6uk1sbd7yn",
 				type: AnswerType.TEXT,
 				answer: "The number of bytes in an IPv4 address",
+				answerDe: "Die Anzahl der Bytes in einer IPv4-Adresse",
 				hint: "What is 4",
 				explanation: "",
 				points: 100,
@@ -261,6 +265,7 @@ export const roundHardcore: ICategory[] = [
 				id: "1qxjh6uk1sbd7yu",
 				type: AnswerType.TEXT,
 				answer: "Private IPv4 addresses were set as a standard in this RFC.",
+				answerDe: "Private IPv4-Adressen wurden in diesem RFC als Standard festgelegt.",
 				hint: "What is RFC 1918",
 				explanation: "",
 				points: 200,
@@ -270,7 +275,9 @@ export const roundHardcore: ICategory[] = [
 			{
 				id: "1qxjh6uk1sbd7z1",
 				type: AnswerType.TEXT,
-				answer: "A netmask of 255.255.255.240 (or /28) has how many usable hosts?",
+				answer: "A netmask of 255.255.255.240 (or /28) has this many usable hosts",
+				answerDe:
+					"Eine Netzmaske von 255.255.255.255.240.240 (oder /28) hat so viele brauchbare Hosts.",
 				hint: "What is 14",
 				explanation: "",
 				points: 300,
@@ -281,7 +288,9 @@ export const roundHardcore: ICategory[] = [
 				id: "1qxjh6uk1sbd7z8",
 				type: AnswerType.TEXT,
 				answer:
-					"A technology for securing Internet Protocol (IP) communications by authenticating and/or encrypting each IP packet of a communication session is known as what?",
+					"This technology is known for securing Internet Protocol (IP) communications by authenticating and/or encrypting each IP packet of a communication session",
+				answerDe:
+					"Diese Technologie ist bekannt für die Sicherung der Internet Protocol (IP)-Kommunikation durch Authentifizierung und/oder Verschlüsselung jedes IP-Pakets einer Kommunikationssitzung.",
 				hint: "What is IPSec",
 				explanation: "",
 				points: 400,
@@ -291,7 +300,8 @@ export const roundHardcore: ICategory[] = [
 			{
 				id: "1qxjh6uk1sbd7zf",
 				type: AnswerType.TEXT,
-				answer: "The subnet 224.0.0.0/4 is reserved for what use?",
+				answer: "The subnet 224.0.0.0/4 is reserved for this use",
+				answerDe: "Das Subnetz 224.0.0.0.0.0/4 ist für diese Nutzung reserviert.",
 				hint: "What is IP Multicast",
 				explanation: "",
 				points: 500,
@@ -303,6 +313,8 @@ export const roundHardcore: ICategory[] = [
 				type: AnswerType.TEXT,
 				answer:
 					"This Internet Protocol, written and released on April 1, 1990 in RFC 1149, transmits large amounts of data with high latency and packet loss.",
+				answerDe:
+					"Dieses Internet-Protokoll, das am 1. April 1990 in RFC 1149 geschrieben und veröffentlicht wurde, überträgt große Datenmengen mit hoher Latenz und Paketverlust.",
 				hint: "What is Internet Protocol over Avian Carrier (IPoAC)",
 				explanation: "",
 				points: 600,
