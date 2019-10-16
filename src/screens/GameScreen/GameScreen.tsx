@@ -77,24 +77,6 @@ export const GameScreen: React.FC<RouteComponentProps> = () => {
 					))}
 				</div>
 			)}
-			<div className={styles.teamFooter}>
-				{teams.map(t => (
-					<div
-						key={t.id}
-						className={classnames(styles.teamItem, {
-							[styles.teamItemActive]: t.id === activeTeam
-						})}
-						style={{
-							backgroundColor: t.color
-						}}
-					>
-						<div className={styles.teamName}>{t.name}</div>
-						<div className={styles.teamPoints}>
-							<CountTo to={t.points} speed={1000} />
-						</div>
-					</div>
-				))}
-			</div>
 		</>
 	);
 
@@ -121,6 +103,24 @@ export const GameScreen: React.FC<RouteComponentProps> = () => {
 				</span>
 			</div>
 			{allAnswered ? finishContent : gameContent}
+			<div className={styles.teamFooter}>
+				{teams.map(t => (
+					<div
+						key={t.id}
+						className={classnames(styles.teamItem, {
+							[styles.teamItemActive]: t.id === activeTeam
+						})}
+						style={{
+							backgroundColor: t.color
+						}}
+					>
+						<div className={styles.teamName}>{t.name}</div>
+						<div className={styles.teamPoints}>
+							<CountTo to={t.points} speed={1000} />
+						</div>
+					</div>
+				))}
+			</div>
 		</div>
 	);
 };
