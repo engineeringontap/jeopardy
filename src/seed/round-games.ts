@@ -3,6 +3,73 @@ import { AnswerType, ICategory } from "../models";
 
 export const roundGames: ICategory[] = [
 	{
+		id: "sktwiyw5k1tjf6ni",
+		name: "Most popular games",
+		answers: [
+			{
+				id: "sktwiyw5k1tjf6nn",
+				type: AnswerType.TEXT,
+				answer: 'This game features a man named "Drake" who searches for treasure around the world',
+				answerDe:
+					'In diesem Spiel wird ein Mann namens "Drake" gespielt, der auf der ganzen Welt nach Schätzen sucht.',
+				hint: "What is Uncharted 4",
+				explanation: "",
+				points: 200,
+				show: false,
+				answered: false
+			},
+			{
+				id: "sktwiyw5k1tjf6ns",
+				type: AnswerType.TEXT,
+				answer:
+					"This game takes place in 2287 and a nuke goes off as you are going down an elevator",
+				answerDe:
+					"Dieses Spiel findet im Jahr 2287 statt und eine Atombombe geht los, während man einen Aufzug hinuntergeht.",
+				hint: "What is Fallout 4",
+				explanation: "",
+				points: 400,
+				show: false,
+				answered: false
+			},
+			{
+				id: "sktwiyw5k1tjf6nx",
+				type: AnswerType.TEXT,
+				answer:
+					"This game allows you to be a criminal mastermind and run in the city of Los Santos",
+				answerDe:
+					"Dieses Spiel erlaubt es dir, ein kriminelles Superhirn zu sein und in der Stadt Los Santos zu laufen.",
+				hint: "What is GTA V",
+				explanation: "",
+				points: 600,
+				show: false,
+				answered: false
+			},
+			{
+				id: "sktwiyw5k1tjf6o2",
+				type: AnswerType.TEXT,
+				answer: "This game takes place in London England in the time of 1868",
+				answerDe: "Dieses Spiel findet in London England in der Zeit von 1868 statt",
+				hint: "What is Assassin's Creed Syndicate",
+				explanation: "",
+				points: 800,
+				show: false,
+				answered: false
+			},
+			{
+				id: "sktwiyw5k1tjf6o7",
+				type: AnswerType.TEXT,
+				answer: 'You play this game as a man named "Joel" and a little girl named "Ellie"',
+				answerDe:
+					'Du spielst dieses Spiel als ein Mann namens "Joel" und ein kleines Mädchen namens "Ellie".',
+				hint: "What is The Last of Us",
+				explanation: "",
+				points: 1000,
+				show: false,
+				answered: false
+			}
+		]
+	},
+	{
 		id: "1qxjj0ek1sccaif",
 		name: "Popular Board games",
 		answers: [

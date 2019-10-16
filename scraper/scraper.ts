@@ -4,7 +4,7 @@ import uniqid from "uniqid";
 import { AnswerType, IAnswer, ICategory } from "./models";
 
 // TODO: Change me
-const URL = "https://jeopardylabs.com/play/internet475";
+const URL = "https://jeopardylabs.com/play/ps47";
 
 const scrape = async () => {
 	const { data } = await axios.get(URL);
@@ -34,6 +34,9 @@ const scrape = async () => {
 					id: uniqid(),
 					type: AnswerType.TEXT,
 					answer: $(cell)
+						.find(".answer")
+						.text(),
+					answerDe: $(cell)
 						.find(".answer")
 						.text(),
 					hint: $(cell)
