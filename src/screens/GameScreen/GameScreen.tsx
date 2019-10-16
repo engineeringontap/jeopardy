@@ -7,6 +7,7 @@ import Highlight from "react-highlight.js";
 import { useActiveTeam, useCategories, useTeams } from "../../firestore";
 import { AnswerType, IAnswer, ICategory } from "../../models";
 import styles from "./GameScreen.module.css";
+import Confetti from "react-confetti";
 
 const renderAnswerByType = ({ type, answer }: IAnswer) => {
 	switch (type) {
@@ -41,7 +42,7 @@ const Category: React.FC<{ category: ICategory }> = ({ category }) => {
 		<div className={styles.category}>
 			<div className={styles.categoryTitle}>{category.name}</div>
 			{category.answers.map(a => (
-				<AnswerElement {...a} />
+				<AnswerElement key={a.id} {...a} />
 			))}
 		</div>
 	);
@@ -58,28 +59,28 @@ export const GameScreen: React.FC<RouteComponentProps> = () => {
 
 	const activeTeam = useActiveTeam(currentAnswer ? currentAnswer.id : "");
 
-	return (
-		<div className={styles.root}>
-			<Helmet>
-				<title>Jeopardy!</title>
-			</Helmet>
-			<div className={styles.title}>
-				<span className={styles.titleText}>
-					<span className={styles.titleName}>Jeopardy</span> by engineeringontap
-				</span>
-			</div>
+	const allAnswered = categories
+		.flatMap(category => category.answers)
+		.map(a => a.answered)
+		.reduce((accumulator, currentValue) => accumulator && currentValue, true);
+
+	console.log({ allAnswered });
+
+	const gameContent = (
+		<>
 			{currentCategory && currentAnswer ? (
 				<Answer category={currentCategory} answer={currentAnswer} />
 			) : (
 				<div className={styles.categories}>
 					{categories.map(c => (
-						<Category category={c} />
+						<Category key={c.id} category={c} />
 					))}
 				</div>
 			)}
 			<div className={styles.teamFooter}>
 				{teams.map(t => (
 					<div
+						key={t.id}
 						className={classnames(styles.teamItem, {
 							[styles.teamItemActive]: t.id === activeTeam
 						})}
@@ -94,6 +95,32 @@ export const GameScreen: React.FC<RouteComponentProps> = () => {
 					</div>
 				))}
 			</div>
+		</>
+	);
+
+	const canvasRef = React.createRef<HTMLCanvasElement>();
+
+	const finishContent = (
+		<div className={styles.confettiWrapper}>
+			<canvas ref={canvasRef}></canvas>
+			<Confetti width={window.innerWidth} height={window.innerHeight} canvasRef={canvasRef} />
+		</div>
+	);
+
+	return (
+		<div className={styles.root}>
+			<Helmet>
+				<title>Jeopardy!</title>
+			</Helmet>
+			<div className={styles.title}>
+				<span className={styles.titleText}>
+					<span className={styles.titleFirst}>
+						<span className={styles.titleName}>Jeopardy</span> by engineeringontap
+					</span>
+					<span>jeopardy.sipgate.beer</span>
+				</span>
+			</div>
+			{allAnswered ? finishContent : gameContent}
 		</div>
 	);
 };
