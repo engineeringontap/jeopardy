@@ -8,6 +8,7 @@ import {
 	penalize,
 	removePlayer,
 	resetAnswerRequests,
+	resetTeamPoints,
 	setAnsweredAndDismiss,
 	setTeamPoints,
 	useActiveTeam,
@@ -148,15 +149,15 @@ export const ModeratorScreen: React.SFC<RouteComponentProps> = () => {
 	const teams = useTeams();
 	const { enabled, toggleThemeState } = useSoundEnbaled();
 
-	const reset = () => {
-		if (window.confirm("Really reset game?")) {
-			if (window.confirm("Really????")) {
-				resetRounds();
-				resetTeams();
-				resetAnswerRequests();
-			}
-		}
-	};
+	// const reset = () => {
+	// 	if (window.confirm("Really reset game?")) {
+	// 		if (window.confirm("Really????")) {
+	// 			resetRounds();
+	// 			resetTeams();
+	// 			resetAnswerRequests();
+	// 		}
+	// 	}
+	// };
 
 	const choose = (category: ICategory, answer: IAnswer) => () => {
 		chooseAnswer(category, answer);
@@ -184,7 +185,6 @@ export const ModeratorScreen: React.SFC<RouteComponentProps> = () => {
 				<title>Moderator</title>
 			</Helmet>
 			<div className={styles.controlBar}>
-				<button onClick={reset}>Reset</button>
 				<button onClick={bootstrapRound(roundTech)}>Bootstrap Tech Round</button>
 				<button onClick={bootstrapRound(roundGames)}>Bootstrap Games Round</button>
 				<button onClick={bootstrapRound(roundMovies)}>Bootstrap Movies Round</button>
@@ -200,6 +200,10 @@ export const ModeratorScreen: React.SFC<RouteComponentProps> = () => {
 				<button onClick={bootstrapRound(round97)}>Bootstrap Round 97</button>
 				<button onClick={bootstrapRound(round98)}>Bootstrap Round 98</button>
 				<button onClick={bootstrapRound(round99)}>Bootstrap Round 99</button>
+			</div>
+			<div className={styles.controlBar}>
+				{/* <button onClick={reset}>Reset</button> */}
+				<button onClick={resetTeamPoints}>Reset team points</button>
 				<button onClick={toggleTheme}>Toggle theme song</button>
 				<input
 					type="checkbox"
