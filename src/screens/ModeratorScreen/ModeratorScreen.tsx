@@ -8,12 +8,12 @@ import {
 	penalize,
 	removePlayer,
 	resetAnswerRequests,
+	resetTeamPoints,
 	setAnsweredAndDismiss,
 	setTeamPoints,
 	useActiveTeam,
 	useCategories,
-	useTeams,
-	resetTeamPoints
+	useTeams
 } from "../../firestore";
 import { AnswerType, IAnswer, ICategory, Team } from "../../models";
 import { roundGames } from "../../seed/round-games";
@@ -149,15 +149,15 @@ export const ModeratorScreen: React.SFC<RouteComponentProps> = () => {
 	const teams = useTeams();
 	const { enabled, toggleThemeState } = useSoundEnbaled();
 
-	const reset = () => {
-		if (window.confirm("Really reset game?")) {
-			if (window.confirm("Really????")) {
-				resetRounds();
-				resetTeams();
-				resetAnswerRequests();
-			}
-		}
-	};
+	// const reset = () => {
+	// 	if (window.confirm("Really reset game?")) {
+	// 		if (window.confirm("Really????")) {
+	// 			resetRounds();
+	// 			resetTeams();
+	// 			resetAnswerRequests();
+	// 		}
+	// 	}
+	// };
 
 	const choose = (category: ICategory, answer: IAnswer) => () => {
 		chooseAnswer(category, answer);

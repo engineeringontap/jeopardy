@@ -6,6 +6,18 @@ import { PacmanLoader } from "react-spinners";
 import { addToTeam, requestToAnswer, useCategories, useTeams } from "../../firestore";
 import { useUserId } from "../../util/userId";
 import styles from "./PlayerScreen.module.css";
+import * as NoSleep from "nosleep.js";
+
+const noSleep = new NoSleep();
+
+document.addEventListener(
+	"click",
+	function enableNoSleep() {
+		document.removeEventListener("click", enableNoSleep, false);
+		noSleep.enable();
+	},
+	false
+);
 
 const PlayerButton: React.FC<{ color: string; onClick: () => void }> = ({ color, onClick }) => (
 	<button className={styles.playerButton} onClick={onClick} style={{ backgroundColor: color }}>
