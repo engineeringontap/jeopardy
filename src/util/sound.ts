@@ -56,6 +56,7 @@ export const useSoundEnbaled = () => {
 		if (enabled) {
 			setSoundEnabled(false);
 			setEnabled(false);
+			stopTheme();
 		} else {
 			setSoundEnabled(true);
 			setEnabled(true);
