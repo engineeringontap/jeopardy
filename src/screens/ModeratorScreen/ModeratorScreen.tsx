@@ -38,12 +38,20 @@ const dismiss = (category?: ICategory) => () => {
 	resetAnswerRequests();
 };
 
+const setAnswered = (answer: IAnswer, category?: ICategory) => () => {
+	if (!category) {
+		return;
+	}
+	setAnsweredAndDismiss(category, answer);
+};
+
 const awardPoints = (team: Team, answer: IAnswer, category: ICategory) => () => {
 	award(team, answer);
 	setAnsweredAndDismiss(category, answer);
 	stopTheme();
 	resetAnswerRequests();
 };
+
 const penalizePoints = (team: Team, answer: IAnswer, category: ICategory) => () => {
 	penalize(team, answer);
 	setAnsweredAndDismiss(category, answer);
@@ -205,6 +213,7 @@ export const ModeratorScreen: React.SFC<RouteComponentProps> = () => {
 									<span className={styles.points}>{answer.points}</span>
 									<button onClick={choose(category, answer)}>Show</button>
 									<button onClick={dismiss(category)}>Dismiss</button>
+									<button onClick={setAnswered(answer, category)}>setAnswered</button>
 								</div>
 							))}
 						</div>
