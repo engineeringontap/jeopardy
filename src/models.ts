@@ -22,6 +22,7 @@ export interface IAnswer {
 	id: string;
 	type: AnswerType;
 	answer: string;
+	answerDe?: string;
 	hint: string;
 	explanation: string;
 	points: number;

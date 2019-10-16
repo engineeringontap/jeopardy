@@ -121,8 +121,8 @@ export const round93: ICategory[] = [
 			{
 				id: "1qxjjkwk1sczm29",
 				type: AnswerType.TEXT,
-				answer: "YouTube",
-				hint: "A website to watch popular videos on",
+				hint: "YouTube",
+				answer: "A website to watch popular videos on",
 				explanation: "",
 				points: 100,
 				show: false,

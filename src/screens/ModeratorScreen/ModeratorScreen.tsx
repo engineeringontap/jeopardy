@@ -15,6 +15,10 @@ import {
 	useTeams
 } from "../../firestore";
 import { AnswerType, IAnswer, ICategory, Team } from "../../models";
+import { roundGames } from "../../seed/round-games";
+import { roundHardcore } from "../../seed/round-hardcore";
+import { roundMovies } from "../../seed/round-movies";
+import { roundTech } from "../../seed/round-tech";
 import { round1 } from "../../seed/round1";
 import { round2 } from "../../seed/round2";
 import { round3 } from "../../seed/round3";
@@ -173,6 +177,11 @@ export const ModeratorScreen: React.SFC<RouteComponentProps> = () => {
 			</Helmet>
 			<div className={styles.controlBar}>
 				<button onClick={reset}>Reset</button>
+				<button onClick={bootstrapRound(roundTech)}>Bootstrap Tech Round</button>
+				<button onClick={bootstrapRound(roundGames)}>Bootstrap Games Round</button>
+				<button onClick={bootstrapRound(roundMovies)}>Bootstrap Movies Round</button>
+				<button onClick={bootstrapRound(roundHardcore)}>Bootstrap Hardcore Round</button>
+				<button onClick={bootstrapRound(round1)}>Bootstrap Round 1</button>
 				<button onClick={bootstrapRound(round1)}>Bootstrap Round 1</button>
 				<button onClick={bootstrapRound(round2)}>Bootstrap Round 2</button>
 				<button onClick={bootstrapRound(round3)}>Bootstrap Round 3</button>
