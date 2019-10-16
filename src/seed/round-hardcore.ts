@@ -60,7 +60,7 @@ export const roundHardcore: ICategory[] = [
 	},
 	{
 		id: uniqid(),
-		name: "Hacker",
+		name: "Famous Hackers",
 		answers: [
 			{
 				id: uniqid(),
