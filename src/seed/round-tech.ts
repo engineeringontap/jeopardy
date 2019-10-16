@@ -251,7 +251,7 @@ export const roundTech: ICategory[] = [
 			{
 				id: "1qxjj4uk1scgk0h",
 				type: AnswerType.TEXT,
-				answer: "Cyper, Thank, Switch, Trinity, Morpheus, Neo",
+				answer: "Cyper, Tank, Switch, Trinity, Morpheus, Neo",
 				hint: "What is 'The Matrix'?",
 				explanation: "",
 				points: 200,
