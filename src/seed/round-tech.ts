@@ -114,7 +114,7 @@ export const roundTech: ICategory[] = [
 				type: AnswerType.CODE,
 				answer: "",
 				hint: "Whitespace",
-				explanation: "",
+				explanation: "Der Code hier ist syntaktisch korrekt und gibt auch wirklich hello world aus",
 				points: 1000,
 				show: false,
 				answered: false
@@ -131,7 +131,7 @@ export const roundTech: ICategory[] = [
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fwebsites%2Fwebsites1.png?alt=media&token=9008446d-b4dd-400a-9f2a-f047c62d0403",
 				hint: "PornHub",
-				explanation: "",
+				explanation: "Eine der größten Movie Websites überhaupt",
 				points: 200,
 				show: false,
 				answered: false
@@ -142,7 +142,7 @@ export const roundTech: ICategory[] = [
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fwebsites%2Fwebsites2.png?alt=media&token=136efc0d-035a-4873-ac0a-a4e3eedcbe83",
 				hint: "GitHub",
-				explanation: "",
+				explanation: "Vermutlich liegt euer Code auch hier",
 				points: 400,
 				show: false,
 				answered: false
@@ -153,7 +153,7 @@ export const roundTech: ICategory[] = [
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fwebsites%2Fwebsites3.png?alt=media&token=05336056-8244-4144-b318-23ca58bba586",
 				hint: "StackOverflow",
-				explanation: "",
+				explanation: "Wenn ihr nicht pairt oder mobbt, dann seid ihr vermutlich häufiger hier.",
 				points: 600,
 				show: false,
 				answered: false
@@ -163,8 +163,8 @@ export const roundTech: ICategory[] = [
 				type: AnswerType.IMAGE,
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fwebsites%2Fwebsites4.png?alt=media&token=4e51925f-ba7b-4282-80cd-da8f9d0c8a3e",
-				hint: "AWS",
-				explanation: "",
+				hint: "AWS Lambda",
+				explanation: "Die Mädels und Jungs brauchten nur eine Webseite auf ihr Produkt bauen",
 				points: 800,
 				show: false,
 				answered: false
@@ -175,7 +175,7 @@ export const roundTech: ICategory[] = [
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Fwebsites%2Fwebsites5.gif?alt=media&token=ca2e9765-d971-48eb-aec0-1831a5e7fd92",
 				hint: "Coderanch",
-				explanation: "",
+				explanation: "Wenn Stackoverflow mal down ist, kommt ihr meistens hier raus",
 				points: 1000,
 				show: false,
 				answered: false
@@ -192,7 +192,7 @@ export const roundTech: ICategory[] = [
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Funix%2Funix1.jpg?alt=media&token=7204ac9d-21ad-4704-90ac-289954a8a2d0",
 				hint: "cat",
-				explanation: "",
+				explanation: "Wie heißt das UNIX Kommando?",
 				points: 200,
 				show: false,
 				answered: false
@@ -203,7 +203,7 @@ export const roundTech: ICategory[] = [
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Funix%2Funix2.jpg?alt=media&token=78e10fcb-5240-4885-a293-4528eadff922",
 				hint: "tail",
-				explanation: "",
+				explanation: "Wir suchen ein UNIX Kommando zu diesem Bild",
 				points: 400,
 				show: false,
 				answered: false
@@ -214,7 +214,8 @@ export const roundTech: ICategory[] = [
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Funix%2Funix3.gif?alt=media&token=23e9c6f3-4a4a-4525-a5f1-4856fa4c2c2b",
 				hint: "ping",
-				explanation: "",
+				explanation:
+					"Ich weiß ja nicht wie ihr eure Infrastruktur monitored aber wir machen das mit dem Tool",
 				points: 600,
 				show: false,
 				answered: false
@@ -225,7 +226,7 @@ export const roundTech: ICategory[] = [
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Funix%2Funix4.jpg?alt=media&token=d7edc8b1-5b1b-4082-9dec-d25685d2bfd7",
 				hint: "netcat",
-				explanation: "",
+				explanation: "Die meisten benutzen es mit -tulpen",
 				points: 800,
 				show: false,
 				answered: false
@@ -236,7 +237,7 @@ export const roundTech: ICategory[] = [
 				answer:
 					"https://firebasestorage.googleapis.com/v0/b/eot-jeopardy.appspot.com/o/answers%2Funix%2Funix5.jpg?alt=media&token=f612cd84-fed3-4766-9aac-833e1cc9915a",
 				hint: "socat",
-				explanation: "",
+				explanation: "Wer von euch hatte noch ein Modem oder ist ein UNIX Opa?",
 				points: 1000,
 				show: false,
 				answered: false
