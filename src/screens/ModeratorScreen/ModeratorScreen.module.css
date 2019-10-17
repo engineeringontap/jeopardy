@@ -11,6 +11,10 @@
 	border-bottom: 2px solid gold;
 }
 
+.controlBar button {
+	margin-right: 10px;
+}
+
 .content {
 	display: flex;
 	flex-grow: 1;

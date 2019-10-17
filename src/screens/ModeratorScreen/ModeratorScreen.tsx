@@ -35,6 +35,7 @@ import { round99 } from "../../seed/round99";
 import { bootstrapRound } from "../../seed/seed";
 import { startTheme, stopTheme, toggleTheme, useSoundEnbaled } from "../../util/sound";
 import styles from "./ModeratorScreen.module.css";
+import { resetTeams } from "../../seed";
 
 const dismiss = (category?: ICategory) => () => {
 	if (!category) {
@@ -211,6 +212,8 @@ export const ModeratorScreen: React.SFC<RouteComponentProps> = () => {
 			<div className={styles.controlBar}>
 				{/* <button onClick={reset}>Reset</button> */}
 				<button onClick={resetTeamPoints}>Reset team points</button>
+				<button onClick={resetAnswerRequests}>Reset answer requests</button>
+				<button onClick={resetTeams}>Reset teams</button>
 				<button onClick={toggleTheme}>Toggle theme song</button>
 				<input
 					type="checkbox"

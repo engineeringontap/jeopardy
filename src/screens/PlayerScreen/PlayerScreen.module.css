@@ -58,6 +58,7 @@
 .userId {
 	font-size: 12px;
 	margin-bottom: 5px;
+	opacity: 0.5;
 }
 
 .qrReader {

@@ -729,8 +729,8 @@ export const round2: ICategory[] = [
 const teamsSeed: Team[] = [
 	{
 		id: "4242",
-		color: "#ffeb3b",
-		name: "Yellow",
+		color: "#81d4fa",
+		name: "Blue",
 		members: [],
 		points: 0
 	},
@@ -793,19 +793,21 @@ export const bootstrapRound = (categories: ICategory[]) => async () => {
 };
 
 export const resetTeams = async () => {
-	const query = await firestore()
-		.collection("teams")
-		.get();
-	for (const item of query.docs) {
-		await firestore()
-			.doc(`teams/${item.id}`)
-			.delete();
-	}
-
-	for (const team of teamsSeed) {
-		await firestore()
+	if (window.confirm("Really?")) {
+		const query = await firestore()
 			.collection("teams")
-			.doc(team.id)
-			.set(team);
+			.get();
+		for (const item of query.docs) {
+			await firestore()
+				.doc(`teams/${item.id}`)
+				.delete();
+		}
+
+		for (const team of teamsSeed) {
+			await firestore()
+				.collection("teams")
+				.doc(team.id)
+				.set(team);
+		}
 	}
 };
