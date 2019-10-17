@@ -81,18 +81,16 @@
 	position: absolute;
 	/* bottom: 50px; */
 	z-index: 9999;
-	user-select: none;
+	/* user-select: none; */
 	top: 50%;
 }
 
 .playerScreenInput:focus {
 	outline: none;
 	border: none;
-	user-select: none;
 }
 .playerScreenInput:active {
 	border: none;
-	user-select: none;
 }
 
 .loadingView {
