@@ -170,6 +170,24 @@ export const setAnsweredAndDismiss = (category: ICategory, answer: IAnswer) => {
 		.set(categoryCopy);
 };
 
+export const toggleAnsweredAndDismiss = (category: ICategory, answer: IAnswer) => {
+	const categoryCopy = {
+		...category,
+		answers: category.answers.map(a => {
+			const answered = answer.id === a.id ? !a.answered : a.answered;
+			return {
+				...a,
+				show: false,
+				answered
+			};
+		})
+	};
+
+	firestore()
+		.doc(`categories/${category.id}`)
+		.set(categoryCopy);
+};
+
 export const award = (team: Team, answer: IAnswer) => {
 	firestore()
 		.doc(`teams/${team.id}`)

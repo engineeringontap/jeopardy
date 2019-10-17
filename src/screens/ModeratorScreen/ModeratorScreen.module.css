@@ -75,3 +75,11 @@
 .answerRow button {
 	margin-left: 10px;
 }
+
+.timer {
+	font-size: 30px;
+	background-color: white;
+	padding: 20px;
+	color: black;
+	width: 100px;
+}

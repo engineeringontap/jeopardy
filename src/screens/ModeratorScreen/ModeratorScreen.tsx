@@ -1,5 +1,6 @@
 import { RouteComponentProps } from "@reach/router";
 import React from "react";
+import Timer from "react-compound-timer";
 import { Helmet } from "react-helmet";
 import {
 	award,
@@ -13,7 +14,8 @@ import {
 	setTeamPoints,
 	useActiveTeam,
 	useCategories,
-	useTeams
+	useTeams,
+	toggleAnsweredAndDismiss
 } from "../../firestore";
 import { AnswerType, IAnswer, ICategory, Team } from "../../models";
 import { roundGames } from "../../seed/round-games";
@@ -43,11 +45,11 @@ const dismiss = (category?: ICategory) => () => {
 	resetAnswerRequests();
 };
 
-const setAnswered = (answer: IAnswer, category?: ICategory) => () => {
+const toggleAnswered = (answer: IAnswer, category?: ICategory) => () => {
 	if (!category) {
 		return;
 	}
-	setAnsweredAndDismiss(category, answer);
+	toggleAnsweredAndDismiss(category, answer);
 };
 
 const awardPoints = (team: Team, answer: IAnswer, category: ICategory) => () => {
@@ -116,9 +118,14 @@ const CurrentAnswer: React.FC<{
 					>
 						penalize {activeTeam.name}
 					</button>
+					<div className={styles.timer}>
+						<Timer>
+							<Timer.Seconds />s
+						</Timer>
+					</div>
 				</div>
 			)}
-			{/* <div>
+			<div>
 				{teams.map(t => (
 					<button
 						key={t.id}
@@ -139,7 +146,7 @@ const CurrentAnswer: React.FC<{
 						penalize {t.name}
 					</button>
 				))}
-			</div> */}
+			</div>
 		</div>
 	);
 };
@@ -226,7 +233,7 @@ export const ModeratorScreen: React.SFC<RouteComponentProps> = () => {
 									<span className={styles.points}>{answer.points}</span>
 									<button onClick={choose(category, answer)}>Show</button>
 									<button onClick={dismiss(category)}>Dismiss</button>
-									<button onClick={setAnswered(answer, category)}>setAnswered</button>
+									<button onClick={toggleAnswered(answer, category)}>toggle Answered</button>
 								</div>
 							))}
 						</div>

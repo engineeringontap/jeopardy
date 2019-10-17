@@ -7,6 +7,7 @@ import { addToTeam, requestToAnswer, useCategories, useTeams } from "../../fires
 import { useUserId } from "../../util/userId";
 import styles from "./PlayerScreen.module.css";
 import * as NoSleep from "nosleep.js";
+import { IAnswer, AnswerType } from "../../models";
 
 const noSleep = new NoSleep();
 
@@ -41,7 +42,7 @@ export const PlayerScreen: React.FC<RouteComponentProps> = () => {
 	const teams = useTeams();
 	const signedTeam = teams.filter(team => team.members.includes(userId))[0];
 
-	const currentAnswer = categories
+	const currentAnswer: IAnswer | undefined = categories
 		.flatMap(category => category.answers)
 		.find(answer => answer.show);
 
@@ -121,6 +122,9 @@ export const PlayerScreen: React.FC<RouteComponentProps> = () => {
 				<>
 					<div className={styles.teamHeadline}>Your team: {signedTeam.name}</div>
 					<div className={styles.userId}>User id: {userId}</div>
+					{currentAnswer && currentAnswer.type === AnswerType.TEXT && (
+						<div className={styles.answerInfo}>{currentAnswer && currentAnswer.answer}</div>
+					)}
 					<PlayerButton onClick={handleAnswerClick} color={signedTeam.color} />
 				</>
 			) : (
