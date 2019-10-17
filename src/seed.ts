@@ -730,21 +730,21 @@ const teamsSeed: Team[] = [
 	{
 		id: "4242",
 		color: "#81d4fa",
-		name: "Blue",
+		name: "Blau",
 		members: [],
 		points: 0
 	},
 	{
 		id: "1337",
 		color: "#4caf50",
-		name: "Green",
+		name: "Grün",
 		members: [],
 		points: 0
 	},
 	{
 		id: "1235",
 		color: "#f44336",
-		name: "Red",
+		name: "Rot",
 		members: [],
 		points: 0
 	},

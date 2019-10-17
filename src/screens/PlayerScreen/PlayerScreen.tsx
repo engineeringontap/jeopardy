@@ -83,18 +83,18 @@ export const PlayerScreen: React.FC<RouteComponentProps> = () => {
 			});
 	}, [currentAnswer, signedTeam, userId]);
 
-	const handleError = error => {
-		return () => {
-			console.log("Something went wrong", error);
-		};
-	};
+	// const handleError = error => {
+	// 	return () => {
+	// 		console.log("Something went wrong", error);
+	// 	};
+	// };
 
-	const handleScan = (data: any) => {
-		if (data) {
-			console.log("new team member: ", userId, "for team: ", data);
-			addToTeam(userId, data);
-		}
-	};
+	// const handleScan = (data: any) => {
+	// 	if (data) {
+	// 		console.log("new team member: ", userId, "for team: ", data);
+	// 		addToTeam(userId, data);
+	// 	}
+	// };
 
 	if (!userId) {
 		return (
