@@ -1,13 +1,12 @@
 import { RouteComponentProps } from "@reach/router";
+import * as NoSleep from "nosleep.js";
 import React, { useCallback } from "react";
 import { Helmet } from "react-helmet";
-import QrReader from "react-qr-reader";
 import { PacmanLoader } from "react-spinners";
 import { addToTeam, requestToAnswer, useCategories, useTeams } from "../../firestore";
+import { AnswerType, IAnswer } from "../../models";
 import { useUserId } from "../../util/userId";
 import styles from "./PlayerScreen.module.css";
-import * as NoSleep from "nosleep.js";
-import { IAnswer, AnswerType } from "../../models";
 
 const noSleep = new NoSleep();
 
@@ -46,7 +45,7 @@ export const PlayerScreen: React.FC<RouteComponentProps> = () => {
 		.flatMap(category => category.answers)
 		.find(answer => answer.show);
 
-	// initShake(userId, signedTeam);
+	// initShake(userId, signedTeam)
 
 	const handleTeamInput = teamId => {
 		const team = teamId.target.value;
@@ -129,13 +128,13 @@ export const PlayerScreen: React.FC<RouteComponentProps> = () => {
 				</>
 			) : (
 				<>
-					<div className={styles.helpline}>Scan team QR code or enter team ID</div>
-					<QrReader
+					{/* <div className={styles.helpline}>Scan team QR code or enter team ID</div> */}
+					{/* <QrReader
 						className={styles.qrReader}
 						delay={300}
 						onError={handleError}
 						onScan={handleScan}
-					/>
+					/> */}
 					<input
 						onInput={handleTeamInput}
 						className={styles.playerScreenInput}

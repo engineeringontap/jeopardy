@@ -8,9 +8,9 @@ export const useUserId = () => {
 	useEffect(() => {
 		setTimeout(() => {
 			Fingerprint2.get(components => {
-				console.log({ components });
+				// console.log({ components });
 				const id = Md5(JSON.stringify(components));
-				console.log({ id });
+				// console.log({ id });
 				setUserId(id);
 			});
 		}, 3000);

@@ -67,17 +67,36 @@ const penalizePoints = (team: Team, answer: IAnswer, category: ICategory) => () 
 	resetAnswerRequests();
 };
 
+const setRandomAnswer = categories => () => {
+	const unanswered = categories
+		.flatMap(category => category.answers)
+		.filter(answer => !answer.answered);
+
+	const randomAnswer = unanswered[Math.floor(Math.random() * unanswered.length)];
+
+	const cat = categories.find(c => c.answers.find(a => a.id === randomAnswer.id));
+
+	chooseAnswer(cat, randomAnswer);
+	startTheme();
+};
+
 const CurrentAnswer: React.FC<{
 	currentAnswer: IAnswer | undefined;
 	currentCategory: ICategory | undefined;
 }> = ({ currentAnswer, currentCategory }) => {
 	const teams = useTeams();
+	const categories = useCategories();
 	const activeTeamId = useActiveTeam(currentAnswer ? currentAnswer.id : "");
 	const activeTeam = teams.find(team => team.id === activeTeamId);
 
 	if (!currentAnswer || !currentCategory) {
 		stopTheme();
-		return <div>No Answer selected</div>;
+		return (
+			<div>
+				No Answer selected
+				<button onClick={setRandomAnswer(categories)}>Select random answer</button>
+			</div>
+		);
 	}
 
 	let answerImageOrText: any = "";
@@ -100,7 +119,7 @@ const CurrentAnswer: React.FC<{
 			<div>Points: {currentAnswer.points}</div>
 			<div>Hint: {currentAnswer.question}</div>
 			<div>Explanation: {currentAnswer.explanation}</div>
-
+			<button onClick={dismiss(currentCategory)}>Dismiss</button>
 			{activeTeam && (
 				<div>
 					<button
@@ -126,27 +145,29 @@ const CurrentAnswer: React.FC<{
 					</div>
 				</div>
 			)}
-			<div>
-				{teams.map(t => (
-					<button
-						key={t.id}
-						style={{ backgroundColor: t.color }}
-						onClick={awardPoints(t, currentAnswer, currentCategory)}
-					>
-						Award {t.name}
-					</button>
-				))}
-			</div>
-			<div>
-				{teams.map(t => (
-					<button
-						key={t.id}
-						style={{ backgroundColor: t.color }}
-						onClick={penalizePoints(t, currentAnswer, currentCategory)}
-					>
-						penalize {t.name}
-					</button>
-				))}
+			<div className={styles.awardings}>
+				<div>
+					{teams.map(t => (
+						<button
+							key={t.id}
+							style={{ backgroundColor: t.color }}
+							onClick={awardPoints(t, currentAnswer, currentCategory)}
+						>
+							Award {t.name}
+						</button>
+					))}
+				</div>
+				<div>
+					{teams.map(t => (
+						<button
+							key={t.id}
+							style={{ backgroundColor: t.color }}
+							onClick={penalizePoints(t, currentAnswer, currentCategory)}
+						>
+							penalize {t.name}
+						</button>
+					))}
+				</div>
 			</div>
 		</div>
 	);
@@ -156,6 +177,12 @@ export const ModeratorScreen: React.SFC<RouteComponentProps> = () => {
 	const categories = useCategories();
 	const teams = useTeams();
 	const { enabled, toggleThemeState } = useSoundEnbaled();
+
+	const isModerator = Boolean(localStorage.getItem("moderator") === "true");
+
+	if (!isModerator) {
+		return <></>;
+	}
 
 	// const reset = () => {
 	// 	if (window.confirm("Really reset game?")) {
@@ -246,7 +273,6 @@ export const ModeratorScreen: React.SFC<RouteComponentProps> = () => {
 					<div className={styles.currentAnswer}>
 						<div className={styles.currentAnswerTitle}>
 							<div>Current Jeopardy</div>
-							<button onClick={dismiss(currentCategory)}>Dismiss</button>
 						</div>
 						<CurrentAnswer currentAnswer={currentAnswer} currentCategory={currentCategory} />
 					</div>

@@ -79,9 +79,10 @@
 	font-size: 30px;
 	text-align: center;
 	position: absolute;
-	bottom: 50px;
+	/* bottom: 50px; */
 	z-index: 9999;
 	user-select: none;
+	top: 50%;
 }
 
 .playerScreenInput:focus {
