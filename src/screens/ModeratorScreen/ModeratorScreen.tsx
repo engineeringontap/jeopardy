@@ -12,12 +12,13 @@ import {
 	resetTeamPoints,
 	setAnsweredAndDismiss,
 	setTeamPoints,
+	toggleAnsweredAndDismiss,
 	useActiveTeam,
 	useCategories,
-	useTeams,
-	toggleAnsweredAndDismiss
+	useTeams
 } from "../../firestore";
 import { AnswerType, IAnswer, ICategory, Team } from "../../models";
+import { resetTeams } from "../../seed";
 import { roundGames } from "../../seed/round-games";
 import { roundHardcore } from "../../seed/round-hardcore";
 import { roundMovies } from "../../seed/round-movies";
@@ -25,6 +26,7 @@ import { roundTech } from "../../seed/round-tech";
 import { round1 } from "../../seed/round1";
 import { round2 } from "../../seed/round2";
 import { round3 } from "../../seed/round3";
+import { round90 } from "../../seed/round-beer";
 import { round93 } from "../../seed/round93";
 import { round94 } from "../../seed/round94";
 import { round95 } from "../../seed/round95";
@@ -35,7 +37,6 @@ import { round99 } from "../../seed/round99";
 import { bootstrapRound } from "../../seed/seed";
 import { startTheme, stopTheme, toggleTheme, useSoundEnbaled } from "../../util/sound";
 import styles from "./ModeratorScreen.module.css";
-import { resetTeams } from "../../seed";
 
 const dismiss = (category?: ICategory) => () => {
 	if (!category) {
@@ -228,6 +229,7 @@ export const ModeratorScreen: React.SFC<RouteComponentProps> = () => {
 				<button onClick={bootstrapRound(round1)}>Bootstrap Round 1</button>
 				<button onClick={bootstrapRound(round2)}>Bootstrap Round 2</button>
 				<button onClick={bootstrapRound(round3)}>Bootstrap Round 3</button>
+				<button onClick={bootstrapRound(round90)}>Bootstrap Round Beer</button>
 				<button onClick={bootstrapRound(round93)}>Bootstrap Round 93</button>
 				<button onClick={bootstrapRound(round94)}>Bootstrap Round 94</button>
 				<button onClick={bootstrapRound(round95)}>Bootstrap Round 95</button>
